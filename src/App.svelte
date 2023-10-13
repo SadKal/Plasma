@@ -7,7 +7,7 @@
         <ul class="topbar__list">
             <li>  
                 <a href="#">
-                <img src="src/assets/plasma_icon.svg" alt="logo" class="topbar__logo"/>
+                    <img src="src/assets/plasma_icon_notext.png" alt="logo" class="topbar__logo"/>
                 </a> 
             </li>
             <li>
@@ -36,6 +36,9 @@
         </ul>
     </div>
     <div class="yar">
+
+    </div>
+    <div class="circle">
 
     </div>
 </main>
@@ -68,8 +71,8 @@ $topbar-background-color: rgb(0,74,64);
     }   
 
     &__logo{
-        height: 60px;
         width: 60px;
+        height: auto;
     }
 }
 
@@ -77,13 +80,14 @@ li{
     box-sizing: border-box;
     float: left;
     padding: 2rem 5rem 1rem;
-    font-size: 46px;
+    font-size: 54px;
     color: $topbar-text-color
 ;
 }
 li a{
     text-decoration: none;
     color: $topbar-text-color;
+    transition: all .5s;
 
     &:hover{
         color: white;

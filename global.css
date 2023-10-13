@@ -2,5 +2,7 @@ html, body{
     height: 100%;
     padding: 0;
     margin: 0;
-    background-color: darkcyan;
+    background: linear-gradient(162deg, rgba(0,61,53,1) 22%, rgba(0,0,0,1) 100%);
+    background-attachment: fixed; /*Esto hace que el gradiente de fondo no se repita, se "ancla" a la vista del usuario*/
+    font-family: 'Roboto';
 }

@@ -53,6 +53,7 @@ $topbar-background-color: rgb(0,74,64);
 
 .topbar{
     position: absolute;
+    box-sizing: border-box;
     border-bottom: 6px solid $topbar-text-color;
     width: 100%;
     background-color: $topbar-background-color;
@@ -68,26 +69,28 @@ $topbar-background-color: rgb(0,74,64);
         &__burger{
             float: right;
         }
-    }   
-
+    }  
+    
     &__logo{
-        width: 60px;
+        width: 45px;
         height: auto;
     }
 }
 
 li{
     box-sizing: border-box;
-    float: left;
     padding: 2rem 5rem 1rem;
-    font-size: 54px;
-    color: $topbar-text-color
-;
+    font-size: 42px;
+    color: $topbar-text-color;
+    @media (min-width: 550px) {
+        float: left;
+    }  
 }
 li a{
     text-decoration: none;
     color: $topbar-text-color;
     transition: all .5s;
+    
 
     &:hover{
         color: white;

@@ -3,7 +3,7 @@
 </script>
 
 <main>
-    <div class="topbar">
+    <div class="topbar clearfix">
         <ul class="topbar__list">
             <li>  
                 <a href="#">
@@ -35,12 +35,13 @@
             </li>
         </ul>
     </div>
+    <div>
+        <p>probando</p>
+    </div>
     <div class="yar">
 
     </div>
-    <div class="circle">
-
-    </div>
+    
 </main>
 
 <style lang="scss">
@@ -50,9 +51,13 @@ $topbar-background-color: rgb(0,74,64);
 .yar{
     height: 4000px;
 }
+.clearfix::after {
+  content: ""; 
+  clear: both;
+  display: table;
+} 
 
 .topbar{
-    position: absolute;
     box-sizing: border-box;
     border-bottom: 6px solid $topbar-text-color;
     width: 100%;
@@ -65,7 +70,9 @@ $topbar-background-color: rgb(0,74,64);
         width: 100%;
     }
     @media (min-width: 1250px) {
-        position: fixed;
+        /*Position sticky y top 0 hace que la barra se quede siempre arriba sin hacer overlap con el resto de contenido*/
+        position: sticky;
+        top: 0;
         &__burger{
             float: right;
         }

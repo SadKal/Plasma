@@ -2,7 +2,7 @@
 
 </script>
 
-<main>
+<header>
     <div class="topbar clearfix">
         <ul class="topbar__list">
             <li>  
@@ -42,7 +42,7 @@
 
     </div>
     
-</main>
+</header>
 
 <style lang="scss">
 $topbar-text-color: rgb(209,51,100);
@@ -54,7 +54,7 @@ $topbar-background-color: rgb(0,74,64);
 .clearfix::after {
   content: ""; 
   clear: both;
-  display: table;
+  display: block;
 } 
 
 .topbar{
@@ -69,7 +69,8 @@ $topbar-background-color: rgb(0,74,64);
         padding: 0;
         width: 100%;
     }
-    @media (min-width: 1250px) {
+    
+    @media (min-width: 1080px) {
         /*Position sticky y top 0 hace que la barra se quede siempre arriba sin hacer overlap con el resto de contenido*/
         position: sticky;
         top: 0;
@@ -89,9 +90,13 @@ li{
     padding: 2rem 5rem 1rem;
     font-size: 42px;
     color: $topbar-text-color;
-    @media (min-width: 550px) {
+    transition: all .3s;
+    @media (min-width: 1080px) {
         float: left;
     }  
+    @media (max-width: 1640px){
+        padding: 1rem 2rem .5rem;
+    } 
 }
 li a{
     text-decoration: none;

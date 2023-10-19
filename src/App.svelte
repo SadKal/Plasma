@@ -1,5 +1,5 @@
 <script>
-	import Biblioteca from "./lib/biblioteca/biblioteca.svelte";
+	import Biblioteca from "./lib/biblioteca/main.svelte";
 
 </script>
 

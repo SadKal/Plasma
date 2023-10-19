@@ -1,10 +1,12 @@
 <script>
-    import Header from "./lib/header/Header.svelte";
+	import Biblioteca from "./lib/biblioteca/biblioteca.svelte";
+
 </script>
 
-<header>
-    <Header/>
-</header>
+
+<body>
+	<Biblioteca />
+</body>
 
 <style lang="scss">
 </style>

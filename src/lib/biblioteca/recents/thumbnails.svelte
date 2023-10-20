@@ -1,5 +1,5 @@
 <script>
-    
+
 </script>
 
 <div class="main_biblioteca__recientes">
@@ -27,14 +27,14 @@
 	);
 
     .main_biblioteca__recientes {
-        $topbar-text-color: rgb(209, 51, 100);
-		width: 80%;
+		$text-color: rgb(209, 51, 100);
+		width: 70%;
 		margin: 0 auto;
 
 		&-title {
 			font-family: "Montserrat";
 			font-weight: 600;
-			color: $topbar-text-color;
+			color: $text-color;
 			font-size: 2.5rem;
 			margin-bottom: 20px;
 			letter-spacing: 1px;
@@ -56,7 +56,7 @@
 				border-radius: 3%;
 				height: 250px;
 				width: 175px;
-				margin-left: 30px;
+				margin-left: 2vw;
 				display: inline-block;
 			}
 		}

@@ -1,19 +1,12 @@
 <script>
 	import Header from "../header/Header.svelte";
 	import Recents from "./recents/recents.svelte";
+	import Library from "./tusjuegos/yourgames.svelte"
 </script>
 
 <Header />
 <Recents />
-<div class="urgames_biblioteca">
-	<div class="urgames_biblioteca__title" />
-	<div class="urgames_biblioteca__content">
-		<div class="urgames_biblioteca__content-row" />
-		<div class="urgames_biblioteca__content-row" />
-		<div class="urgames_biblioteca__content-row" />
-	</div>
-</div>
-
+<Library />
 <style lang="scss">
 	
 </style>

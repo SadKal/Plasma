@@ -8,19 +8,19 @@
 </div>
 
 <style lang="scss">
-	$topbar-text-color: rgb(209, 51, 100);
+	$text-color: rgb(209, 51, 100);
 	.main_biblioteca {
 		background-color: unset;
-		border-bottom: 7px solid $topbar-text-color;
+		border-bottom: 7px solid $text-color;
 		padding-bottom: 100px;
 
 		&__title {
 			padding: 10rem;
 			text-align: center;
-			font-size: 5rem;
+			font-size: 80px;
 			font-family: "Montserrat";
 			font-weight: 600;
-			color: $topbar-text-color;
+			color: $text-color;
 			letter-spacing: 3px;
 		}
 	}

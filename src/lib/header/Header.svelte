@@ -32,22 +32,11 @@
             </li>
         </ul>
     </div>
-    <div>
-        <p>probando</p>
-    </div>
-    <div class="yar">
-
-    </div>
-    
 </header>
 
 <style lang="scss">
-$topbar-text-color: rgb(209,51,100);
-$topbar-background-color: rgb(0,74,64);
+    @import "../../sass/abstracts/variables";
 
-.yar{
-    height: 4000px;
-}
 .clearfix::after {
   content: ""; 
   clear: both;
@@ -56,7 +45,7 @@ $topbar-background-color: rgb(0,74,64);
 
 .topbar{
     box-sizing: border-box;
-    border-bottom: 6px solid $topbar-text-color;
+    border-bottom: 6px solid $text-color;
     width: 100%;
     background-color: $topbar-background-color;
 
@@ -86,7 +75,7 @@ li{
     box-sizing: border-box;
     padding: 2rem 5rem 1rem;
     font-size: 42px;
-    color: $topbar-text-color;
+    color: $text-color;
     transition: all .3s;
     @media (min-width: 1080px) {
         float: left;
@@ -97,16 +86,21 @@ li{
 }
 li a{
     text-decoration: none;
-    color: $topbar-text-color;
-    transition: all .5s;
-    
+    color: $text-color;
+    transition: all .3s;
 
     &:hover{
         color: white;
         text-shadow: 
-            0 0 2rem $topbar-text-color
+            0 0 2rem $text-color
         ,
             0 0 .5rem black;
+    }
+    &:focus{
+        display: block;
+        transform-origin: 50% 50%;
+        transform: scale(1.3, 1.3);
+        color: $selected-text-color;
     }
 }
 

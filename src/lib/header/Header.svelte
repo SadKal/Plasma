@@ -1,10 +1,8 @@
-<header>
+
     <div class="topbar clearfix">
         <ul class="topbar__list">
             <li>  
-                <a href="#">
-                    <img src="src/assets/plasma_icon_notext.png" alt="logo" class="topbar__logo"/>
-                </a> 
+                <img src="src/assets/plasma_icon_notext.png" alt="logo" class="topbar__logo"/>
             </li>
             <li>
                 <a href="#">
@@ -32,11 +30,14 @@
             </li>
         </ul>
     </div>
-</header>
 
 <style lang="scss">
     @import "../../sass/abstracts/variables";
 
+    *{
+        //Necesitamos en este caso usarlo ya que si no la imagen apareceria por encima
+        z-index: 100;
+    }
 .clearfix::after {
   content: ""; 
   clear: both;
@@ -45,7 +46,7 @@
 
 .topbar{
     box-sizing: border-box;
-    border-bottom: 6px solid $text-color;
+    border-bottom: 6px solid $text-color;   
     width: 100%;
     background-color: $topbar-background-color;
 

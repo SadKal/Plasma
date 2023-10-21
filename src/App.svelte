@@ -3,12 +3,14 @@
     import Novedades from "./lib/inicio/Novedades.svelte";
 </script>
 
-<header>
     <Header/>
-</header> 
-<body>
-    <Novedades/>
-</body>
 
+
+    <Novedades/>
+
+    <div style="height: 2000px;">
+
+    </div>
 <style lang="scss">
+    
 </style>

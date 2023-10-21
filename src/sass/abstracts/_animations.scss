@@ -1,0 +1,16 @@
+@keyframes fadein{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+@keyframes side_images{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 50%;
+    }
+}

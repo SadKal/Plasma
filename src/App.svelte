@@ -8,9 +8,7 @@
 
     <Novedades/>
 
-    <div style="height: 2000px;">
-
-    </div>
 <style lang="scss">
-    
+   
+
 </style>

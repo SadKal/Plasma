@@ -7,6 +7,4 @@ html, body{
     background-attachment: fixed; /*Esto hace que el gradiente de fondo no se repita, se "ancla" a la vista del usuario*/
     font-family: 'Roboto';
     transition: all .3s;
-    /*Evito que se pueda deslizar a la derecha*/
-    overflow-x: hidden;
 }

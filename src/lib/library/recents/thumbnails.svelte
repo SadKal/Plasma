@@ -28,7 +28,7 @@
 
     .main_biblioteca__recientes {
 		$text-color: rgb(209, 51, 100);
-		width: 70%;
+		width: 75%;
 		margin: 0 auto;
 
 		&-title {
@@ -45,8 +45,8 @@
 				background: $greenish-gradient;
 				background-size: 150%;
 				border-radius: 2%;
-				height: 350px;
-				width: 400px;
+				height: 425px;
+				width: 500px;
 				display: inline-block;
 			}
 
@@ -54,9 +54,9 @@
 				background: $purplish-gradient;
 				background-size: 200%;
 				border-radius: 3%;
-				height: 250px;
-				width: 175px;
-				margin-left: 2vw;
+				height: 300px;
+				width: 225px;
+				margin-left: 1vw;
 				display: inline-block;
 			}
 		}

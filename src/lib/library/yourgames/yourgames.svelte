@@ -6,6 +6,7 @@
 	<div class="urgames_biblioteca__title">
 		<span>Tus juegos</span>
 		<Select />
+		<br><br>
 		<div class="urgames_biblioteca__content">
 			<div class="urgames_biblioteca__content-row" />
 			<div class="urgames_biblioteca__content-row" />
@@ -27,7 +28,7 @@
 			font-weight: 600;
 			color: $text-color;
 			font-size: 2.5rem;
-			margin-bottom: 20px;
+
 			letter-spacing: 1px;
 		}
 	}

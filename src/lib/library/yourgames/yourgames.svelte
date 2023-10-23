@@ -20,7 +20,7 @@
 	.urgames_biblioteca {
 
         padding-top: 100px;
-		width: 70%;
+		width: 75%;
 		margin: 0 auto;
 
 		&__title span {

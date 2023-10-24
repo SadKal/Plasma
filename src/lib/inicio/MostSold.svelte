@@ -4,11 +4,12 @@
     function scrollOnLoad(n) {
         window.scrollTo(0, n);
     }
-
-
-
+    let mediaQuerySize = "(max-width: 420px)";
+    
     onMount( ()=> {
-        scrollOnLoad(500);
+        if(window.matchMedia(mediaQuerySize).matches){
+            scrollOnLoad(460);
+        }   
     });
 </script>
 
@@ -67,6 +68,12 @@
 
 <style lang="scss">
     @import "../../sass/abstracts/variables";
+    @import "../../sass/abstracts/animations";
+    *{
+        animation-name: fadein;
+        animation-duration: $seconds-fadein;
+        animation-timing-function: ease-in;
+    }
 
 
     .clearfix::after {
@@ -79,7 +86,7 @@
         width: 100%;
         text-align: center;
         font-family: 'Montserrat';
-        margin-top: 10rem;
+        margin-top: 15rem;
         color: $text-color;
         font-size: 60px;
         font-weight: bolder;
@@ -149,6 +156,13 @@
         transition: all .4s;
         position: relative;
 
+        &:not(:last-child){
+            margin-right: $gutter_horizontal;
+        }
+        &:hover{
+            cursor: pointer;
+        }
+
         @media (max-width: 420px) {
             width:60%;
             left: 50%;
@@ -163,9 +177,7 @@
                 scale: 110%;
             }
         }
-        &:not(:last-child){
-            margin-right: $gutter_horizontal;
-        }
         
+
     }
 </style>

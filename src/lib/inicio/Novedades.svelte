@@ -39,7 +39,6 @@
             font-weight: bolder;
             transition: all .5s;
             @media (min-width: 780px){
-                margin-top: 10rem;
                 color: $text-color;
                 font-size: 100px;
                 letter-spacing: .8rem;

@@ -10,12 +10,47 @@
         "src/assets/games/outer.png"
     ];
 
+    //Marco el tamaño para la mediaQuery posterior para visualizar mejor en movil
     let mediaQuerySize = "(max-width: 420px)";
+    //Preparo índices para las imagenes
     let slideIndex = 1;
     let rightIndex = 2;
     let leftIndex = 0;
+    //Esta bindeado en el html, esta variable contiene el componente de "slideshow"
     let slideshow;
+    //Variables para deslizar, necesito guardar inicio y final para calcular cuanto se ha deslizado y poder poner un minimo
+    let startSwipe, endSwipe;
+    let isSwiping = false;
 
+    //Registra el inicio del deslizamiento
+    function swipeStart(event){
+        startSwipe=event.touches[0].clientX;
+        isSwiping=true;
+    }
+    //Registra el final del deslizamiento
+    function swipeEnd(event) {
+        if (isSwiping){
+            endSwipe = event.touches[0].clientX;
+        }            
+    }
+    //Ejecuta segun el deslizamiento
+    function swipeAction() {
+        if (isSwiping){
+            isSwiping = false;
+            //Calculo cuanto ha deslizado y comparo con un minimo, para que no registre un toque como deslizamiento
+            let pxMoved = endSwipe - startSwipe;
+            const minDistance = 50; 
+            if (Math.abs(pxMoved) > minDistance) {
+                if (pxMoved < 0) {
+                    //Deslizar IZDA
+                    showSlides(1);
+                } else {
+                    //Deslizar DCHA
+                    showSlides(-1);
+                }
+            }
+        }
+    } 
 
     function showSlides(n) {
         /*Aqui debemos comprobar 2 cosas:
@@ -34,14 +69,23 @@
         let slides = slideshow.querySelectorAll(".slideshow__img");
 
         slides[0].src = images[leftIndex]
-        slides[0].style.opacity = "40%"
-
+        
         slides[1].src = images[slideIndex];
-        slides[1].style.scale = "160%"; 
         slides[1].style.zIndex = 2;
         
         slides[2].src = images[rightIndex];
-        slides[2].style.opacity = "40%"
+        
+        //Me encargo de pantallas pequeñas
+        if(window.matchMedia(mediaQuerySize).matches){
+            slides[1].style.scale = "230%"; 
+            slides[0].style.opacity = "50%"
+            slides[2].style.opacity = "50%"
+        }
+        else{
+            slides[1].style.scale = "160%"; 
+            slides[0].style.opacity = "40%"
+            slides[2].style.opacity = "40%"
+        }
 
         
     }
@@ -52,9 +96,9 @@
     });
 </script>
 
-<div bind:this={slideshow} class="slideshow clearfix">
+<div bind:this={slideshow} class="slideshow clearfix"  on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
 
-    <div  class="slideshow__slide">
+    <div class="slideshow__slide">
         <a class="previous" on:click={() => showSlides(-1)}>
             <img  class="slideshow__img left" src="src/assets/games/hollow.png" alt="img1"/>
         </a> 

@@ -69,16 +69,13 @@
 
     li{
         box-sizing: border-box;
-        padding: 2rem 5rem 1rem;
+        padding: 1rem 2rem .5rem;
         font-size: 42px;
         color: $text-color;
         transition: all .3s;
         @media (min-width: 1080px) {
             float: left;
         }  
-        @media (max-width: 1640px){
-            padding: 1rem 2rem .5rem;
-        } 
     }
     li a{
         text-decoration: none;

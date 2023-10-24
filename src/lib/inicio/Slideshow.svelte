@@ -10,6 +10,7 @@
         "src/assets/games/outer.png"
     ];
 
+    let mediaQuerySize = "(max-width: 420px)";
     let slideIndex = 1;
     let rightIndex = 2;
     let leftIndex = 0;
@@ -36,11 +37,13 @@
         slides[0].style.opacity = "40%"
 
         slides[1].src = images[slideIndex];
-        slides[1].style.scale = "160%";
-        
+        slides[1].style.scale = "160%"; 
+        slides[1].style.zIndex = 2;
         
         slides[2].src = images[rightIndex];
         slides[2].style.opacity = "40%"
+
+        
     }
     
     /*onMount(exclusivo de Svelte) espera a que cargue el DOM para ejecutar lo de dentro*/

@@ -11,8 +11,6 @@
             (semana del 02/09 al 09/09)
         </div>
     </div>
-    
-    
 
 <style lang="scss">
     @import "../../sass/abstracts/variables";

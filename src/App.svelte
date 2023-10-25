@@ -1,6 +1,6 @@
 <script>
     import Header from "./lib/header/Header.svelte";
-    import Perfil from "./lib/header/Perfil.svelte";
+    import Perfil from "./Perfil.svelte";
   
 </script>
 
@@ -15,3 +15,4 @@
 </main>
 <style lang="scss">
 </style>
+ 

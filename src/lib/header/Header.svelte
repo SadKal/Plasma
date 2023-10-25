@@ -43,9 +43,6 @@
 $topbar-text-color: rgb(209,51,100);
 $topbar-background-color: rgb(0,74,64);
 
-.yar{
-    height: 4000px;
-}
 .clearfix::after {
   content: ""; 
   clear: both;

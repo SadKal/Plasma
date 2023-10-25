@@ -1,14 +1,5 @@
 <script>
 import Header from "./lib/header/Header.svelte";
-
-  //Subir una imagen y luego mostrarla
-  let Image=null;
-
-  function UploadImage(event){
-
-  }
-
-
 </script>
 
 <Header/>
@@ -26,7 +17,7 @@ import Header from "./lib/header/Header.svelte";
             <div class="profile-header-avatar">
                 <figure class="circle">
                   <img src="https://avatars.cloudflare.steamstatic.com/de9eb8c8875fd7935f08baa1f36ba1bd633f6fc9_full.jpg" alt="" class="image">
-                  <figcaption class="change-photo">📷</figcaption>
+                  <figcaption class="change-photo">Cambiar foto</figcaption>
               </figure>
             </div>
         </div>

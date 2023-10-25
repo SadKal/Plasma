@@ -1,17 +1,16 @@
 <script>
 	export let label = "Ordenar por";
 	export let values = [
-		"Ordenar por:",
 		"Más jugados",
 		"Nombre",
 		"Fecha adq.",
 	];
-	export let selectedValue = "Ordenar por";
+	export let selectedValue = values[0];
 	export let disabled = false;
 	export let eventClick = (_) => {};
 
 	function selectValue(value) {
-		selectedValue = value === selectedValue ? undefined : value;
+		selectedValue = value === selectedValue ? selectedValue : value;
 		eventClick(selectedValue);
 	}
 </script>
@@ -20,7 +19,7 @@
 	aria-label={label}
 	value={selectedValue}
 	{disabled}
-	on:click={() => selectValue()}
+
 >
 	{#each values as value (value)}
 		<option

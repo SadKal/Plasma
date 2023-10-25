@@ -33,11 +33,9 @@
         </ul>
     </div>
     <div>
-        <p>probando</p>
+       <!-- He quitado un div que ocupaba el espacio de toda la pagina -->
     </div>
-    <div class="yar">
-
-    </div>
+    
     
 </header>
 
@@ -111,3 +109,4 @@ li a{
 }
 
 </style>
+

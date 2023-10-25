@@ -20,11 +20,11 @@
 </div>
 
 <style lang="scss">
-    @import "../../sass/abstracts/variables";
-    @import "../../sass/abstracts/animations";
+    
+
     *{
         animation-name: fadein;
-        animation-duration: $seconds-fadein;
+        animation-duration: var(--seconds-fadein);
         animation-timing-function: ease-in;
     }
 
@@ -40,10 +40,11 @@
         text-align: center;
         font-family: 'Montserrat';
         margin-top: 15rem;
-        color: $text-color;
+        color: var(--text-color);
         font-size: 60px;
         font-weight: bolder;
         letter-spacing: .4rem;
+
         @media (max-width: 420px) {
             font-size: 30px;
             margin-top: 8rem;
@@ -56,6 +57,7 @@
         height: 1000px;
         position: relative;
         left: 50%;
+
         transform: translateX(-50%);
         @media (max-width: 420px) {
             width: 90%;
@@ -63,9 +65,8 @@
     }
     .row{
         width: 100%;
-        &:not(:last-child){
-            margin-bottom: 5rem;
-        }
+        margin-bottom: 5rem;
+        
         @media (max-width: 420px) {
             &:not(:last-child){
             margin-bottom: 2rem;

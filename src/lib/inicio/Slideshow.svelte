@@ -99,22 +99,20 @@
 <div bind:this={slideshow} class="slideshow clearfix"  on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
 
     <div class="slideshow__slide">
-        <a class="previous" on:click={() => showSlides(-1)}>
-            <img  class="slideshow__img left" src="src/assets/games/hollow.png" alt="img1"/>
+        <a on:click={() => showSlides(-1)}>
+            <img  class="slideshow__img slideshow__img--left" src="src/assets/games/hollow.png" alt="img1"/>
         </a> 
     </div>
     <div class="slideshow__slide">
-        <img class="slideshow__img center" src="src/assets/games/persona.png" alt="img2"/>
+        <img class="slideshow__img slideshow__img--center" src="src/assets/games/persona.png" alt="img2"/>
     </div>
     <div class="slideshow__slide">
-        <a class="next" on:click={() => showSlides(1)}>
-            <img class="slideshow__img right" src="src/assets/games/outer.png" alt="img3"/>
+        <a on:click={() => showSlides(1)}>
+            <img class="slideshow__img slideshow__img--right" src="src/assets/games/outer.png" alt="img3"/>
         </a>
     </div>
 </div>
 <style lang="scss">
-    @import "../../sass/abstracts/variables";
-    @import "../../sass/abstracts/animations";
 
     .clearfix::after {
         content: ""; 
@@ -122,6 +120,7 @@
         display: block;
 
     } 
+
     .slideshow{
         max-width: 100%;
         margin-top: 5rem;
@@ -140,31 +139,30 @@
         &__img{
             max-width: 100%;
             position: relative;
+
+            &--left{
+                //Numeros tan especificos para que al cargar la animación no hagan overlapping en opacidades bajas
+                clip-path: polygon(0 0, 76.5% 0%, 71.5% 100%, 0% 100%);
+                animation-name: side_images;
+                animation-duration: var(--seconds_fadein);
+                animation-timing-function: ease-in;
+                cursor: pointer;
+            }
+            &--center{                
+                clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+                animation-name: fadein;
+                animation-duration: var(--seconds_fadein);
+                animation-timing-function: ease-in;
+            }  
+            &--right{
+                clip-path: polygon(28.5% 0, 100% 0%, 100% 100%,  23.5% 100%);
+                animation-name: side_images;
+                animation-duration: var(--seconds_fadein);
+                animation-timing-function: ease-in;
+                cursor: pointer;
+            }
         }
     }
 
-    .left{
-        //Numeros tan especificos para que al cargar la animación no hagan overlapping en opacidades bajas
-        clip-path: polygon(0 0, 76.5% 0%, 71.5% 100%, 0% 100%);
-        animation-name: side_images;
-        animation-duration: $seconds_fadein;
-        animation-timing-function: ease-in;
-    }
-    .center{                
-        clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
-        animation-name: fadein;
-        animation-duration: $seconds_fadein;
-        animation-timing-function: ease-in;
-    }  
-    .right{
-        clip-path: polygon(28.5% 0, 100% 0%, 100% 100%,  23.5% 100%);
-        animation-name: side_images;
-        animation-duration: $seconds_fadein;
-        animation-timing-function: ease-in;
-    }
-    
-    .previous, .next {
-        cursor: pointer;
-    }
 </style>
 

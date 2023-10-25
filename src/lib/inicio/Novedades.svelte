@@ -13,12 +13,11 @@
     </div>
 
 <style lang="scss">
-    @import "../../sass/abstracts/variables";
-    @import "../../sass/abstracts/animations";
+
 
     *{
         animation-name: fadein;
-        animation-duration: $seconds_fadein;
+        animation-duration: var(--seconds_fadein);
         animation-timing-function: ease-in;
     }
 
@@ -31,13 +30,13 @@
     
         &__title{
             margin-top: 5rem;
-            color: $text-color;
+            color: var(--text-color);
             font-size: 50px;
             letter-spacing: .4rem;
             font-weight: bolder;
             transition: all .5s;
             @media (min-width: 780px){
-                color: $text-color;
+                color: var(--text-color);
                 font-size: 100px;
                 letter-spacing: .8rem;
             }
@@ -45,7 +44,7 @@
         &__subtitle{
             margin-top: .3rem;
             letter-spacing: .05rem;
-            color: $subtitle-text-color;
+            color: var(--subtitle-text-color);
             font-size: 10px;
             @media (min-width: 780px){
                 margin-top: .7rem;

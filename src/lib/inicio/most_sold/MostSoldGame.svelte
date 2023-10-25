@@ -1,9 +1,13 @@
 <script>
+    //Variables que guardan el angulo con el que rota la imagen y el elemento a rotar
     let rotationAngle = 0;
     let element;
 
+    //event, en este tipo de funciones, representa el elemento al que esta asociada la funcion. En este caso el div del juego
     function updateRotation(event) {
+        //Saco el centro del elemento, recibiendo el punto mas a la izquierda y sumandole la mitad de su longitud
         var elementCenterX = element.getBoundingClientRect().left + element.offsetWidth / 2;
+        //Calculo la distancia del ratón al centro para rotar más o menos, el divisor permite controlar la sensibilidad
         rotationAngle = (event.clientX - elementCenterX) / 15;
     }    
 </script>
@@ -14,7 +18,8 @@
     role="region" aria-label="Interactive Region"
     on:mousemove={updateRotation}
     on:mouseleave={() => rotationAngle = 0}
-    style="transform: perspective(1000px) rotateY({rotationAngle}deg);" class="col_1_of_3">
+    style="transform: perspective(1000px) rotateY({rotationAngle}deg);" 
+    class="col_1_of_3">
         <img class="most_sold__image" src="https://upload.wikimedia.org/wikipedia/en/1/12/Baldur%27s_Gate_3_cover_art.jpg" alt="cover"/>
         <div class="most_sold__data">
             <p>Baldurs Gate 3</p>
@@ -24,7 +29,6 @@
 
 
 <style lang="scss">
-    @import "../../sass/abstracts/variables";
 
     .most_sold{
         &__image{
@@ -42,7 +46,7 @@
 
         &__data{
             box-sizing: border-box;
-            background-color: $game-data-bg-color;
+            background-color: var(--game-data-bg-color);
             font-size: 16px;
             font-family: 'Montserrat';
             font-weight: bolder;
@@ -59,14 +63,14 @@
 
 
     .col_1_of_3{
-        width: calc((100% - (2 * $gutter_horizontal)) / 3);
+        width: calc((100% - (2 * var(--gutter-horizontal))) / 3);
         height: auto;
         float: left;
         transition: all .4s;
         position: relative;
         
         &:not(:last-child){
-            margin-right: $gutter_horizontal;
+            margin-right: var(--gutter-horizontal);
         }
         &:hover{
             cursor: pointer;

@@ -30,7 +30,6 @@
     </ul>
 </div>
 <style lang="scss">
-    @import "../../sass/abstracts/variables";
 
     .clearfix::after {
         content: ""; 
@@ -39,9 +38,9 @@
     } 
     .topbar{
         box-sizing: border-box;
-        border-bottom: 6px solid $text-color;   
+        border-bottom: 6px solid var(--text-color);   
         width: 100%;
-        background-color: $topbar-background-color;
+        background-color: var(--topbar-background-color);
         //Necesitamos en este caso usarlo ya que si no las imagenes del slideshow apareceria por encima
         z-index: 100;
 
@@ -71,7 +70,7 @@
         box-sizing: border-box;
         padding: 1rem 2rem .5rem;
         font-size: 42px;
-        color: $text-color;
+        color: var(--text-color);
         transition: all .3s;
         @media (min-width: 1080px) {
             float: left;
@@ -79,13 +78,13 @@
     }
     li a{
         text-decoration: none;
-        color: $text-color;
+        color: var(--text-color);
         transition: all .3s;
 
         &:hover{
             color: white;
             text-shadow: 
-                0 0 2rem $text-color
+                0 0 2rem var(--text-color)
             ,
                 0 0 .5rem black;
         }
@@ -93,7 +92,7 @@
             display: block;
             transform-origin: 50% 50%;
             transform: scale(1.3, 1.3);
-            color: $selected-text-color;
+            color: var(--selected-text-color);
         }
     }
 

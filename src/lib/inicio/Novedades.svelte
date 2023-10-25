@@ -12,7 +12,7 @@
         </div>
     </div>
     
-    <Slideshow/>
+    
 
 <style lang="scss">
     @import "../../sass/abstracts/variables";

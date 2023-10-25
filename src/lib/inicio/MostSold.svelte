@@ -5,7 +5,7 @@
         window.scrollTo(0, n);
     }
     let mediaQuerySize = "(max-width: 420px)";
-    
+
     onMount( ()=> {
         if(window.matchMedia(mediaQuerySize).matches){
             scrollOnLoad(460);
@@ -93,6 +93,7 @@
         letter-spacing: .4rem;
         @media (max-width: 420px) {
             font-size: 30px;
+            margin-top: 8rem;
         }
 
 
@@ -139,7 +140,6 @@
     }
     .row{
         width: 100%;
-        margin-bottom: 10rem;
         &:not(:last-child){
             margin-bottom: 5rem;
         }
@@ -155,7 +155,7 @@
         float: left;
         transition: all .4s;
         position: relative;
-
+        
         &:not(:last-child){
             margin-right: $gutter_horizontal;
         }

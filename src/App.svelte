@@ -9,6 +9,8 @@
 
     <Novedades/>
 
+    <Slideshow/>
+
     <MostSold/>
 
 <style lang="scss">

@@ -5,15 +5,9 @@ import Header from "./lib/header/Header.svelte";
 <Header/>
 
 <main>
-
     <div class="profile">
+      <div class="profile-container">
         <div class="profile-header">
-            <div class="profile-header-data">
-                <span>Marypoppins</span><br>
-                <bdi>Maria</bdi>
-                
-                <img class="country" alt="" src="https://community.cloudflare.steamstatic.com/public/images/countryflags/es.gif">
-            </div>
             <div class="profile-header-avatar">
                 <figure class="circle">
                   <img src="https://avatars.cloudflare.steamstatic.com/de9eb8c8875fd7935f08baa1f36ba1bd633f6fc9_full.jpg" alt="" class="image">
@@ -28,10 +22,10 @@ import Header from "./lib/header/Header.svelte";
                 <input type="email" name="email"><br>
                 
                 <p>Contraseña:</p>
-                <input type="password">            
+                <input type="password" placeholder="" class="form__input">          
             </div>
 
-            <fieldset>
+            
             <div class="profile-body-user">
               <p>Nombre de usuario:</p>
               <input type="text" name="username"><br>
@@ -39,9 +33,10 @@ import Header from "./lib/header/Header.svelte";
               <p>Descripción:</p>
               <input type="text" name="description">
             </div>
-            </fieldset>
+            
 
             <div>
+            </div>
               <p></p>
               
             </div>
@@ -60,35 +55,48 @@ import Header from "./lib/header/Header.svelte";
 
 <style lang="scss">
 $topbar-text-color: rgb(209, 51, 100);
-.profile {
+
+
+main{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+
+.profile-container{
   color: $topbar-text-color;
-  font-size: 30px;
-  max-width: 50%;
+  font-size: 25px;
+  max-width: 55%;
   height: 100%;
   margin: 0 auto;
-  padding: 0;
+  padding: 1px;
   background-color: #002e28;
   background-position: center;
-  margin-top: 0;
-
+}
+.profile {
   &-header {
     margin-bottom: 1rem;
+   
 
-    &-data {
+   /*  &-data {
       span, bdi {
         margin: 1.5rem;
       }
       img .country {
         margin-left: 0.2rem;
       }
-    }
+    } */
 
     &-avatar {
       .circle {
         position: relative;//Lo pongo en relativo para que no afecte a nada mas de la pagina.
         width: 12rem;
         height: 12rem;
+        shape-outside: circle(50% at 50% 50%);
         clip-path: circle(50% at 50% 50%);//Recorto la imagen en forma de circulo
+        margin-top: 1rem;
+
         .image {
           height: 100%;
           transition: all 0.5s;//Le doy una transicion para la imagen
@@ -120,23 +128,34 @@ $topbar-text-color: rgb(209, 51, 100);
 
   &-body {
     p, input {
-      display: inline-block;
-      margin-right: 1rem;
       vertical-align: middle;
+      margin-left: 1rem;
     }
 
     &-info {
       margin: 1rem;
+      margin-bottom: 2rem;
+    }
+input{
+  color: black;
+  font-size: 1.2rem;
+  font-family: inherit;
+  color: inherit;
+  padding: 0.5rem 1rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border: none;
+  border-bottom: 3px solid transparent;
+  width: 35%;
+  transition: all .3s;
+    }
+    &-user{ 
+      border-top: 5px solid $topbar-text-color; 
+      margin: 1rem;
       margin-bottom: 1rem;
-    }
-
-    fieldset {
-      border: none;
-      border-top: 6px solid $topbar-text-color;
-    }
   }
 }
-
+}
 
 </style>
 

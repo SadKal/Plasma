@@ -64,18 +64,24 @@
             background-color: var(--game-data-bg-color);
             font-size: 16px;
             font-family: 'Montserrat';
-            font-weight: bolder;
+            font-weight: bold;
             width: 100%;
             height: 20%;
             margin-top: .2rem;
             padding: .5rem;
             border-radius: .5rem;
+            text-align: center;
             @media (max-width: 420px) {
                 font-size: 12px;
             }
         }
         &__name{
-            margin: .6rem 0;
+            font-size: 20px;
+            font-weight: bolder;
+            margin: .5rem 0;
+            @media (max-width: 420px) {
+                font-size: 15px;
+            }
         }
     }
 

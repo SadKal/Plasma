@@ -22,8 +22,4 @@
     <Inicio/>
     
 <style lang="scss">
-   .yar{
-    height: 1000px;
-   }
-
 </style>

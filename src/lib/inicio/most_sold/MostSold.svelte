@@ -1,5 +1,19 @@
 <script>
     import MostSoldGame from "./MostSoldGame.svelte";
+    import gamesData from '../../../data/games.json';
+    let games = [];
+    let randomIndex;
+    let randomObject; 
+    let i=0; 
+    
+    while(i<10){
+        randomIndex = Math.floor(Math.random() * gamesData.data.length);
+        randomObject = gamesData.data[randomIndex];
+        if(!games.includes(randomObject)){
+            games.push(randomObject);
+            i++;
+        }
+    }
 </script>
 
 <div class="most_sold">
@@ -7,15 +21,15 @@
 </div>
 <div class="most_sold__exhibitor">
     <div class="row clearfix">
-        <MostSoldGame/>
-        <MostSoldGame/>
-        <MostSoldGame/>
+        {#each games.slice(0,3) as game}
+            <MostSoldGame {game}/>
+        {/each}
     </div>
 
     <div class="row clearfix">
-        <MostSoldGame/>
-        <MostSoldGame/>
-        <MostSoldGame/>
+        {#each games.slice(3,6) as game}
+            <MostSoldGame {game}/>
+        {/each}
     </div>
 </div>
 

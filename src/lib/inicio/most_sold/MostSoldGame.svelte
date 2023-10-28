@@ -1,4 +1,11 @@
 <script>
+
+    export let game;
+    let cover=game.cover;
+    let name=game.name;
+    let genres=game.genres;
+    
+
     //Variables que guardan el angulo con el que rota la imagen y el elemento a rotar
     let rotationAngle = 0;
     let element;
@@ -25,10 +32,12 @@
     on:mousemove={updateRotation}
     on:mouseleave={resetRotation} 
     class="col_1_of_3">
-        <img class="most_sold__image" src="https://upload.wikimedia.org/wikipedia/en/1/12/Baldur%27s_Gate_3_cover_art.jpg" alt="cover"/>
+        <img class="most_sold__image" src={cover} alt="cover"/>
         <div class="most_sold__data">
-            <p>Baldurs Gate 3</p>
-            <p>Por turnos</p>
+            <p class="most_sold__name">{name}</p>
+            {#each genres as genre, index}
+                <span>{genre}{index === genres.length - 1 ? '' : ', '}</span>
+            {/each}
         </div>
 </div>
 
@@ -41,6 +50,7 @@
             height: 80%;
             border-radius: 5%;
             transition: all .4s;
+            object-fit: cover;
 
             &:hover{
                 box-shadow: 0 0 10px 2px lightgray;
@@ -64,12 +74,15 @@
                 font-size: 12px;
             }
         }
+        &__name{
+            margin: .6rem 0;
+        }
     }
 
 
     .col_1_of_3{
         width: calc((100% - (2 * var(--gutter-horizontal))) / 3);
-        height: auto;
+        height: 500px;
         float: left;
         transition: all .4s;
         position: relative;
@@ -81,6 +94,7 @@
             cursor: pointer;
             transform-origin: center center;
             transition: all .1s;
+            z-index: 5;
         }
 
         @media (max-width: 420px) {

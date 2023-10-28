@@ -9,7 +9,8 @@
     let randomIndex;
     let randomObject; 
     let i=0;
-    while(i<3){
+    
+    while(i<10){
         randomIndex = Math.floor(Math.random() * games.data.length);
         randomObject = games.data[randomIndex];
         if(!images.includes(randomObject.image)){
@@ -94,11 +95,10 @@
             slides[2].style.opacity = "50%"
         }
         else{
-            slides[1].style.scale = "160%"; 
+            slides[1].style.scale = "140%"; 
             slides[0].style.opacity = "40%"
             slides[2].style.opacity = "40%"
         }
-
         
     }
     
@@ -136,17 +136,21 @@
 
     .slideshow{
         width: 100%;
-        height: 350px;
+        height: auto;
         margin-top: 5rem;
         @media (min-width: 780px){
             margin-top: 10rem; 
+            height: 350px;
         }
 
         &__slide{
             height: 100%;
             display: inline;
             max-width: calc(100%/3);
-            float: left;    
+            float: left; 
+            position: relative;   
+            
+            
         }
 
 

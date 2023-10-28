@@ -24,9 +24,6 @@
                 Soporte    
             </a> 
         </li>
-        <li class="topbar__burger"> 
-            Burg   
-        </li>
     </ul>
 </div>
 <style lang="scss">

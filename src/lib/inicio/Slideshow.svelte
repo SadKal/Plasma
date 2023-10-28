@@ -10,6 +10,7 @@
     let randomObject; 
     let i=0;
     
+    //Sacara 10 juegos al azar para mostrar en novedades
     while(i<10){
         randomIndex = Math.floor(Math.random() * games.data.length);
         randomObject = games.data[randomIndex];

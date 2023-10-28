@@ -15,7 +15,7 @@
         //Saco el centro del elemento, recibiendo el punto mas a la izquierda y sumandole la mitad de su longitud
         var elementCenterX = element.getBoundingClientRect().left + element.offsetWidth / 2;
         //Calculo la distancia del ratón al centro para rotar más o menos, el divisor permite controlar la sensibilidad
-        rotationAngle = (event.clientX - elementCenterX) / 15;
+        rotationAngle = (event.clientX - elementCenterX) / 15 ;
         if(window.matchMedia("(min-width: 420px)").matches){
             element.style.transform = 'perspective(1000px) rotateY(' + rotationAngle + 'deg)';
         }

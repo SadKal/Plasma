@@ -1,8 +1,3 @@
-<script>
-    import Slideshow from "./Slideshow.svelte";
-</script>
-
-
     <div class="novedades">
         <div class="novedades__title">
             Novedades
@@ -13,14 +8,11 @@
     </div>
 
 <style lang="scss">
-
-
     *{
         animation-name: fadein;
-        animation-duration: var(--seconds_fadein);
+        animation-duration: var(--seconds-fadein);
         animation-timing-function: ease-in;
     }
-
     .novedades{
         
         width: 100%;

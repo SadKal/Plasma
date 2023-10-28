@@ -1,14 +1,26 @@
 <script>
-    import { onMount } from "svelte";
-
     //Debo añadir ts-nocheck porque si no vscode da error
     //@ts-nocheck
+    import { onMount } from "svelte";
+    import games from '../../data/games.json';
+
+
+    let images = [];
+    let randomIndex;
+    let randomObject; 
+    let i=0;
+    while(i<3){
+        randomIndex = Math.floor(Math.random() * games.data.length);
+        randomObject = games.data[randomIndex];
+        if(!images.includes(randomObject.image)){
+            images.push(randomObject.image);
+            i++;
+        }
+    }
+
     
-    var images=[
-        "src/assets/games/hollow.png",
-        "src/assets/games/persona.png",
-        "src/assets/games/outer.png"
-    ];
+    
+  
 
     //Marco el tamaño para la mediaQuery posterior para visualizar mejor en movil
     let mediaQuerySize = "(max-width: 420px)";
@@ -93,6 +105,7 @@
     /*onMount(exclusivo de Svelte) espera a que cargue el DOM para ejecutar lo de dentro*/
     onMount(() => {
         showSlides(0);
+        console.log(randomObject);
     });
 </script>
 
@@ -100,15 +113,15 @@
 
     <div class="slideshow__slide">
         <a on:click={() => showSlides(-1)}>
-            <img  class="slideshow__img slideshow__img--left" src="src/assets/games/hollow.png" alt="img1"/>
+            <img  class="slideshow__img slideshow__img--left" src={randomObject.image} alt="img1"/>
         </a> 
     </div>
     <div class="slideshow__slide">
-        <img class="slideshow__img slideshow__img--center" src="src/assets/games/persona.png" alt="img2"/>
+        <img class="slideshow__img slideshow__img--center" src={randomObject.image} alt="img2"/>
     </div>
     <div class="slideshow__slide">
         <a on:click={() => showSlides(1)}>
-            <img class="slideshow__img slideshow__img--right" src="src/assets/games/outer.png" alt="img3"/>
+            <img class="slideshow__img slideshow__img--right" src={randomObject.image} alt="img3"/>
         </a>
     </div>
 </div>
@@ -122,14 +135,15 @@
     } 
 
     .slideshow{
-        max-width: 100%;
+        width: 100%;
+        height: 350px;
         margin-top: 5rem;
         @media (min-width: 780px){
             margin-top: 10rem; 
         }
-        
 
         &__slide{
+            height: 100%;
             display: inline;
             max-width: calc(100%/3);
             float: left;    
@@ -137,30 +151,24 @@
 
 
         &__img{
-            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             position: relative;
 
-            &--left{
+            &--left, &--right{
                 //Numeros tan especificos para que al cargar la animación no hagan overlapping en opacidades bajas
-                clip-path: polygon(0 0, 76.5% 0%, 71.5% 100%, 0% 100%);
                 animation-name: side_images;
-                animation-duration: var(--seconds_fadein);
+                animation-duration: var(--seconds-fadein);
                 animation-timing-function: ease-in;
                 cursor: pointer;
             }
             &--center{                
                 clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
                 animation-name: fadein;
-                animation-duration: var(--seconds_fadein);
+                animation-duration: var(--seconds-fadein);
                 animation-timing-function: ease-in;
             }  
-            &--right{
-                clip-path: polygon(28.5% 0, 100% 0%, 100% 100%,  23.5% 100%);
-                animation-name: side_images;
-                animation-duration: var(--seconds_fadein);
-                animation-timing-function: ease-in;
-                cursor: pointer;
-            }
         }
     }
 

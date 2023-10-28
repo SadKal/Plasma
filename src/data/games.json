@@ -1,0 +1,19 @@
+{
+    "data" : [
+        {
+            "name":"Persona 5 Royal",
+            "image":"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_Persona5Royal_image1600w.jpg",
+            "cover":"https://i0.wp.com/xboxera.com/wp-content/uploads/2022/10/I37BgLmQ.jpeg?fit=2438%2C3225&ssl=1"            
+        },
+        {
+            "name":"Xenoblade Chronicles 3",
+            "image":"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_4/2x1_NSwitch_XenobladeChronicles3_image1600w.jpg",
+            "cover":"https://pics.filmaffinity.com/Xenoblade_Chronicles_3-672291151-large.jpg"            
+        },
+        {
+            "name":"Rimworld",
+            "image":"https://cdn1.epicgames.com/7051eadbb8c2435caf32a9bc0dc17936/offer/EGS_RimWorld_LudeonStudios_S1-2560x1440-410a62ec21d44260409182e1174cce2e.jpg",
+            "cover":"https://images.igdb.com/igdb/image/upload/t_cover_big/co1j6x.jpg"            
+        }
+    ]
+}

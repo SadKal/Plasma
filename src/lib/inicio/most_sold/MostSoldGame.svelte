@@ -9,7 +9,13 @@
         var elementCenterX = element.getBoundingClientRect().left + element.offsetWidth / 2;
         //Calculo la distancia del ratón al centro para rotar más o menos, el divisor permite controlar la sensibilidad
         rotationAngle = (event.clientX - elementCenterX) / 15;
+        if(window.matchMedia("(min-width: 420px)").matches){
+            element.style.transform = 'perspective(1000px) rotateY(' + rotationAngle + 'deg)';
+        }
     }    
+    function resetRotation(event){
+        element.style.transform = 'perspective(1000px) rotateY(0)';
+    }
 </script>
 
 
@@ -17,8 +23,7 @@
     bind:this={element}
     role="region" aria-label="Interactive Region"
     on:mousemove={updateRotation}
-    on:mouseleave={() => rotationAngle = 0}
-    style="transform: perspective(1000px) rotateY({rotationAngle}deg);" 
+    on:mouseleave={resetRotation} 
     class="col_1_of_3">
         <img class="most_sold__image" src="https://upload.wikimedia.org/wikipedia/en/1/12/Baldur%27s_Gate_3_cover_art.jpg" alt="cover"/>
         <div class="most_sold__data">

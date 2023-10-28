@@ -2,38 +2,121 @@
     import Genre from "./Genre.svelte";
 
     let genres_arr=[
-        /*{
-            'name': 'horror',
-            'bg_color': 'red',
-            'svg_color': 'black',
-            'svg_src': ''
-        },*/
         {
-            'name': 'Acción Aventura',
-            'bg_color': 'green',
-            'svg_color': 'yellow',
-            'svg_src': '../../../assets/svgs/adventure.svg'
+            name: 'Horror',
+            bg_color: 'rgba(255,255,255,.8)',
+            svg_src: 'src/assets/svgs/horror.svg',
+            text_color: 'black'
+        },
+        {
+            name: 'Acción Aventura',
+            bg_color: 'rgb(46,139,87)',
+            svg_src: 'src/assets/svgs/adventure.svg',
+            text_color: 'rgb(255,255,0)'
+        },
+        {
+            name: 'Simulación',
+            bg_color: 'rgb(100,149,237)',
+            svg_src: 'src/assets/svgs/simulation.svg',
+            text_color: 'rgb(245,245,245)'
+        },
+        {
+            name: 'Lucha',
+            bg_color: 'rgb(255,215,0)',
+            svg_src: 'src/assets/svgs/fighting.svg',
+            text_color: 'rgb(255,0,0)'
+        },
+        {
+            name: 'Novela Visual',
+            bg_color: 'rgb(128,0,0)',
+            svg_src: 'src/assets/svgs/vns.svg',
+            text_color: 'rgb(255,215,0)'
+        },
+        {
+            name: 'Carreras',
+            bg_color: 'rgb(105,105,105)',
+            svg_src: 'src/assets/svgs/racing.svg',
+            text_color: 'rgb(220,220,220)'
+        },
+        {
+            name: 'Deportes',
+            bg_color: 'rgb(210,180,140)',
+            svg_src: 'src/assets/svgs/sports.svg',
+            text_color: 'black'
+        },
+        {
+            name: 'Metroidvania',
+            bg_color: 'rgb(95,158,160)',
+            svg_src: 'src/assets/svgs/metroidvania.svg',
+            text_color: 'rgb(139,0,0)'
         }
     ]
 </script>
 
 
 <div class="genres">
-    {#each genres_arr as {name, bg_color, svg_color, svg_src}}
-        <Genre {name} {bg_color} {svg_color} {svg_src}/>
-    {/each}
+    <div class="genres__exhibitor">
+        <div class="genres__title">
+            Géneros Populares
+        </div>
+        <div class="row clearfix">
+            {#each genres_arr.slice(0,4) as {name, bg_color, svg_src, text_color}}
+                <Genre {name} {bg_color} {svg_src} {text_color}/>
+            {/each}
+        </div>
+        <div class="row clearfix">
+            {#each genres_arr.slice(4,8) as {name, bg_color, svg_src, text_color}}
+                <Genre {name} {bg_color} {svg_src} {text_color}/>
+            {/each}
+        </div>
+    </div>
 </div>
 
-<style lang="scss">
+<style lang="scss"> 
+    .clearfix::after {
+        content: ""; 
+        clear: both;
+        display: block;
 
-    
-    
+    } 
     *{
         animation-name: fadein;
         animation-duration: var(--seconds-fadein);
         animation-timing-function: ease-in;
     }
-    .genres{
-        
+
+    .genres{ 
+        &__exhibitor{
+            width: 80%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &__title{
+            width: 100%;
+            text-align: center;
+            font-family: 'Montserrat';
+            margin-top: 6rem;
+            color: var(--text-color);
+            font-size: 60px;
+            font-weight: bolder;
+            letter-spacing: .4rem;
+
+            @media (max-width: 420px) {
+                font-size: 30px;
+                margin-top: 8rem;
+            }
+        }
     }
+    .row{
+        margin-top: 5rem;
+        margin-bottom: 5rem;
+        
+        @media (max-width: 420px) {
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
 </style>

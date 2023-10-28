@@ -26,7 +26,6 @@ html, body{
     background: linear-gradient(130deg, rgba(0,61,53,.95) 40%, rgba(0,0,0,.95) 100%), url("src/assets/bg.png");
     background-attachment: fixed; /*Esto hace que el gradiente de fondo no se repita, se "ancla" a la vista del usuario*/
     font-family: 'Roboto';
-    transition: all .3s;
 }
 
 

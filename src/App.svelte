@@ -1,10 +1,7 @@
 <script>
     import { onMount } from "svelte";
     import Header from "./lib/header/Header.svelte";
-    import MostSold from "./lib/inicio/most_sold/MostSold.svelte";
-    import Novedades from "./lib/inicio/Novedades.svelte";
-    import Slideshow from "./lib/inicio/Slideshow.svelte";
-    import Genres from "./lib/inicio/genres/Genres.svelte";
+    import Inicio from "./lib/inicio/Inicio.svelte";
 
 
     let mediaQuerySize = "(max-width: 420px)";
@@ -22,15 +19,11 @@
 
     <Header/>
 
-    <Novedades/>
-
-    <Slideshow/>
-
-    <MostSold/>
-
-    <Genres/>
-
+    <Inicio/>
+    
 <style lang="scss">
-   
+   .yar{
+    height: 1000px;
+   }
 
 </style>

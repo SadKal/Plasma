@@ -54,11 +54,11 @@
     .most_sold__exhibitor{
         width: 60%;
         margin-top: 4rem;
-        height: 1000px;
+        
         position: relative;
         left: 50%;
-
         transform: translateX(-50%);
+
         @media (max-width: 420px) {
             width: 90%;
         }
@@ -67,10 +67,13 @@
         width: 100%;
         margin-bottom: 5rem;
         
-        @media (max-width: 420px) {
-            &:not(:last-child){
+        &:not(:last-child){
             margin-bottom: 2rem;
         }
+        @media (max-width: 420px) {
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
         }
     }
 </style>

@@ -1,16 +1,32 @@
 <script>
+	import user from "../../../data/testuser.json";
+	let games = Object.values(user.gamesOwned);
 
+	let images = [];
+    let randomIndex;
+    let randomObject; 
+    let i=0;
+    while(i<5){
+        randomIndex = Math.floor(Math.random() * games.length);
+        randomObject = games[randomIndex];
+        if(!images.includes(randomObject.cover)){
+            images.push(randomObject.cover);
+            i++;
+        }
+	}
 </script>
 
 <div class="library--recents">
 	<div class="library--recents__title">Jugado recientemente</div>
-	<div class="library--recents__thumbnails">
-		<div class="library--recents__thumbnails thumbnail--large" />
-		<div class="library--recents__thumbnails thumbnail--small" />
-		<div class="library--recents__thumbnails thumbnail--small" />
-		<div class="library--recents__thumbnails thumbnail--small" />
-		<div class="library--recents__thumbnails thumbnail--small" />
+	{#each images as img}
+	<div
+		class="library--recents__thumbnails thumbnail--small"
+		style="background-image: url('{img}');"
+	>
+		&nbsp;
 	</div>
+{/each}
+
 </div>
 
 <style lang="scss">
@@ -41,23 +57,26 @@
 		}
     }
 	.thumbnail {
-		&--large {
-				background: $cyanish-gradient;
-				background-size: 150%;
-				border-radius: 2%;
-				height: 425px;
-				width: 500px;
-				display: inline-block;
-			}
-
 			&--small {
-				background: $purplish-gradient;
-				background-size: 200%;
 				border-radius: 3%;
 				height: 300px;
 				width: 225px;
-				margin-left: 1vw;
+				background-size: contain;
+				background-repeat: round;
+				margin-right: 12px;
 				display: inline-block;
+				transition: all .4s;
+
+			}
+			&--small:hover{
+				border-radius: 2%;
+				height: 550px;
+				width: 425px;
+				display: inline-block;
+				background-size: contain;
+				background-repeat: round;
+				transition: all .2s;
+					margin-right: 7px;
 			}
 	}
 </style>

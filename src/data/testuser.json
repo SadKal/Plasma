@@ -1,12 +1,12 @@
 {
     "name": "testuser",
-    
+    "lastPlayed": 0,
     "gamesOwned": {
         "1": {
             "name":"Persona 5 Royal",
             "image":"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_Persona5Royal_image1600w.jpg",
             "cover":"https://i0.wp.com/xboxera.com/wp-content/uploads/2022/10/I37BgLmQ.jpeg?fit=2438%2C3225&ssl=1",
-            "hrsPlayed": 96.5  
+            "hrsPlayed": 96.5
         }, 
         "2": {
             "name":"Phoenix Wright: Ace Attorney trilogy",

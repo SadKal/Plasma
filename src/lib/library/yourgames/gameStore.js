@@ -1,13 +1,3 @@
-import { writable } from "svelte/store";
-
-const hrsPlayed = 0;
-
-const gameStore = writable({
-    hrsPlayed
-});
-
-export default gameStore;
-
 /*
 
     iqdb.com <---- de donde vamos a sacar la info

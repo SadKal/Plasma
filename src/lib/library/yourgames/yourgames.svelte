@@ -1,6 +1,6 @@
 <script>
-	import Content from "./content_insides/gamelist.svelte";
-	import Select from "./content_insides/select.svelte";
+	import Gamelist from "./content_insides/gamelist.svelte";
+import Select from "./content_insides/select.svelte";
 </script>
 
 <div class="library--urgames">
@@ -9,7 +9,7 @@
 		<Select />
 		<br><br>
 		<div class="library--urgames__content">
-			<Content />
+			<Gamelist />
 		</div>
 	</div>
 </div>

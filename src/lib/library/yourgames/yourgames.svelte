@@ -1,26 +1,25 @@
 <script>
-	import Select from "./select.svelte";
+	import Content from "./content_insides/gamelist.svelte";
+	import Select from "./content_insides/select.svelte";
 </script>
 
-<div class="urgames_biblioteca">
-	<div class="urgames_biblioteca__title">
+<div class="library--urgames">
+	<div class="library--urgames__title">
 		<span>Tus juegos</span>
 		<Select />
 		<br><br>
-		<div class="urgames_biblioteca__content">
-			<div class="urgames_biblioteca__content-row" />
-			<div class="urgames_biblioteca__content-row" />
-			<div class="urgames_biblioteca__content-row" />
+		<div class="library--urgames__content">
+			<Content />
 		</div>
 	</div>
 </div>
 
 <style lang="scss">
 	$text-color: rgb(209, 51, 100);
-	.urgames_biblioteca {
+	.library--urgames {
 
         padding-top: 100px;
-		width: 75%;
+		width: 80%;
 		margin: 0 auto;
 
 		&__title span {

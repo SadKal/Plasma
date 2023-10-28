@@ -31,6 +31,7 @@
 </select>
 
 <style lang="scss">
+	$text-color: rgb(209, 51, 100);
 	*,
 	*::after,
 	*::before {
@@ -46,7 +47,7 @@
 		line-height: inherit;
 	}
 	select {
-		$text-color: rgb(209, 51, 100);
+		font-size: 14px;
 		margin-left: 20px;
 		padding: 10px;
 		vertical-align: bottom;
@@ -57,5 +58,9 @@
 		cursor: pointer;
 		background-color: transparent;
 		font-family: "Montserrat";
+	}
+	select *{
+		font-size: 14px;
+		background-color: $text-color;
 	}
 </style>

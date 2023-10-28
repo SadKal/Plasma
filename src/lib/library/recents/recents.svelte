@@ -2,18 +2,17 @@
 	import Thumbnails from "./thumbnails.svelte";
 </script>
 
-<div class="main_biblioteca">
-	<div class="main_biblioteca__title">Tu biblioteca</div>
+<div class="library--recents">
+	<div class="library--recents__title">Tu biblioteca</div>
 	<Thumbnails />
 </div>
 
 <style lang="scss">
 	$text-color: rgb(209, 51, 100);
-	.main_biblioteca {
+	.library--recents {
 		background-color: unset;
 		border-bottom: 7px solid $text-color;
 		padding-bottom: 100px;
-
 		&__title {
 			padding: 10rem;
 			text-align: center;

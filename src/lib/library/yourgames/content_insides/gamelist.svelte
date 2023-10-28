@@ -1,25 +1,29 @@
 <script>
-    import user from "../../../../data/testuser.json"
+	import user from "../../../../data/testuser.json";
+    import Select from "./select.svelte"; 
 
-
-    let games = Object.values(user.gamesOwned)
-    games
+	let games = Object.values(user.gamesOwned);
 </script>
 
-<!-- {#each {length: Object.values(user.gamesOwned).length} as game}
-    <div style='background-image: {game.image};'></div>
-{/each} -->
-
 {#each games as game}
-    <div class="gamelist__thumbnail" style="background-image: url('{game.cover}');" >&nbsp;</div>
+	<div
+		class="gamelist__thumbnail"
+		style="background-image: url('{game.cover}');"
+	>
+		&nbsp;
+	</div>
 {/each}
 
 <style>
-    .gamelist__thumbnail{
-        background-color: aquamarine;
-        height: 275px;
-        width: 225px;
-        display: inline-block;
-        margin-left: 5px;
-    }
+	.gamelist__thumbnail {
+		height: 375px;
+		width: 275px;
+		display: inline-block;
+		margin-right: 30px;
+        margin-bottom: 20px;
+		background-size: contain;
+		background-repeat: round;
+        margin-top: 30px;
+        border-radius: 8px;
+	}
 </style>

@@ -7,7 +7,7 @@ import Select from "./content_insides/select.svelte";
 	<div class="library--urgames__title">
 		<span>Tus juegos</span>
 		<Select />
-		<br><br>
+		<br>
 		<div class="library--urgames__content">
 			<Gamelist />
 		</div>

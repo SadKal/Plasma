@@ -19,11 +19,6 @@
             i++;
         }
     }
-
-    
-    
-  
-
     //Marco el tamaño para la mediaQuery posterior para visualizar mejor en movil
     let mediaQuerySize = "(max-width: 420px)";
     //Preparo índices para las imagenes
@@ -79,28 +74,7 @@
             slideIndex = (images[slideIndex-1]==null) ? images.length-1 : slideIndex-1;
             leftIndex = (images[leftIndex-1]==null) ? images.length-1 : leftIndex-1;
             rightIndex = (images[rightIndex-1]==null) ? images.length-1 : rightIndex-1; 
-        }
-        let slides = slideshow.querySelectorAll(".slideshow__img");
-
-        slides[0].src = images[leftIndex]
-        
-        slides[1].src = images[slideIndex];
-        slides[1].style.zIndex = 2;
-        
-        slides[2].src = images[rightIndex];
-        
-        //Me encargo de pantallas pequeñas
-        if(window.matchMedia(mediaQuerySize).matches){
-            slides[1].style.scale = "230%"; 
-            slides[0].style.opacity = "50%"
-            slides[2].style.opacity = "50%"
-        }
-        else{
-            slides[1].style.scale = "140%"; 
-            slides[0].style.opacity = "40%"
-            slides[2].style.opacity = "40%"
-        }
-        
+        } 
     }
     
     /*onMount(exclusivo de Svelte) espera a que cargue el DOM para ejecutar lo de dentro*/
@@ -114,15 +88,15 @@
 
     <div class="slideshow__slide">
         <a on:click={() => showSlides(-1)}>
-            <img  class="slideshow__img slideshow__img--left" src={randomObject.image} alt="img1"/>
+            <img  class="slideshow__img slideshow__img--left" src={images[leftIndex]} alt="img1"/>
         </a> 
     </div>
     <div class="slideshow__slide">
-        <img class="slideshow__img slideshow__img--center" src={randomObject.image} alt="img2"/>
+        <img class="slideshow__img slideshow__img--center" src={images[slideIndex]} alt="img2"/>
     </div>
     <div class="slideshow__slide">
         <a on:click={() => showSlides(1)}>
-            <img class="slideshow__img slideshow__img--right" src={randomObject.image} alt="img3"/>
+            <img class="slideshow__img slideshow__img--right" src={images[rightIndex]} alt="img3"/>
         </a>
     </div>
 </div>
@@ -167,12 +141,21 @@
                 animation-duration: var(--seconds-fadein);
                 animation-timing-function: ease-in;
                 cursor: pointer;
+                opacity: 50%;
+                @media (max-width: 420px){
+                    opacity: 40%;
+                }
             }
             &--center{                
                 clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
                 animation-name: fadein;
                 animation-duration: var(--seconds-fadein);
                 animation-timing-function: ease-in;
+                z-index: 2;
+                scale: 140%;
+                @media (max-width: 420px){
+                    scale: 230%;
+                }
             }  
         }
     }

@@ -8,7 +8,14 @@
 </div>
 
 <style lang="scss">
+
 	$text-color: rgb(209, 51, 100);
+
+	*{
+        animation-name: fadein;
+        animation-duration: var(--seconds-fadein);
+        animation-timing-function: ease-in;
+    }
 	.library--recents {
 		background-color: unset;
 		border-bottom: 7px solid $text-color;

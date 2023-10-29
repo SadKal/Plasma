@@ -16,6 +16,12 @@
 
 <style lang="scss">
 	$text-color: rgb(209, 51, 100);
+
+	*{
+        animation-name: fadein;
+        animation-duration: var(--seconds-fadein);
+        animation-timing-function: ease-in;
+    }
 	.library--urgames {
 
         padding-top: 100px;

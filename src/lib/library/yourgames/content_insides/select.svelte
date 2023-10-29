@@ -46,8 +46,9 @@
 		line-height: inherit;
 	}
 	select {
-		font-size: 14px;
+		font-size: 16px;
 		margin-left: 20px;
+		font-weight: 600;
 		padding: 10px;
 		vertical-align: bottom;
 		color: $text-color;
@@ -57,9 +58,5 @@
 		cursor: pointer;
 		background-color: transparent;
 		font-family: "Montserrat";
-	}
-	select *{
-		font-size: 14px;
-		background-color: $text-color;
 	}
 </style>

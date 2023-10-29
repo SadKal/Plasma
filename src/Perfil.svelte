@@ -107,7 +107,7 @@ main{
         left: 50%;
         transform: translate(-50%, 20%);//Mlo que hago es que este objeto lo coloco mas abajo y cuando ponga opacidad cambio el translate para que se haga el efecto requerido
         color:$topbar-text-color;
-        font-size: 1.7rem;
+        font-size: 1.5rem;
         text-align: center;
         transition: all 0.5s;
         opacity: 0;//Le pongo opacidad 0 para que no se vea sin que se ponga el raton encima.
@@ -141,12 +141,12 @@ input{
   font-size: 1.2rem;
   font-family: inherit;
   color: inherit;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 2px;
   background-color: rgba(255, 255, 255, 0.5);
   border: none;
   border-bottom: 3px solid transparent;
-  width: 35%;
+  width: 40%;
   transition: all .3s;
     }
     &-user{ 

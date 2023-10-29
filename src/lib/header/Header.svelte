@@ -32,9 +32,9 @@
             </li>
         </ul>
     </div>
-    <div>
+  
        <!-- He quitado un div que ocupaba el espacio de toda la pagina -->
-    </div>
+
     
     
 </header>

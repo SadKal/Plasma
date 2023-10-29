@@ -1,13 +1,15 @@
 <script>
-    import Header from "./lib/header/Header.svelte";
+    import Footer from "./Footer.svelte";
+import Header from "./lib/header/Header.svelte";
     import Perfil from "./Perfil.svelte";
+  
   
 </script>
 
 <header>
 
-    <Perfil/><!--Meto perfil el cual tengo el header-->
-    
+    <Perfil/> <!--Meto perfil el cual tengo el header-->
+    <Footer/>
 
 </header>
 <main>

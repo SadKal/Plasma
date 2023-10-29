@@ -1,18 +1,15 @@
 <script>
 	import user from "../../../data/testuser.json";
+	let userLastPlayed = user.lastPlayed
 	let games = Object.values(user.gamesOwned);
 
 	let images = [];
-    let randomIndex;
-    let randomObject; 
     let i=0;
     while(i<5){
-        randomIndex = Math.floor(Math.random() * games.length);
-        randomObject = games[randomIndex];
-        if(!images.includes(randomObject.cover)){
-            images.push(randomObject.cover);
-            i++;
-        }
+		if(!images.includes(userLastPlayed[i])){
+			images.push(games[Number(userLastPlayed[i])-1].cover); // horrid type conversion from string to number
+		i++;
+		}
 	}
 </script>
 
@@ -51,7 +48,7 @@
 			font-family: "Montserrat";
 			font-weight: 600;
 			color: $text-color;
-			font-size: 2.5rem;
+			font-size: 3rem;
 			margin-bottom: 20px;
 			letter-spacing: 1px;
 		}
@@ -76,7 +73,7 @@
 				background-size: contain;
 				background-repeat: round;
 				transition: all .2s;
-					margin-right: 7px;
+				margin-right: 7px;
 			}
 	}
 </style>

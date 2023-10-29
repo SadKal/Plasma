@@ -19,7 +19,6 @@
 	aria-label={label}
 	value={selectedValue}
 	{disabled}
-
 >
 	{#each values as value (value)}
 		<option

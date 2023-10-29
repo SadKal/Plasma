@@ -1,6 +1,6 @@
 <script>
 	import Gamelist from "./content_insides/gamelist.svelte";
-import Select from "./content_insides/select.svelte";
+	import Select from "./content_insides/select.svelte";
 </script>
 
 <div class="library--urgames">
@@ -26,9 +26,9 @@ import Select from "./content_insides/select.svelte";
 			font-family: "Montserrat";
 			font-weight: 600;
 			color: $text-color;
-			font-size: 2.5rem;
-
+			font-size: 3rem;
 			letter-spacing: 1px;
+
 		}
 	}
 </style>

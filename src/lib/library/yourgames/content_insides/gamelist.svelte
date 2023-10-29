@@ -20,7 +20,7 @@
 		width: 275px;
 		display: inline-block;
 		margin-right: 30px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
 		background-size: contain;
 		background-repeat: round;
         margin-top: 30px;

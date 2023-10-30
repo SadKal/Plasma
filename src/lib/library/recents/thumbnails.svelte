@@ -40,14 +40,13 @@
 	);
 
     .library--recents {
-		$text-color: rgb(209, 51, 100);
 		width: 80%;
 		margin: 0 auto;
 
 		&__title {
 			font-family: "Montserrat";
 			font-weight: 600;
-			color: $text-color;
+			color: var(--text-color);
 			font-size: 3rem;
 			margin-bottom: 20px;
 			letter-spacing: 1px;

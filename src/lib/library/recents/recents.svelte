@@ -9,7 +9,6 @@
 
 <style lang="scss">
 
-	$text-color: rgb(209, 51, 100);
 
 	*{
         animation-name: fadein;
@@ -18,7 +17,7 @@
     }
 	.library--recents {
 		background-color: unset;
-		border-bottom: 7px solid $text-color;
+		border-bottom: 7px solid var(--text-color);
 		padding-bottom: 100px;
 		&__title {
 			padding: 10rem;
@@ -26,7 +25,7 @@
 			font-size: 80px;
 			font-family: "Montserrat";
 			font-weight: 600;
-			color: $text-color;
+			color: var(--text-color);
 			letter-spacing: 3px;
 		}
 	}

@@ -1,11 +1,7 @@
 <script>
-	export let label = "Ordenar por";
-	export let values = [
-		"Más jugados",
-		"Nombre",
-		"Fecha adq.",
-	];
-	export let selectedValue = values[0];
+	export let label = "";
+	export let values = [];
+	export let selectedValue = "";
 	export let disabled = false;
 	export let eventClick = (_) => {};
 
@@ -19,6 +15,8 @@
 	aria-label={label}
 	value={selectedValue}
 	{disabled}
+	on:click={() => selectValue()}
+	{...$$restProps}
 >
 	{#each values as value (value)}
 		<option
@@ -30,7 +28,6 @@
 </select>
 
 <style lang="scss">
-	$text-color: rgb(209, 51, 100);
 	*,
 	*::after,
 	*::before {
@@ -46,13 +43,15 @@
 		line-height: inherit;
 	}
 	select {
+		position: absolute;
+		transform: translate(300px, -40px);
 		font-size: 16px;
 		margin-left: 20px;
 		font-weight: 600;
 		padding: 10px;
 		vertical-align: bottom;
-		color: $text-color;
-		border: 4px solid $text-color;
+		color: var(--text-color);
+		border: 4px solid var(--text-color);
 		width: 150px;
 		overflow: hidden;
 		cursor: pointer;

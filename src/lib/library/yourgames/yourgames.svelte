@@ -5,9 +5,7 @@
 
 <div class="library--urgames">
 	<div class="library--urgames__title">
-		<span>Tus juegos</span>
-		<Select />
-		<br>
+
 		<div class="library--urgames__content">
 			<Gamelist />
 		</div>
@@ -31,7 +29,7 @@
 		&__title span {
 			font-family: "Montserrat";
 			font-weight: 600;
-			color: $text-color;
+			color: var(--text-color);
 			font-size: 3rem;
 			letter-spacing: 1px;
 

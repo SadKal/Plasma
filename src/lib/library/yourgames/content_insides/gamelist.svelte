@@ -3,8 +3,19 @@
     import Select from "./select.svelte"; 
 
 	let games = Object.values(user.gamesOwned);
+	
+	function sortBy(selectedValue){
+		//placeholder
+	}
+
 </script>
 
+<span class="library--urgames__title">Tus juegos</span>
+<Select 
+label = "Ordenar por"
+values = {["Nombre", "Más jugados", "Fecha adq."]}
+selectedValue = "Nombre"
+eventClick={sortBy}/>
 {#each games as game}
 	<div
 		class="gamelist__thumbnail"
@@ -25,5 +36,15 @@
 		background-repeat: round;
         margin-top: 30px;
         border-radius: 8px;
+	}
+	.library--urgames__title {
+			position: absolute;
+			margin-top: -50px;
+			font-family: "Montserrat";
+			font-weight: 600;
+			color: var(--text-color);
+			font-size: 3rem;
+			letter-spacing: 1px;
+
 	}
 </style>

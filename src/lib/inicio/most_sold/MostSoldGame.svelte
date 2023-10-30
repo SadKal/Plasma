@@ -43,7 +43,7 @@
 
 
 <style lang="scss">
-
+    
     .most_sold{
         &__image{
             width: 100%;
@@ -56,6 +56,7 @@
                 box-shadow: 0 0 10px 2px lightgray;
                 background-color: lightgray;
                 border-radius: 5%;
+                filter: brightness(1.1);
             }
         }
 
@@ -114,7 +115,7 @@
         }
         @media (min-width: 420px) {
             &:hover{
-                scale: 110%;
+                scale: 120%;
             }
         }
     }

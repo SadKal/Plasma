@@ -5,7 +5,6 @@
     let randomIndex;
     let randomObject; 
     let i=0; 
-    console.log(gamesData.data.length)
     while(i<10){
         randomIndex = Math.floor(Math.random() * gamesData.data.length);
         randomObject = gamesData.data[randomIndex];

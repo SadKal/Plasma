@@ -2,8 +2,8 @@
     //Debo añadir ts-nocheck porque si no vscode da error
     //@ts-nocheck
     import { onMount } from "svelte";
-    import games from '../../data/games.json';
-
+    import games from '../../../data/games.json';
+    import ImageTest from "./ImageTest.svelte"
 
     let images = [];
     let randomIndex;
@@ -30,6 +30,13 @@
     //Variables para deslizar, necesito guardar inicio y final para calcular cuanto se ha deslizado y poder poner un minimo
     let startSwipe, endSwipe;
     let isSwiping = false;
+
+    //Defino los valores donde guardare los src
+    let srcLeft;
+    let srcCenter;
+    let srcRight;
+    let placeholderImage= "src/assets/loading.gif";
+    let loaded=false;
 
     //Registra el inicio del deslizamiento
     function swipeStart(event){
@@ -59,28 +66,54 @@
                 }
             }
         }
-    } 
-
+    }   
     function showSlides(n) {
         /*Aqui debemos comprobar 2 cosas:
             Primero: si deslizamos hacia derecha o izquierda(n=1 o n=-1)
             Segundo: si nos salimos del array. En este caso recolocamos el indice*/
+        let slides = slideshow.querySelectorAll(".slideshow__img");
         if(n>0){
             slideIndex = (images[slideIndex+1]==null) ? 0 : slideIndex+1;
             leftIndex = (images[leftIndex+1]==null) ? 0 : leftIndex+1;
             rightIndex = (images[rightIndex+1]==null) ? 0 : rightIndex+1;
         }
-        else{
+        else if (n<0){
             slideIndex = (images[slideIndex-1]==null) ? images.length-1 : slideIndex-1;
             leftIndex = (images[leftIndex-1]==null) ? images.length-1 : leftIndex-1;
             rightIndex = (images[rightIndex-1]==null) ? images.length-1 : rightIndex-1; 
-        } 
+        }
+        srcLeft=images[leftIndex];
+        srcCenter=images[slideIndex];
+        srcRight=images[rightIndex];
+
+    }
+    function preloadImages(imageUrls, callback) {
+        var loadedImages = 0;
+        var totalImages = imageUrls.length;
+
+        function imageLoaded() {
+            loadedImages++;
+            if (loadedImages === totalImages) {
+            // All images are loaded
+            callback();
+            }
+        }
+
+        imageUrls.forEach(function (imageUrl) {
+            var image = new Image();
+            image.src = imageUrl;
+            image.onload = imageLoaded;
+            image.onerror = imageLoaded; // Handle errors as well
+        });
     }
     
     /*onMount(exclusivo de Svelte) espera a que cargue el DOM para ejecutar lo de dentro*/
     onMount(() => {
-        showSlides(0);
-        console.log(randomObject);
+        preloadImages(images, function () {
+            console.log('All images are preloaded and ready to use.');
+            loaded=true;
+            showSlides(0);
+        });
     });
 </script>
 
@@ -88,17 +121,31 @@
 
     <div class="slideshow__slide">
         <a on:click={() => showSlides(-1)}>
-            <img  class="slideshow__img slideshow__img--left" src={images[leftIndex]} alt="img1"/>
+            {#if loaded}
+                <img class="slideshow__img slideshow__img--left" src={srcLeft} alt="img1"/>
+            {:else}
+                <img class="slideshow__img slideshow__img--left" src={placeholderImage} alt="img1"/>
+            {/if}
+            
         </a> 
     </div>
     <div class="slideshow__slide">
-        <img class="slideshow__img slideshow__img--center" src={images[slideIndex]} alt="img2"/>
+            {#if loaded}
+                <img class="slideshow__img slideshow__img--center" src={srcCenter} alt="img2"/>
+            {:else}
+                <img class="slideshow__img slideshow__img--center" src={placeholderImage} alt="img2"/>
+            {/if}
     </div>
     <div class="slideshow__slide">
         <a on:click={() => showSlides(1)}>
-            <img class="slideshow__img slideshow__img--right" src={images[rightIndex]} alt="img3"/>
+            {#if loaded}
+                <img class="slideshow__img slideshow__img--right" src={srcRight} alt="img3"/>
+            {:else}
+                <img class="slideshow__img slideshow__img--right" src={placeholderImage} alt="img3"/>
+            {/if}
         </a>
     </div>
+    
 </div>
 <style lang="scss">
 
@@ -117,18 +164,6 @@
             margin-top: 10rem; 
             height: 350px;
         }
-
-        &__slide{
-            height: 100%;
-            display: inline;
-            max-width: calc(100%/3);
-            float: left; 
-            position: relative;   
-            
-            
-        }
-
-
         &__img{
             width: 100%;
             height: 100%;
@@ -156,7 +191,17 @@
                 @media (max-width: 420px){
                     scale: 230%;
                 }
-            }  
+            }
+        }
+
+        &__slide{
+            height: 100%;
+            display: inline;
+            max-width: calc(100%/3);
+            float: left; 
+            position: relative;   
+            
+            
         }
     }
 

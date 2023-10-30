@@ -1,161 +1,146 @@
-<script>
-import Header from "./lib/header/Header.svelte";
-</script>
-
-<Header/>
 
 <main>
-    <div class="profile">
-      <div class="profile-container">
-        <div class="profile-header">
-            <div class="profile-header-avatar">
-                <figure class="circle">
-                  <img src="https://avatars.cloudflare.steamstatic.com/de9eb8c8875fd7935f08baa1f36ba1bd633f6fc9_full.jpg" alt="" class="image">
-                  <figcaption class="change-photo">Cambiar foto</figcaption>
-              </figure>
+    <div class="container">
+        <div class="content">
+            <div class="edit">
+                <div class="title">
+                    <h1>Editar perfil</h1>
+                </div>
+                <div class="text">
+                    <p>Mantén la privacidad de tus datos personales. Cualquier usuario que pueda ver tu perfil puede ver la información que añades aquí.</p>
+                </div>
             </div>
-        </div>
-        
-        <div class="profile-body">
-            <div class="profile-body-info">
-                <p>Email asociado:</p>
-                <input type="email" name="email"><br>
-                
-                <p>Contraseña:</p>
-                <input type="password" placeholder="" class="form__input">          
+    
+            <div class="photo">
+                <div class="ph">Foto</div>
+                <div class="image">
+                    <img src="https://avatars.cloudflare.steamstatic.com/de9eb8c8875fd7935f08baa1f36ba1bd633f6fc9_full.jpg" alt="" class="image-rounded">
+                </div>
+    
+                <div class="modify">
+                    <button type="button">Modificar</button>
+                </div>
             </div>
+    
+            <div class="data">
+                <div class="names">
+                    <div class="name">
+                        <div class="nombre">Nombre</div>
+                        <div class="box">
+                            <input type="text" value="Maria">
+                        </div>
+                    </div>
+                    <div class="lastname">
+                        <div class="apellidos">Apellidos</div>
+                        <div class="box">
+                            <input type="text" value="Pinar">
+                        </div>
+                    </div>
+                </div>
 
-            
-            <div class="profile-body-user">
-              <p>Nombre de usuario:</p>
-              <input type="text" name="username"><br>
-              
-              <p>Descripción:</p>
-              <input type="text" name="description">
-            </div>
-            
+                <div class="infos">
+                    <div class="info">Info</div>
+                    <div class="textarea">
+                        <textarea name="" id="" cols="30" rows="10" placeholder="Cuenta tu historia"></textarea>
+                    </div>
+                </div>
 
-            <div>
-            </div>
-              <p></p>
-              
-            </div>
-            <div>
-              <p></p>
-              
-            </div>
-            <div>
-              <p></p>
-              
+                <div class="pronouns">
+                    <div class="pronoun">Pronombres</div>
+                    <div class="selects">
+                        <select name="" id="">
+                            <option value="">Él/He/Him </option>
+                            <option value="">Ella/She/Her </option>
+                            <option value="">Elle/They/Them </option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="user">
+                    <div class="username">Nombre de usuario</div>
+                    <div class="usertext">
+                        <input type="text" value="mapins">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+
 </main>
 
-<style lang="scss">
-$topbar-text-color: rgb(209, 51, 100);
+<style>
 
-
-main{
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-
-.profile-container{
-  color: $topbar-text-color;
-  font-size: 25px;
-  max-width: 55%;
+    .container{
+        margin: 20px;
+        color: rgb(209, 51, 100);
+  font-size: 18px;
+  max-width: 70%;
   height: 100%;
   margin: 0 auto;
   padding: 1px;
   background-color: #002e28;
   background-position: center;
-}
-.profile {
-  &-header {
-    margin-bottom: 1rem;
-   
+  
 
-   /*  &-data {
-      span, bdi {
-        margin: 1.5rem;
-      }
-      img .country {
-        margin-left: 0.2rem;
-      }
-    } */
-
-    &-avatar {
-      .circle {
-        position: relative;//Lo pongo en relativo para que no afecte a nada mas de la pagina.
-        width: 12rem;
-        height: 12rem;
-        shape-outside: circle(50% at 50% 50%);
-        clip-path: circle(50% at 50% 50%);//Recorto la imagen en forma de circulo
-        margin-top: 1rem;
-
-        .image {
-          height: 100%;
-          transition: all 0.5s;//Le doy una transicion para la imagen
-        }
-        .change-photo{
-        position: absolute;//Le doy una posicion absoluta para que afecte a todo
-        top: 50%;//Lo situo en el centro
-        left: 50%;
-        transform: translate(-50%, 20%);//Mlo que hago es que este objeto lo coloco mas abajo y cuando ponga opacidad cambio el translate para que se haga el efecto requerido
-        color:$topbar-text-color;
-        font-size: 1.5rem;
-        text-align: center;
-        transition: all 0.5s;
-        opacity: 0;//Le pongo opacidad 0 para que no se vea sin que se ponga el raton encima.
-
-        }
-
-        &:hover .image {
-          filter: blur(3px) brightness(80%);//Cuando pase por encima con el raton se pone borroso.
-          
-        }
-        &:hover .change-photo{
-            opacity: 1;//Una vez que pasa el raton activo
-            transform: translate(-50%, -50%); //Una vez que se ha puesto abajo lo muevo
-          }
-      }
-    }
-  }
-
-  &-body {
-    p, input {
-      vertical-align: middle;
-      margin-left: 1rem;
     }
 
-    &-info {
-      margin: 1rem;
-      margin-bottom: 2rem;
+    .content{
+        margin: 20px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
     }
-input{
-  color: black;
-  font-size: 1.2rem;
-  font-family: inherit;
-  color: inherit;
-  padding: 0.2rem 0.5rem;
-  border-radius: 2px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border: none;
-  border-bottom: 3px solid transparent;
-  width: 40%;
-  transition: all .3s;
+
+    input,select,textarea, button{
+        border-radius: 15px;
+        padding: 10px;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-size: 16px;
     }
-    &-user{ 
-      border-top: 5px solid $topbar-text-color; 
-      margin: 1rem;
-      margin-bottom: 1rem;
-  }
-}
-}
+
+    input{
+        width: 70%;
+    }
+
+    .image-rounded{
+        border-radius: 50%;
+            width: 100px; 
+            height: 100px;
+            margin-bottom: 15px;
+    }
+
+    .image, .modify{
+        display: inline-block;
+        vertical-align: middle;
+    }
+
+    .modify{
+      margin-left: 10px;
+      margin-bottom: 20px;
+    }
+
+    .modify button{}
+
+    .name, .lastname{
+        display: inline-block;
+    }
+
+    .names,.infos,.pronouns,.user{
+        
+        margin-bottom: 15px;
+    }
+
+    .nombre,.apellidos,.info,.pronoun,.username,.ph{
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+
+    h1{
+        margin-bottom: 2px;
+    }
+
+    .usertext{
+        width: 50%;
+    }
 
 </style>
-

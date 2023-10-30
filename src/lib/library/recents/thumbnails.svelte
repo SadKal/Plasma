@@ -1,7 +1,7 @@
 <script>
 	import user from "../../../data/testuser.json";
 	let userLastPlayed = user.lastPlayed
-	let games = Object.values(user.gamesOwned);
+	let games = user.gamesOwned;
 
 	let images = [];
     let i=0;

@@ -25,14 +25,5 @@
         padding-top: 100px;
 		width: 80%;
 		margin: 0 auto;
-
-		&__title span {
-			font-family: "Montserrat";
-			font-weight: 600;
-			color: var(--text-color);
-			font-size: 3rem;
-			letter-spacing: 1px;
-
-		}
 	}
 </style>

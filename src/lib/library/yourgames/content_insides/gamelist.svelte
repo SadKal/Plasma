@@ -2,20 +2,54 @@
 	import user from "../../../../data/testuser.json";
     import Select from "./select.svelte"; 
 
-	let games = Object.values(user.gamesOwned);
-	
-	function sortBy(selectedValue){
-		//placeholder
+	let games = user.gamesOwned;
+	sortBy("Nombre");
+
+
+
+	function compareDate(a, b) {
+
 	}
+
+
+	function sortBy(selectedValue){
+		if (selectedValue === "Nombre") {
+			games.sort((a , b) => {
+				if (a.name < b.name)
+					return -1;
+				if (a.name > b.name)
+					return 1;
+				if (a.name === b.name)
+					return 0;
+				
+			})
+
+		} 
+		if (selectedValue === "Más jugados") {
+			games.sort((a, b) => {
+				return -(a.hrsPlayed - b.hrsPlayed);
+			})
+			
+		}
+		if (selectedValue === "Fecha adq.") {
+			//games.sort(compareDate)
+			//alert("fecha");
+		}
+		console.log(">>>>>>", games)
+	}
+
+	
 
 </script>
 
 <span class="library--urgames__title">Tus juegos</span>
+
 <Select 
 label = "Ordenar por"
 values = {["Nombre", "Más jugados", "Fecha adq."]}
 selectedValue = "Nombre"
 eventClick={sortBy}/>
+
 {#each games as game}
 	<div
 		class="gamelist__thumbnail"
@@ -44,7 +78,7 @@ eventClick={sortBy}/>
 			font-weight: 600;
 			color: var(--text-color);
 			font-size: 3rem;
-			letter-spacing: 1px;
+			letter-spacing: -1px;
 
 	}
 </style>

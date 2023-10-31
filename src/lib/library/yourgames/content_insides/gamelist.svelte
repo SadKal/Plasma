@@ -19,7 +19,21 @@
 			});
 		}
 		if (selectedValue === "Fecha adq.") {
-			//Needs to be implemented: add dates to jsons and research date manipulation (uh oh)
+			/*
+			So, basically: Games need (or at least it would be best) to have their dates as a Unix timestamp, because when we add more games to the user, the 
+			Date.now() method returns the Unix timestamp of this exact moment, and parsing back and forth would be pointless (can be done with Date.parse(), 
+			but it would mean going timestamp -> string,  and then the other way around when comparing or doing anything).
+			
+			Methods that might be useful:
+				Date.now();
+				Date.parse();
+				prototype.toLocaleString();
+
+			*/
+
+			games.sort((a, b) => {
+				return -(a.adqDate - b.adqDate);
+			})
 		}
 		games = games;
 		//console.log(">>>>>>", games)

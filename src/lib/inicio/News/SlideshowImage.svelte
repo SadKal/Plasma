@@ -4,26 +4,28 @@
     export let src;
     export let positionClass;
     export let alt;
+    export let cache;
+    let secondClass= "slideshow__img" + positionClass;
+    let unloadedClass= "unloaded__" + positionClass;
 
     let placeholderImage= "src/assets/loading.gif";
     let img;
     let loadedImg=false;
 
-    //console.log(src)
 
     function loadLeftImg(loaded, source) {
         if (!loaded) {
             return ;
         }
-        console.log(alt + " " + img.src)
         img.src = placeholderImage;
         const tempImg = new Image()
         tempImg.src = source;
-        console.log(tempImg.src)
 
         const onImgLoaded = () => {
             img.src = tempImg.src;
-            console.log(alt + " 2: " + img.src)
+            if (!cache.includes(source)){
+                cache.push(source);
+            }
             tempImg.removeEventListener('load', onImgLoaded);            
         }
 
@@ -41,14 +43,25 @@
 
     onMount(() => {
         loadedImg = true;  
-        loadLeftImg(loadedImg, src);
+        if(cache.includes(src)){
+            img.src=src;
+        }
+        else{
+            loadLeftImg(loadedImg, src);
+        }
     }); 
     onDestroy(() => {
         //removeLoad && removeLoad();
     });
+
 </script>
 
-<img bind:this={img} src={placeholderImage} alt="Loading..." class="slideshow__img {positionClass}"/>
+{#if cache.includes(src)}
+    <img bind:this={img} src={src} alt="Loading..." class="slideshow__img {secondClass}"/>
+{:else}
+    <img bind:this={img} src={placeholderImage} alt="Loading..." class="slideshow__img {secondClass} {unloadedClass}"/>
+{/if}
+
 
 <style lang="scss">
     .slideshow{
@@ -59,10 +72,6 @@
             position: relative;
 
             &--left, &--right{
-                //Numeros tan especificos para que al cargar la animación no hagan overlapping en opacidades bajas
-                animation-name: side_images;
-                animation-duration: var(--seconds-fadein);
-                animation-timing-function: ease-in;
                 cursor: pointer;
                 opacity: 50%;
                 @media (max-width: 420px){
@@ -71,15 +80,24 @@
             }
             &--center{                
                 clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
-                animation-name: fadein;
-                animation-duration: var(--seconds-fadein);
-                animation-timing-function: ease-in;
-                z-index: 2;
+                z-index: 2; 
                 scale: 140%;
                 @media (max-width: 420px){
                     scale: 230%;
                 }
             }
+        }
+    }
+    .unloaded{
+        &--left, &--right{
+                animation-name: side_images;
+                animation-duration: var(--seconds-fadein);
+                animation-timing-function: ease-in;
+        }
+        &--center{                
+                animation-name: fadein;
+                animation-duration: var(--seconds-fadein);
+                animation-timing-function: ease-in;
         }
     }
 </style>

@@ -3,7 +3,7 @@
     //@ts-nocheck
     import { onMount } from "svelte";
     import games from '../../../data/games.json';
-    import ImageTest from "./ImageTest.svelte"
+    import SlideshowImage from "./SlideshowImage.svelte";
 
     let images = [];
     let randomIndex;
@@ -19,8 +19,7 @@
             i++;
         }
     }
-    //Marco el tamaño para la mediaQuery posterior para visualizar mejor en movil
-    let mediaQuerySize = "(max-width: 420px)";
+
     //Preparo índices para las imagenes
     let slideIndex = 1;
     let rightIndex = 2;
@@ -32,12 +31,10 @@
     let isSwiping = false;
 
     //Defino los valores donde guardare los src
-    let srcLeft;
-    let srcCenter;
-    let srcRight;
-    let placeholderImage= "src/assets/loading.gif";
-    let loaded=false;
-
+    let srcLeft = images[leftIndex];
+    let srcCenter= images[slideIndex];
+    let srcRight= images[rightIndex];
+   
     //Registra el inicio del deslizamiento
     function swipeStart(event){
         startSwipe=event.touches[0].clientX;
@@ -71,7 +68,6 @@
         /*Aqui debemos comprobar 2 cosas:
             Primero: si deslizamos hacia derecha o izquierda(n=1 o n=-1)
             Segundo: si nos salimos del array. En este caso recolocamos el indice*/
-        let slides = slideshow.querySelectorAll(".slideshow__img");
         if(n>0){
             slideIndex = (images[slideIndex+1]==null) ? 0 : slideIndex+1;
             leftIndex = (images[leftIndex+1]==null) ? 0 : leftIndex+1;
@@ -87,62 +83,28 @@
         srcRight=images[rightIndex];
 
     }
-    function preloadImages(imageUrls, callback) {
-        var loadedImages = 0;
-        var totalImages = imageUrls.length;
 
-        function imageLoaded() {
-            loadedImages++;
-            if (loadedImages === totalImages) {
-            // All images are loaded
-            callback();
-            }
-        }
-
-        imageUrls.forEach(function (imageUrl) {
-            var image = new Image();
-            image.src = imageUrl;
-            image.onload = imageLoaded;
-            image.onerror = imageLoaded; // Handle errors as well
-        });
-    }
     
     /*onMount(exclusivo de Svelte) espera a que cargue el DOM para ejecutar lo de dentro*/
     onMount(() => {
-        preloadImages(images, function () {
-            console.log('All images are preloaded and ready to use.');
-            loaded=true;
-            showSlides(0);
-        });
+        showSlides(0);
     });
+    
 </script>
 
 <div bind:this={slideshow} class="slideshow clearfix"  on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
 
     <div class="slideshow__slide">
         <a on:click={() => showSlides(-1)}>
-            {#if loaded}
-                <img class="slideshow__img slideshow__img--left" src={srcLeft} alt="img1"/>
-            {:else}
-                <img class="slideshow__img slideshow__img--left" src={placeholderImage} alt="img1"/>
-            {/if}
-            
+            <SlideshowImage src={srcLeft} positionClass="slideshow__img--left" alt="img1"/>
         </a> 
     </div>
     <div class="slideshow__slide">
-            {#if loaded}
-                <img class="slideshow__img slideshow__img--center" src={srcCenter} alt="img2"/>
-            {:else}
-                <img class="slideshow__img slideshow__img--center" src={placeholderImage} alt="img2"/>
-            {/if}
+        <SlideshowImage src={srcCenter} positionClass="slideshow__img--center" alt="img2"/>
     </div>
     <div class="slideshow__slide">
         <a on:click={() => showSlides(1)}>
-            {#if loaded}
-                <img class="slideshow__img slideshow__img--right" src={srcRight} alt="img3"/>
-            {:else}
-                <img class="slideshow__img slideshow__img--right" src={placeholderImage} alt="img3"/>
-            {/if}
+            <SlideshowImage src={srcRight} positionClass="slideshow__img--right" alt="img3"/>
         </a>
     </div>
     
@@ -163,35 +125,6 @@
         @media (min-width: 780px){
             margin-top: 10rem; 
             height: 350px;
-        }
-        &__img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-
-            &--left, &--right{
-                //Numeros tan especificos para que al cargar la animación no hagan overlapping en opacidades bajas
-                animation-name: side_images;
-                animation-duration: var(--seconds-fadein);
-                animation-timing-function: ease-in;
-                cursor: pointer;
-                opacity: 50%;
-                @media (max-width: 420px){
-                    opacity: 40%;
-                }
-            }
-            &--center{                
-                clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
-                animation-name: fadein;
-                animation-duration: var(--seconds-fadein);
-                animation-timing-function: ease-in;
-                z-index: 2;
-                scale: 140%;
-                @media (max-width: 420px){
-                    scale: 230%;
-                }
-            }
         }
 
         &__slide{

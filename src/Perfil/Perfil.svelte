@@ -1,3 +1,30 @@
+<script>
+    let imgDefault = 'src/Perfil/default.jpg';
+
+    function ChangeImage(newImg){
+        imgDefault = newImg;
+    }
+
+    function HandleImg(e){/* Creo una funcion para manejar el evento que causa que seleccione una imagen */
+        const file=e.target.files[0]; /* Meto lo que me pasen en una variable */
+
+        if(file){/* Si esa variable tiene una foto nueva hace esto: */
+            const reader = new FileReader();/* Un objeto el cual puede leer del lado del cliente */
+
+            reader.onload = function (e){/* reader tiene un evento que lo manejo con una funcion, que se ejecute cuando finaliza la lectura */
+                ChangeImage(e.target.result); /* Llamo a la otra funcion para que me cambie la imagen */
+            }
+            reader.readAsDataURL(file);/* Que me lea la imagen como una URL */
+        }else{
+            ChangeImage('src/Perfil/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
+        }
+
+
+    }
+
+   
+
+</script>
 
 <main>
     <div class="container">
@@ -14,11 +41,13 @@
             <div class="photo">
                 <div class="ph">Foto</div>
                 <div class="image">
-                    <img src="https://avatars.cloudflare.steamstatic.com/de9eb8c8875fd7935f08baa1f36ba1bd633f6fc9_full.jpg" alt="" class="image-rounded">
+                        <img src="{imgDefault}" alt="" class="image-rounded">
                 </div>
     
                 <div class="modify">
-                    <button type="button">Modificar</button>
+                    <input type="file" id="img-uploader" on:change={HandleImg}>
+                    <label for="img-uploader">Cambiar foto</label>
+
                 </div>
             </div>
     
@@ -66,6 +95,7 @@
         </div>
     </div>
 
+    
 
 </main>
 
@@ -74,39 +104,33 @@
     .container{
         margin: 20px;
         color: rgb(209, 51, 100);
-  font-size: 18px;
-  max-width: 70%;
-  height: 100%;
-  margin: 0 auto;
-  padding: 1px;
-  background-color: #002e28;
-  background-position: center;
-  
-
+        font-size: 18px;
+        max-width: 70%;
+        height: 100%;
+        margin: 0 auto;
+        padding: 1px;
+        background-color: #002e28;
+        background-position: center;
     }
-
     .content{
         margin: 20px;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
     }
-
-    input,select,textarea, button{
+    input,select,textarea,label{
         border-radius: 15px;
         padding: 10px;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         font-size: 16px;
     }
-
-    input{
-        width: 70%;
-    }
-
     .image-rounded{
         border-radius: 50%;
-            width: 100px; 
-            height: 100px;
+            width: 150px; 
+            height: 150px;
             margin-bottom: 15px;
+            filter: none;
+            transition: all 0.5s;/* Le doy una transicion para la imagen */
+
     }
 
     .image, .modify{
@@ -119,14 +143,11 @@
       margin-bottom: 20px;
     }
 
-    .modify button{}
-
     .name, .lastname{
         display: inline-block;
     }
 
     .names,.infos,.pronouns,.user{
-        
         margin-bottom: 15px;
     }
 
@@ -142,5 +163,56 @@
     .usertext{
         width: 50%;
     }
+
+    .apellidos{
+        margin-top: 10px;
+    }
+
+    textarea{
+        width: 40%;
+        max-width: 40%;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    select{
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        box-sizing: border-box;
+    }
+
+    .selects{
+        width: 18%;
+    }
+
+    input{
+        width: 70%;
+        max-width: 70%;
+        box-sizing: border-box;
+    }
+
+    .usertext input{
+        width: 35%;
+        max-width: 35%;
+        box-sizing: border-box;
+    }
+
+    .image-rounded:hover {
+          filter: blur(2px) brightness(60%);/* Cuando pase por encima con el raton se pone borroso. */
+          
+        }
+
+    #img-uploader{
+        display: none;
+    }
+
+    label{
+        background: rgb(209, 51, 100);;
+        color: white;
+        padding: 6px 20px;
+        cursor: pointer;
+        border-radius: 3px;
+}
 
 </style>

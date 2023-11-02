@@ -1,8 +1,7 @@
 <script>
-    import Footer from "./Footer.svelte";
+    import Footer from "./Footer/Footer.svelte";
 import Header from "./lib/header/Header.svelte";
-  import Perfil from "./Perfil.svelte";
-  
+  import Perfil from "./Perfil/Perfil.svelte";
   
 </script>
 
@@ -10,7 +9,8 @@ import Header from "./lib/header/Header.svelte";
 
    <!--Meto perfil el cual tengo el header-->
     <!-- <Footer/> -->
-    <Perfil/>
+   <Perfil/> 
+
 
 </header>
 <main>

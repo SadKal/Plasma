@@ -26,20 +26,13 @@
             if (!cache.includes(source)){
                 cache.push(source);
             }
-            tempImg.removeEventListener('load', onImgLoaded);            
+            tempImg.removeEventListener('load', onImgLoaded);             
         }
 
         tempImg.addEventListener('load', onImgLoaded);
-
-        //Era esta linea de abajo la que daba problemas
-        //return onImgLoaded();
     }
 
-    let removeLoad;
-
     $: src && loadLeftImg(loadedImg, src);
-    /*$: removeLoad =  loadLeftImg(loadedImg, src);*/
-    //$: src && removeLoad && removeLoad();
 
     onMount(() => {
         loadedImg = true;  
@@ -50,16 +43,14 @@
             loadLeftImg(loadedImg, src);
         }
     }); 
-    onDestroy(() => {
-        //removeLoad && removeLoad();
-    });
+
 
 </script>
 
 {#if cache.includes(src)}
     <img bind:this={img} src={src} alt="Loading..." class="slideshow__img {secondClass}"/>
 {:else}
-    <img bind:this={img} src={placeholderImage} alt="Loading..." class="slideshow__img {secondClass} {unloadedClass}"/>
+    <img bind:this={img} src={placeholderImage} alt={alt} class="slideshow__img {secondClass} {unloadedClass}"/>
 {/if}
 
 

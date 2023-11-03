@@ -7,7 +7,8 @@
     --game-data-bg-color: rgba(243, 61, 119, 0.7);
     --selected-text-color: rgb(248, 49, 92);
     --topbar-background-color: rgb(0,74,64);
-
+    --searchbar-background-color: rgba(0,74,64,.1);
+    --searchbar-hover-background-color: rgba(0,74,64,.6);
     //Texts
     --title-font: 60px;
 
@@ -26,6 +27,7 @@ html, body{
     background: linear-gradient(130deg, rgba(0,61,53,.95) 40%, rgba(0,0,0,.95) 100%), url("src/assets/bg.png");
     background-attachment: fixed; /*Esto hace que el gradiente de fondo no se repita, se "ancla" a la vista del usuario*/
     font-family: 'Roboto';
+
 }
 
 

@@ -1,3 +1,4 @@
+
 <div class="topbar clearfix">
     <ul class="topbar__list">
         <li>  
@@ -26,6 +27,7 @@
         </li>
     </ul>
 </div>
+
 <style lang="scss">
 
     .clearfix::after {

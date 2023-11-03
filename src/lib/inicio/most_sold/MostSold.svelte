@@ -62,7 +62,7 @@
             font-size: 30px;
             margin-top: 8rem;
         }
-    }
+    } 
 
     .most_sold__exhibitor{
         width: 60%;

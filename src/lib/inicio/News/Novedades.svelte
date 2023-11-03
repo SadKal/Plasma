@@ -21,14 +21,17 @@
         
     
         &__title{
-            margin-top: 5rem;
+            margin-top: 10rem;
             color: var(--text-color);
             font-size: 50px;
             letter-spacing: .4rem;
             font-weight: bolder;
             transition: all .5s;
-            @media (min-width: 780px){
-                color: var(--text-color);
+            @media (min-width: 420px){
+                font-size: 70px;
+                letter-spacing: .6rem;
+            }
+            @media (min-width: 720px){
                 font-size: 100px;
                 letter-spacing: .8rem;
             }
@@ -38,7 +41,7 @@
             letter-spacing: .05rem;
             color: var(--subtitle-text-color);
             font-size: 10px;
-            @media (min-width: 780px){
+            @media (min-width: 420px){
                 margin-top: .7rem;
                 letter-spacing: .1rem;
                 font-size: 20px;   

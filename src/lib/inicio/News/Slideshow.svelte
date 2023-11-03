@@ -84,7 +84,6 @@
         srcCenter=images[slideIndex];
         srcRight=images[rightIndex];
 
-        console.log(cache);
     }
 
     
@@ -92,7 +91,7 @@
     onMount(() => {
         showSlides(0);
     });
-    
+     
 </script>
 
 <div bind:this={slideshow} class="slideshow clearfix"  on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
@@ -122,13 +121,22 @@
     } 
 
     .slideshow{
-        width: 100%;
-        height: auto;
         margin-top: 5rem;
+        transition: all .2s;
         @media (min-width: 780px){
             margin-top: 10rem; 
-            height: 350px;
+            height: 220px;
         }
+        @media (min-width: 1185px){
+            margin-top: 10rem; 
+            height: 250px;
+        }
+        @media (min-width: 1330px){
+            width: 100%;
+            height: auto;
+            
+        }
+        
 
         &__slide{
             height: 100%;

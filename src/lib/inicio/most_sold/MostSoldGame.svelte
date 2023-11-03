@@ -8,26 +8,28 @@
 
     //Variables que guardan el angulo con el que rota la imagen y el elemento a rotar
     let rotationAngle = 0;
-    let element;
+    let card;
 
     //event, en este tipo de funciones, representa el elemento al que esta asociada la funcion. En este caso el div del juego
     function updateRotation(event) {
         //Saco el centro del elemento, recibiendo el punto mas a la izquierda y sumandole la mitad de su longitud
-        var elementCenterX = element.getBoundingClientRect().left + element.offsetWidth / 2;
+        var elementCenterX = card.getBoundingClientRect().left + card.offsetWidth / 2;
         //Calculo la distancia del ratón al centro para rotar más o menos, el divisor permite controlar la sensibilidad
         rotationAngle = (event.clientX - elementCenterX) / 15 ;
         if(window.matchMedia("(min-width: 420px)").matches){
-            element.style.transform = 'perspective(1000px) rotateY(' + rotationAngle + 'deg)';
+            card.style.transform = 'perspective(1000px) rotateY(' + rotationAngle + 'deg)';
         }
     }    
     function resetRotation(event){
-        element.style.transform = 'perspective(1000px) rotateY(0)';
+        if(window.matchMedia("(min-width: 420px)").matches){
+            card.style.transform = 'perspective(1000px) rotateY(0)';
+        }
     }
 </script>
 
 
 <div 
-    bind:this={element}
+    bind:this={card}
     role="region" aria-label="Interactive Region"
     on:mousemove={updateRotation}
     on:mouseleave={resetRotation} 
@@ -75,6 +77,13 @@
             @media (max-width: 420px) {
                 font-size: 12px;
             }
+            @media (max-width: 1500px) {
+                font-size: 12px;
+            }
+            @media (max-width: 1200px) {
+                font-size: 10px;
+                padding: .2rem;
+            }
         }
         &__name{
             font-size: 20px;
@@ -82,6 +91,13 @@
             margin: .5rem 0;
             @media (max-width: 420px) {
                 font-size: 15px;
+            }
+            @media (max-width: 1500px) {
+                font-size: 18px;
+            }
+            @media (max-width: 1200px) {
+                font-size: 15px;
+                margin: .2rem 0;
             }
         }
     }
@@ -104,7 +120,14 @@
             z-index: 5;
         }
 
+        @media (max-width: 1500px) {
+            height: 400px;
+        }
+        @media (max-width: 1200px) {
+            height: 300px;
+        }
         @media (max-width: 420px) {
+            height: 100vw;
             width:60%;
             left: 50%;
             transform: translateX(-50%);

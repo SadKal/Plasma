@@ -19,7 +19,7 @@
                 window.scrollTo(0,460);
             }   
             else{
-                window.scrollTo(0, 50);
+                window.scrollTo(0, 70);
             };
         });
         

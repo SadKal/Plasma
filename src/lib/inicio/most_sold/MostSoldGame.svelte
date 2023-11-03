@@ -57,7 +57,6 @@
             &:hover{
                 box-shadow: 0 0 10px 2px lightgray;
                 background-color: lightgray;
-                border-radius: 5%;
                 filter: brightness(1.1);
             }
         }
@@ -65,7 +64,7 @@
         &__data{
             box-sizing: border-box;
             background-color: var(--game-data-bg-color);
-            font-size: 16px;
+            font-size: 18px;
             font-family: 'Montserrat';
             font-weight: bold;
             width: 100%;
@@ -74,30 +73,31 @@
             padding: .5rem;
             border-radius: .5rem;
             text-align: center;
+            
             @media (max-width: 420px) {
-                font-size: 12px;
-            }
-            @media (max-width: 1500px) {
                 font-size: 12px;
             }
             @media (max-width: 1200px) {
                 font-size: 10px;
                 padding: .2rem;
             }
+            @media (max-width: 1500px) {
+                font-size: 12px;
+            }
         }
         &__name{
-            font-size: 20px;
+            font-size: 25px;
             font-weight: bolder;
             margin: .5rem 0;
             @media (max-width: 420px) {
                 font-size: 15px;
-            }
-            @media (max-width: 1500px) {
-                font-size: 18px;
-            }
+            } 
             @media (max-width: 1200px) {
                 font-size: 15px;
                 margin: .2rem 0;
+            }
+            @media (max-width: 1500px) {
+                font-size: 18px;
             }
         }
     }
@@ -105,7 +105,7 @@
 
     .col_1_of_3{
         width: calc((100% - (2 * var(--gutter-horizontal))) / 3);
-        height: 500px;
+        height: 30vw;
         float: left;
         transition: all .4s;
         position: relative;

@@ -4,7 +4,7 @@
     import Novedades from "./News/Novedades.svelte";
     import Slideshow from "./News/Slideshow.svelte";
     import Genres from "./genres/Genres.svelte";
-    import Searchbar from "./Searchbar.svelte";
+    import Searchbar from "./Search/Searchbar.svelte";
 
    
 </script>

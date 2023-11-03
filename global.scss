@@ -9,6 +9,10 @@
     --topbar-background-color: rgb(0,74,64);
     --searchbar-background-color: rgba(0,74,64,.1);
     --searchbar-hover-background-color: rgba(0,74,64,.6);
+    --search-result-color: var(--searchbar-hover-background-color);
+    --search-result-hover-color: rgb(0, 61, 53);
+    --search-mobile-color: var(--search-result-hover-color);
+    --search-mobile-focus-color: rgb(0, 43, 37);
     //Texts
     --title-font: 60px;
 

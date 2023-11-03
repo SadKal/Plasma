@@ -61,6 +61,7 @@
             height: 100%;
             object-fit: cover;
             position: relative;
+            z-index: 0;
 
             &--left, &--right{
                 cursor: pointer;

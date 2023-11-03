@@ -46,7 +46,6 @@
         content: ""; 
         clear: both;
         display: block;
-
     } 
     .most_sold{
         width: 100%;

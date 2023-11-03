@@ -1,5 +1,6 @@
 <script>
 	import user from "../../../../data/testuser.json";
+	import { fade } from "svelte/transition";
 	import Select from "./select.svelte";
 
 	let games = user.gamesOwned;
@@ -36,7 +37,6 @@
 			})
 		}
 		games = games;
-		//console.log(">>>>>>", games)
 	}
 </script>
 
@@ -45,7 +45,7 @@
 <Select
 	label="Ordenar por"
 	values={["Nombre", "Más jugados", "Fecha adq."]}
-	selectedValue="Nombre"
+	selectedValue="Nombre"    
 	eventClick={sortBy}
 />
 
@@ -53,10 +53,13 @@
 	<div
 		class="gamelist__thumbnail"
 		style="background-image: url('{game.cover}');"
+
 	>
 		&nbsp;
 	</div>
 {/each}
+
+
 
 <style>
 	.gamelist__thumbnail {

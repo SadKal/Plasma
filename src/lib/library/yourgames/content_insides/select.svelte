@@ -6,16 +6,15 @@
 	export let eventClick = (_) => {};
 
 	function selectValue(value) {
-		selectedValue = value === selectedValue ? selectedValue : value;
 		eventClick(selectedValue);
 	}
 </script>
 
 <select
 	aria-label={label}
-	value={selectedValue}
+	bind:value={selectedValue}
 	{disabled}
-	on:click={() => selectValue()}
+	on:change={() => selectValue()}
 	{...$$restProps}
 >
 	{#each values as value (value)}

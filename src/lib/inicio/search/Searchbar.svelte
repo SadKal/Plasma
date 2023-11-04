@@ -148,7 +148,7 @@
         }
         &__results{
             max-height: 400px;
-            overflow-y: scroll;
+            overflow-y: auto;
         }
     }
 </style>

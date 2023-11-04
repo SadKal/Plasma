@@ -7,10 +7,13 @@
     let mediaQuerySize = "(max-width: 420px)";
     let element;
 
-    
-    onMount(()=> {
-        //Odio los navegadores modernos
-        //El navegador tiene en el historial una variable que hace que vuelva al inicio de la pagina al cargar
+    let active;
+    $:{
+        if(active=='Inicio'){
+            scrollOnLoad();
+        }
+    }
+    function scrollOnLoad(){
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
@@ -22,13 +25,21 @@
                 window.scrollTo(0, 70);
             };
         });
-        
+    }
+
+    onMount(()=> {
+        //Odio los navegadores modernos
+        //El navegador tiene en el historial una variable que hace que vuelva al inicio de la pagina al cargar
+        scrollOnLoad();
     });
 </script>
 
 <div bind:this={element} class="main">
-    <Header/>
-    <Inicio/>
+    <Header bind:active/>
+    {#if active=='Inicio'}
+        <Inicio/> 
+    {/if}
+    
 </div>
     
     

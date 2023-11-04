@@ -6,7 +6,7 @@
     export let alt;
     export let cache;
     let secondClass= "slideshow__img" + positionClass;
-    let unloadedClass= "unloaded__" + positionClass;
+    let unloadedClass= secondClass + "--unloaded";
 
     let placeholderImage= "src/assets/loading.gif";
     let img;
@@ -48,7 +48,7 @@
 </script>
 
 {#if cache.includes(src)}
-    <img bind:this={img} src={src} alt="Loading..." class="slideshow__img {secondClass}"/>
+    <img bind:this={img} src={src} alt={alt} class="slideshow__img {secondClass}"/>
 {:else}
     <img bind:this={img} src={placeholderImage} alt={alt} class="slideshow__img {secondClass} {unloadedClass}"/>
 {/if}
@@ -69,6 +69,11 @@
                 @media (max-width: 420px){
                     opacity: 40%;
                 }
+                &--unloaded{
+                    animation-name: side_images;
+                    animation-duration: var(--seconds-fadein);
+                    animation-timing-function: ease-in;
+                }
             }
             &--center{                
                 clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
@@ -77,14 +82,17 @@
                 @media (max-width: 420px){
                     scale: 230%;
                 }
+                &--unloaded{
+                    animation-name: fadein;
+                    animation-duration: var(--seconds-fadein);
+                    animation-timing-function: ease-in;
+                }
             }
         }
     }
     .unloaded{
         &--left, &--right{
-                animation-name: side_images;
-                animation-duration: var(--seconds-fadein);
-                animation-timing-function: ease-in;
+                
         }
         &--center{                
                 animation-name: fadein;

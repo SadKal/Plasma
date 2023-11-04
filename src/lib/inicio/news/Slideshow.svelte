@@ -5,7 +5,7 @@
     import games from '$data/games.json';
     import SlideshowImage from "$news/SlideshowImage.svelte";
 
-    let images = [];
+    let gamesData = [];
     let randomIndex;
     let randomObject; 
     let i=0;
@@ -14,8 +14,8 @@
     while(i<10){
         randomIndex = Math.floor(Math.random() * games.data.length);
         randomObject = games.data[randomIndex];
-        if(!images.includes(randomObject.image)){
-            images.push(randomObject.image);
+        if(!gamesData.includes(randomObject)){
+            gamesData.push(randomObject);
             i++;
         }
     }
@@ -31,10 +31,10 @@
     let isSwiping = false;
 
     //Defino los valores donde guardare los src
-    let srcLeft = images[leftIndex];
-    let srcCenter= images[slideIndex];
-    let srcRight= images[rightIndex];
-
+    let srcLeft = gamesData[leftIndex].image;
+    let srcCenter= gamesData[slideIndex].image;
+    let srcRight= gamesData[rightIndex].image;
+    
     let cache=[];
    
     //Registra el inicio del deslizamiento
@@ -71,18 +71,18 @@
             Primero: si deslizamos hacia derecha o izquierda(n=1 o n=-1)
             Segundo: si nos salimos del array. En este caso recolocamos el indice*/
         if(n>0){
-            slideIndex = (images[slideIndex+1]==null) ? 0 : slideIndex+1;
-            leftIndex = (images[leftIndex+1]==null) ? 0 : leftIndex+1;
-            rightIndex = (images[rightIndex+1]==null) ? 0 : rightIndex+1;
+            slideIndex = (gamesData[slideIndex+1]==null) ? 0 : slideIndex+1;
+            leftIndex = (gamesData[leftIndex+1]==null) ? 0 : leftIndex+1;
+            rightIndex = (gamesData[rightIndex+1]==null) ? 0 : rightIndex+1;
         }
         else if (n<0){
-            slideIndex = (images[slideIndex-1]==null) ? images.length-1 : slideIndex-1;
-            leftIndex = (images[leftIndex-1]==null) ? images.length-1 : leftIndex-1;
-            rightIndex = (images[rightIndex-1]==null) ? images.length-1 : rightIndex-1; 
+            slideIndex = (gamesData[slideIndex-1]==null) ? gamesData.length-1 : slideIndex-1;
+            leftIndex = (gamesData[leftIndex-1]==null) ? gamesData.length-1 : leftIndex-1;
+            rightIndex = (gamesData[rightIndex-1]==null) ? gamesData.length-1 : rightIndex-1; 
         }
-        srcLeft=images[leftIndex];
-        srcCenter=images[slideIndex];
-        srcRight=images[rightIndex];
+        srcLeft=gamesData[leftIndex].image;
+        srcCenter=gamesData[slideIndex].image;
+        srcRight=gamesData[rightIndex].image;
 
     }
 
@@ -98,15 +98,15 @@
 
     <div class="slideshow__slide">
         <a on:click={() => showSlides(-1)}>
-            <SlideshowImage src={srcLeft} positionClass="--left" alt="img1" bind:cache={cache}/>
+            <SlideshowImage src={srcLeft} positionClass="--left" alt={gamesData[leftIndex].name} bind:cache={cache}/>
         </a> 
     </div>
     <div class="slideshow__slide">
-        <SlideshowImage src={srcCenter} positionClass="--center" alt="img2" bind:cache={cache}/>
+        <SlideshowImage src={srcCenter} positionClass="--center" alt={gamesData[slideIndex].name} bind:cache={cache}/>
     </div>
     <div class="slideshow__slide">
         <a on:click={() => showSlides(1)}>
-            <SlideshowImage src={srcRight} positionClass="--right" alt="img3" bind:cache={cache}/>
+            <SlideshowImage src={srcRight} positionClass="--right" alt={gamesData[rightIndex].name} bind:cache={cache}/>
         </a>
     </div>
     
@@ -136,7 +136,7 @@
             height: auto;
             
         }
-        
+         
 
         &__slide{
             height: 100%;

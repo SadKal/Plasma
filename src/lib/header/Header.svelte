@@ -1,30 +1,18 @@
+<script>
+    import HeaderElement from "$header/HeaderElement.svelte";
+
+    let elements=['Inicio', 'Biblioteca', 'Perfil'];
+    export let active='Inicio';
+</script>
 
 <div class="topbar clearfix">
     <ul class="topbar__list">
         <li>  
             <img src="src/assets/plasma_icon_notext.png" alt="logo" class="topbar__logo"/>
         </li>
-        <li>
-            <a href="#">
-                Inicio    
-            </a> 
-        </li>
-        <li>
-            <a href="#">
-                Biblioteca    
-            </a> 
-        </li>
-        <li>
-            <a href="#">
-                Perfil    
-            </a> 
-        </li> 
-        
-        <li>
-            <a href="#">
-                Soporte    
-            </a> 
-        </li>
+        {#each elements as name}
+            <HeaderElement bind:active {name}/>
+        {/each} 
     </ul>
 </div>
 
@@ -75,24 +63,6 @@
             float: left;
         }  
     }
-    li a{
-        text-decoration: none;
-        color: var(--text-color);
-        transition: all .3s;
-
-        &:hover{
-            color: white;
-            text-shadow: 
-                0 0 2rem var(--text-color)
-            ,
-                0 0 .5rem black;
-        }
-        &:focus{
-            display: block;
-            transform-origin: 50% 50%;
-            transform: scale(1.3, 1.3);
-            color: var(--selected-text-color);
-        }
-    }
+    
 
 </style>

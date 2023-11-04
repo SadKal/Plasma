@@ -24,11 +24,17 @@
     .search-result{
         box-sizing: border-box;
         width: 100%;
-        height: 4vw;
+        height: 6rem;
         background-color: var(--search-result-color);
         position: relative;
         padding: .3rem;
         transition: all .3s;
+
+        @media (max-width: 420px) {
+            height: 5rem;
+            font-size: 12px;
+            z-index: 60;
+        }
 
         &:hover{
             cursor: pointer;
@@ -41,6 +47,11 @@
             position: relative;
             top: 50%;
             transform: translateY(-50%);
+            @media (max-width: 420px) {
+                font-size: 12px;
+                top: 20%;
+                transform: translateY(0);
+            }
         }
         &__image{
             height: 80%;
@@ -55,6 +66,9 @@
                 height: 100%;
                 width: 8%;
                 margin-right: 1.5rem;
+                @media (max-width: 420px) {
+                    width: 40%;
+                }
             }
         }
         &__price{
@@ -66,6 +80,10 @@
             transform: translateY(-50%);
             float: right;
             margin-right: .5rem;
+            @media (max-width: 420px) {
+                top: 40%;
+                font-size: 12px;
+            }
         }
         &__float{
             float: left;

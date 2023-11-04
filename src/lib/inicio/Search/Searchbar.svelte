@@ -28,8 +28,8 @@
             }
         });
         searchResult = [...startsWith, ...otherGames]; 
-
     };
+    
     $: {
         if (searchValue) {
             searchGames(searchValue);
@@ -59,12 +59,11 @@
 
     onMount(() => {
         window.addEventListener('scroll', focusSearch);
-        searchbar.addEventListener('blur', clearFocus);
-    })
+
+    });
     onDestroy(() => {
         window.removeEventListener('scroll', focusSearch);
-        searchbar.removeEventListener('blur', clearFocus);
-    })
+    });
 
 </script>
 
@@ -73,7 +72,7 @@
 </div>
 
 <div class="search">
-    <input bind:this={searchbar} class="search__bar" name="search" type="search" placeholder="Escribe para buscar..." bind:value={searchValue}/>
+    <input bind:this={searchbar} class="search__bar" name="search" type="search" placeholder="Escribe para buscar..." on:change={clearFocus} bind:value={searchValue}/>
     <div class="search__results">
         {#each searchResult as game}
             <SearchResult {game}/>

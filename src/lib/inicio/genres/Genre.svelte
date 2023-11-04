@@ -19,6 +19,9 @@
 </div>
 
 <style lang="scss">
+    object{
+        pointer-events: none;
+    }
     :root{
         --text-svg-color: rgba(0,0,0,.8);
     }

@@ -2,8 +2,8 @@
     //Debo añadir ts-nocheck porque si no vscode da error
     //@ts-nocheck
     import { onMount } from "svelte";
-    import games from '../../../data/games.json';
-    import SlideshowImage from "./SlideshowImage.svelte";
+    import games from '$data/games.json';
+    import SlideshowImage from "$news/SlideshowImage.svelte";
 
     let images = [];
     let randomIndex;

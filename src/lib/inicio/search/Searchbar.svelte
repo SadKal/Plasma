@@ -1,7 +1,7 @@
 <script>
     import { onDestroy, onMount } from "svelte";
-    import games from '../../../data/games.json';
-    import SearchResult from "./SearchResult.svelte";
+    import games from '$data/games.json';
+    import SearchResult from "$search/SearchResult.svelte";
 
     let searchValue = '';
     let searchbar;

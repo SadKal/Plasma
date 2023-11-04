@@ -1,6 +1,6 @@
 <script>
-    import Genre from "./Genre.svelte";
-    import genres from "../../../data/genres.json";
+    import Genre from "$genres/Genre.svelte";
+    import genres from "$data/genres.json";
 
     let genres_arr=genres.data;
 </script>

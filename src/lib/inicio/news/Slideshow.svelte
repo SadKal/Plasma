@@ -34,8 +34,6 @@
     let srcLeft = gamesData[leftIndex].image;
     let srcCenter= gamesData[slideIndex].image;
     let srcRight= gamesData[rightIndex].image;
-    
-    let cache=[];
    
     //Registra el inicio del deslizamiento
     function swipeStart(event){
@@ -98,15 +96,15 @@
 
     <div class="slideshow__slide">
         <a on:click={() => showSlides(-1)}>
-            <SlideshowImage src={srcLeft} positionClass="--left" alt={gamesData[leftIndex].name} bind:cache={cache}/>
+            <SlideshowImage src={srcLeft} positionClass="--left" alt={gamesData[leftIndex].name}/>
         </a> 
     </div>
     <div class="slideshow__slide">
-        <SlideshowImage src={srcCenter} positionClass="--center" alt={gamesData[slideIndex].name} bind:cache={cache}/>
+        <SlideshowImage src={srcCenter} positionClass="--center" alt={gamesData[slideIndex].name}/>
     </div>
     <div class="slideshow__slide">
         <a on:click={() => showSlides(1)}>
-            <SlideshowImage src={srcRight} positionClass="--right" alt={gamesData[rightIndex].name} bind:cache={cache}/>
+            <SlideshowImage src={srcRight} positionClass="--right" alt={gamesData[rightIndex].name}/>
         </a>
     </div>
     

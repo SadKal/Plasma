@@ -31,7 +31,8 @@
       "$most_sold/*": ["src/lib/inicio/most_sold/*"],
       "$news/*": ["src/lib/inicio/news/*"],
       "$search/*": ["src/lib/inicio/search/*"],
-      "$data/*": ["src/data/*"]
+      "$data/*": ["src/data/*"],
+      "$stores/*": ["src/stores/*"]
     }
   },
   /**

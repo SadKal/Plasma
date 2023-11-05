@@ -16,7 +16,8 @@ export default defineConfig({
       $most_sold: path.resolve(__dirname, './src/lib/inicio/most_sold'),
       $news: path.resolve(__dirname, './src/lib/inicio/news'),
       $search: path.resolve(__dirname, './src/lib/inicio/search'),
-      $data: path.resolve(__dirname, './src/data')
+      $data: path.resolve(__dirname, './src/data'),
+      $stores: path.resolve(__dirname, './src/stores')
     }
   }
 })

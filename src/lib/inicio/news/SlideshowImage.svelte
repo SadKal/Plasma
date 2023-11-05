@@ -1,10 +1,10 @@
 <script>
     import { onDestroy, onMount } from "svelte";
+    import cacheStore from "$stores/cache";
 
     export let src;
     export let positionClass;
     export let alt;
-    export let cache;
     let secondClass= "slideshow__img" + positionClass;
     let unloadedClass= secondClass + "--unloaded";
 
@@ -23,8 +23,8 @@
 
         const onImgLoaded = () => {
             img.src = tempImg.src;
-            if (!cache.includes(source)){
-                cache.push(source);
+            if (!$cacheStore.cache.includes(source)){
+                $cacheStore.cache.push(source);
             }
             tempImg.removeEventListener('load', onImgLoaded);             
         }
@@ -36,7 +36,7 @@
 
     onMount(() => {
         loadedImg = true;  
-        if(cache.includes(src)){
+        if($cacheStore.cache.includes(src)){
             img.src=src;
         }
         else{
@@ -47,7 +47,7 @@
 
 </script>
 
-{#if cache.includes(src)}
+{#if $cacheStore.cache.includes(src)}
     <img bind:this={img} src={src} alt={alt} class="slideshow__img {secondClass}"/>
 {:else}
     <img bind:this={img} src={placeholderImage} alt={alt} class="slideshow__img {secondClass} {unloadedClass}"/>

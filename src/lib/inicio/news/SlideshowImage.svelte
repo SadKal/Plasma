@@ -5,6 +5,7 @@
     export let src;
     export let positionClass;
     export let alt;
+    
     let secondClass= "slideshow__img" + positionClass;
     let unloadedClass= secondClass + "--unloaded";
 

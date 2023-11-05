@@ -32,7 +32,8 @@
       "$news/*": ["src/lib/inicio/news/*"],
       "$search/*": ["src/lib/inicio/search/*"],
       "$data/*": ["src/data/*"],
-      "$stores/*": ["src/stores/*"]
+      "$stores/*": ["src/stores/*"],
+      "$utils/*": ["src/lib/utils/*"]
     }
   },
   /**

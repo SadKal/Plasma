@@ -1,8 +1,7 @@
 <script>
     import HeaderElement from "$header/HeaderElement.svelte";
 
-    let elements=['Inicio', 'Biblioteca', 'Perfil'];
-    export let active='Inicio';
+    export let pages;
 </script>
 
 <div class="topbar clearfix">
@@ -10,10 +9,10 @@
         <li>  
             <img src="src/assets/plasma_icon_notext.png" alt="logo" class="topbar__logo"/>
         </li>
-        {#each elements as name}
-            <HeaderElement bind:active {name}/>
+        {#each pages as { name } }
+            <HeaderElement {name}/>
         {/each} 
-    </ul>
+    </ul> 
 </div>
 
 <style lang="scss">

@@ -1,11 +1,16 @@
 <script>
-    export let active;
     export let name;
+    import pagesStore from "$stores/pages";
 </script>
 
 <li>
-    <a class="topbar__element" href="/" on:click|preventDefault={() => {active=name}} class:active={active==name}>
-        {name}    
+    <a 
+    class="topbar__element" 
+    href="/" 
+    on:click|preventDefault={() => { $pagesStore.active=name; }} 
+    class:active={$pagesStore.active==name}
+    >
+    {name}    
     </a> 
 </li>
 
@@ -28,7 +33,7 @@
             ,
                 0 0 .5rem black;
         }
-        &.active{
+        &.active{ 
             display: block;
             transform-origin: 50% 50%;
             transform: scale(1.3, 1.3);

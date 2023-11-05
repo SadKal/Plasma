@@ -1,13 +1,28 @@
 <script>
     import { onMount, tick } from "svelte";
-    import Header from "./lib/header/Header.svelte";
-    import Inicio from "./lib/inicio/Inicio.svelte";
+    import Header from "$header/Header.svelte";
+    import Inicio from "$inicio/Inicio.svelte";
+    import Page from "$utils/Page.svelte";
+    import pagesStore from "$stores/pages";
 
     let mediaQuerySize = "(max-width: 420px)";
 
-    let active;
+    let pages=[
+        {
+            name:'Inicio',
+            component: Inicio
+        },
+        {
+            name:'Biblioteca',
+            component: undefined
+        },
+        {
+            name:'Perfil',
+            component: undefined
+        },
+    ];
     $:{
-        if(active=='Inicio'){
+        if($pagesStore.active=='Inicio'){
             scrollOnLoad();
         }
     }
@@ -29,16 +44,13 @@
         if ('scrollRestoration' in history) {
             history.scrollRestoration = 'manual';
         }
-        scrollOnLoad();
     });
 </script>
 
 <div class="main">
-    <Header bind:active/>
-    {#if active=='Inicio'}
-        <Inicio/> 
-    {/if}
-    
+    <Header {pages}/>
+    {console.log($pagesStore)}
+    <Page id='mainPage' {pages}/>
 </div>
     
     

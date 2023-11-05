@@ -33,6 +33,10 @@
             transform-origin: 50% 50%;
             transform: scale(1.3, 1.3);
             color: var(--selected-text-color);
+            text-shadow: 
+                0 0 2rem var(--selected-text-color)
+            ,
+                0 0 .5rem black;
         }
     }
 </style>

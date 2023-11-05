@@ -131,6 +131,7 @@
             font-family: 'Montserrat';
             font-size: 20px;
             font-style: italic;
+            font-weight: bold;
             color: var(--text-color);
             transition: all .3s;
             &:focus, &:hover{

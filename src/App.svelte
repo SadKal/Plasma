@@ -2,14 +2,17 @@
     import Footer from "./Footer/Footer.svelte";
 import Header from "./lib/header/Header.svelte";
   import Perfil from "./Perfil/Perfil.svelte";
-  
+ import Login from "./loginRegister/Login.svelte";
+
 </script>
 
 <header>
 
    <!--Meto perfil el cual tengo el header-->
-    <!-- <Footer/> -->
+  <!--   <Header/> 
    <Perfil/> 
+  <Footer/>   -->
+  <Login/>
 
 
 </header>

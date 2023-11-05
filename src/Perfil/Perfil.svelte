@@ -208,7 +208,7 @@
     }
 
     label{
-        background: rgb(209, 51, 100);;
+        background: rgb(209, 51, 100);
         color: white;
         padding: 6px 20px;
         cursor: pointer;

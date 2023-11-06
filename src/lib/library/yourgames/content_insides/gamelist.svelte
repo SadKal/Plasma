@@ -2,6 +2,8 @@
 	import user from "../../../../data/testuser.json";
 	import { fade } from "svelte/transition";
 	import Select from "./select.svelte";
+	import { flip } from "svelte/animate";
+	import { cubicOut, elasticInOut } from "svelte/easing";
 
 	let games = user.gamesOwned;
 	sortBy("Nombre");
@@ -34,7 +36,7 @@
 
 			games.sort((a, b) => {
 				return -(a.adqDate - b.adqDate);
-			})
+			});
 		}
 		games = games;
 	}
@@ -45,24 +47,23 @@
 <Select
 	label="Ordenar por"
 	values={["Nombre", "Más jugados", "Fecha adq."]}
-	selectedValue="Nombre"    
+	selectedValue="Nombre"
 	eventClick={sortBy}
 />
 
-{#each games as game}
-	<div
-		class="gamelist__thumbnail"
-		style="background-image: url('{game.cover}');"
-
-	>
-		&nbsp;
-	</div>
+{#each games as game (game.id)}
+		<div
+			class="gamelist__content"
+			style="background-image: url('{game.cover}');"
+			animate:flip={{duration:400, delay: 20 * game.id, easing:cubicOut}}
+		>
+			&nbsp;
+		</div>
 {/each}
 
 
-
 <style>
-	.gamelist__thumbnail {
+	.gamelist__content {
 		height: 375px;
 		width: 275px;
 		display: inline-block;
@@ -73,6 +74,7 @@
 		margin-top: 30px;
 		border-radius: 8px;
 	}
+
 	.library--urgames__title {
 		position: absolute;
 		margin-top: -50px;
@@ -80,6 +82,6 @@
 		font-weight: 600;
 		color: var(--text-color);
 		font-size: 3rem;
-		letter-spacing: -1px;
+		letter-spacing: 1px;
 	}
 </style>

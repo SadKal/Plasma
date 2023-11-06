@@ -24,8 +24,6 @@
     let slideIndex = 1;
     let rightIndex = 2;
     let leftIndex = 0;
-    //Esta bindeado en el html, esta variable contiene el componente de "slideshow"
-    let slideshow;
     //Variables para deslizar, necesito guardar inicio y final para calcular cuanto se ha deslizado y poder poner un minimo
     let startSwipe, endSwipe;
     let isSwiping = false;
@@ -82,17 +80,10 @@
         srcCenter=gamesData[slideIndex].image;
         srcRight=gamesData[rightIndex].image;
 
-    }
-
-    
-    /*onMount(exclusivo de Svelte) espera a que cargue el DOM para ejecutar lo de dentro*/
-    onMount(() => {
-        showSlides(0);
-    });
-     
+    }     
 </script>
 
-<div bind:this={slideshow} class="slideshow clearfix"  on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
+<div class="slideshow clearfix"  on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
 
     <div class="slideshow__slide">
         <a on:click={() => showSlides(-1)}>
@@ -119,7 +110,7 @@
     } 
 
     .slideshow{
-        margin-top: 5rem;
+        margin-top: 5rem; 
         transition: all .2s;
         @media (min-width: 780px){
             margin-top: 10rem; 
@@ -131,10 +122,9 @@
         }
         @media (min-width: 1330px){
             width: 100%;
-            height: auto;
+            height: 400px;
             
         }
-         
 
         &__slide{
             height: 100%;
@@ -145,6 +135,5 @@
             
         }
     }
-
 </style>
 

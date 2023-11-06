@@ -8,12 +8,12 @@
     let scrollY = window.scrollY;
     let gameData=games.data;
     let searchResult = [];
+    
     //Ordeno alfabeticamente, para resultado mas bonito
     gameData.sort((a,b) => a.name.localeCompare(b.name));
     
 
     function searchGames(game){
-        searchResult=[];
         game=game.trim();
         
         //Preparo 2 arrays, uno para prioritizar los resultados que empiezan por lo buscado y otro para los que lo contienen
@@ -55,8 +55,6 @@
         searchResult = [];
     };
     
-   
-
     onMount(() => {
         window.addEventListener('scroll', focusSearch);
 
@@ -74,7 +72,7 @@
 <div class="search">
     <input bind:this={searchbar} class="search__bar" name="search" type="search" placeholder="Escribe para buscar..." on:change={clearFocus} bind:value={searchValue}/>
     <div class="search__results">
-        {#each searchResult as game}
+        {#each searchResult as game (game.name)}
             <SearchResult {game}/>
         {/each}
     </div>
@@ -111,16 +109,18 @@
             z-index: 3;
             opacity: 50%;
 
-            @media (max-width: 420px) {
-                top: 0;
-                left: 85%;
-            }
             transition: all .3s;
             &:hover{
                 scale: 130%;
                 opacity: 100%;   
             }
+
+            @media (max-width: 420px) {
+                top: 0;
+                left: 85%;
+            }
         }
+
         &__bar{
             width: 100%;
             padding: .5rem;
@@ -140,6 +140,7 @@
             }
             
             @media (max-width: 420px) {
+                width: 100%;
                 background-color: var(--search-mobile-color);
                 &:focus, &:hover{
                     background: var(--search-mobile-focus-color);

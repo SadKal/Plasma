@@ -1,7 +1,6 @@
 <script>
     import HeaderElement from "$header/HeaderElement.svelte";
-
-    export let pages;
+    import pagesStore from "$stores/pages";
 </script>
 
 <div class="topbar clearfix">
@@ -9,7 +8,7 @@
         <li>  
             <img src="src/assets/plasma_icon_notext.png" alt="logo" class="topbar__logo"/>
         </li>
-        {#each pages as { name } }
+        {#each Object.keys($pagesStore.pages) as name}
             <HeaderElement {name}/>
         {/each} 
     </ul> 
@@ -37,7 +36,7 @@
             width: 100%;
         }
         
-        @media (min-width: 1080px) {
+        @media (min-width: 700px) {
             /*Position sticky y top 0 hace que la barra se quede siempre arriba sin hacer overlap con el resto de contenido*/
             position: sticky;
             top: 0;
@@ -58,7 +57,7 @@
         font-size: 42px;
         color: var(--text-color);
         transition: all .3s;
-        @media (min-width: 1080px) {
+        @media (min-width: 700px) {
             float: left;
         }  
     }

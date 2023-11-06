@@ -1,11 +1,28 @@
-    <div class="novedades">
-        <div class="novedades__title">
-            Novedades
-        </div>
-        <div class="novedades__subtitle">
-            (semana del 02/09 al 09/09)
-        </div>
+<script>
+    let today = new Date();
+    let currentDay = today.getDay();
+    let monday = new Date();
+    let sunday = new Date();
+
+    //Calculo el lunes. Resto al numero de dia del mes el numero de dias que llevamos de semana menos uno, asi siempre llego al dia del mes que corresponde al lunes
+    monday.setDate(today.getDate() - (currentDay - 1));
+    sunday.setDate(today.getDate() + (7 - currentDay));
+
+    //Cambio de numero de mes a nombre de mes, para que ponga "noviembre" en vez de "10"(los meses cuenta de 0 a 11)
+    const mondayMonth = monday.toLocaleString('default', { month: 'long' });
+    const sundayMonth = sunday.toLocaleString('default', { month: 'long' });
+</script>
+
+
+
+<div class="novedades">
+    <div class="novedades__title">
+        Novedades
     </div>
+    <div class="novedades__subtitle">
+        (Semana del {monday.getDate()} de {mondayMonth} al {sunday.getDate()} de {sundayMonth})
+    </div>
+</div>
 
 <style lang="scss">
     *{
@@ -18,7 +35,6 @@
         width: 100%;
         text-align: center;
         font-family: 'Montserrat';
-        
     
         &__title{
             margin-top: 10rem;
@@ -37,8 +53,12 @@
             }
         }
         &__subtitle{
+            width: 100%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
             margin-top: .3rem;
-            letter-spacing: .05rem;
+            letter-spacing: .1rem;
             color: var(--subtitle-text-color);
             font-size: 10px;
             @media (min-width: 420px){
@@ -46,6 +66,7 @@
                 letter-spacing: .1rem;
                 font-size: 20px;   
             }
+            
         }
     }
 </style>

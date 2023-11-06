@@ -1,5 +1,5 @@
 <script>
-    import { onDestroy, onMount } from "svelte";
+    import { onMount } from "svelte";
     import cacheStore from "$stores/cache";
 
     export let src;

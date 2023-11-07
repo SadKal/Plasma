@@ -58,9 +58,10 @@
 		animate:flip={{ duration: 400, delay: 20 * game.id, easing: expoInOut }}
 	>
 		&nbsp;
-		<p class="gamelist__content_title" in:fade={{ duration: 800 }}>
+		<div class="gamelist__content_shine">&nbsp;</div>
+		<span class="gamelist__content_title" in:fade={{ duration: 800 }}>
 			{game.name}
-		</p>
+		</span>
 	</div>
 {/each}
 
@@ -79,27 +80,26 @@
 
 		&:hover {
 			scale: 1.05;
-			transition: all 0.15s;
+			transition: all 0.4s;
 		}
 		&:hover &_title {
 			opacity: 95%;
-			transition-duration: 0.5s;
-			transition-delay: 0.1s;
+			transition-duration: 0.75s;
 		}
 
 		&_title {
 			background-color: var(--topbar-background-color);
 			padding: 6% 10%;
-			width: 50%;
 			color: var(--selected-text-color);
-			position: absolute;
+			position: relative;
 			text-align: center;
 			opacity: 0;
-			transition: all 0.5s;
+			transition: all 0.25s;
 			font-weight: 900;
 			border-radius: 0px 16px 16px 0px;
 			font-size: 1.2rem;
-			top: 70%; //Not perfect, long names stay too close to the bottom border
+			top: 65%;
+			display: inline-table;
 		}
 	}
 

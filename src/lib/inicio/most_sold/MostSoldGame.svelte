@@ -36,7 +36,7 @@
     class="col_1_of_3">
         <img class="most_sold__image" src={cover} alt="cover"/>
         <div class="most_sold__data">
-            <p class="most_sold__name">{name}</p>
+            <p class="most_sold__name">{name}</p> 
             {#each genres as genre, index}
                 <span>{genre}{index === genres.length - 1 ? '' : ', '}</span>
             {/each}

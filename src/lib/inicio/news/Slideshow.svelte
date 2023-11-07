@@ -37,6 +37,7 @@
         };
     };
 
+    console.log($cacheStore.slides)
 </script>
 
 <div class="slideshow clearfix"  on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>

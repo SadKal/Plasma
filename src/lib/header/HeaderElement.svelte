@@ -1,17 +1,18 @@
 <script>
     export let name;
     import pagesStore from "$stores/pages";
+    import cacheStore from "$stores/cache";
 </script>
 
 <li>
     <a 
     class="topbar__element" 
     href="/" 
-    on:click|preventDefault={() => { $pagesStore.active=name; }} 
+    on:click|preventDefault={() => { $pagesStore.active=name }} 
     class:active={$pagesStore.active==name}
     >
     {name}    
-    </a> 
+    </a>  
 </li>
 
 <style lang="scss">

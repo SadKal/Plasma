@@ -27,7 +27,6 @@
     }
 </script>
 
-
 <div 
     bind:this={card}
     role="region" aria-label="Interactive Region"
@@ -42,7 +41,6 @@
             {/each}
         </div>
 </div>
-
 
 <style lang="scss">
     

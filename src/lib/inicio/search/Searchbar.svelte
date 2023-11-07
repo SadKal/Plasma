@@ -36,7 +36,7 @@
         } else {
             searchResult = [];
         }
-    }
+    };
 
     function scrollToSearch() {
         window.scrollTo({

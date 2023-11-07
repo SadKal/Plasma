@@ -13,8 +13,6 @@
     const sundayMonth = sunday.toLocaleString('default', { month: 'long' });
 </script>
 
-
-
 <div class="novedades">
     <div class="novedades__title">
         Novedades

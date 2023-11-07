@@ -26,7 +26,7 @@
 			font-family: "Montserrat";
 			font-weight: 600;
 			color: var(--text-color);
-			letter-spacing: -1px;
+			letter-spacing: 1px;
 		}
 	}
 </style>

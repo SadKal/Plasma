@@ -1,9 +1,9 @@
 <script>
-	import user from "../../../../data/testuser.json";
 	import { fade } from "svelte/transition";
+	import user from "../../../../data/testuser.json";
 	import Select from "./select.svelte";
 	import { flip } from "svelte/animate";
-	import { cubicOut, elasticInOut } from "svelte/easing";
+	import { cubicOut, elasticInOut, expoInOut } from "svelte/easing";
 
 	let games = user.gamesOwned;
 	sortBy("Nombre");
@@ -52,17 +52,19 @@
 />
 
 {#each games as game (game.id)}
-		<div
-			class="gamelist__content"
-			style="background-image: url('{game.cover}');"
-			animate:flip={{duration:400, delay: 20 * game.id, easing:cubicOut}}
-		>
-			&nbsp;
-		</div>
+	<div
+		class="gamelist__content"
+		style="background-image: url('{game.cover}');"
+		animate:flip={{ duration: 400, delay: 20 * game.id, easing: expoInOut }}
+	>
+		&nbsp;
+		<p class="gamelist__content_title" in:fade={{ duration: 800 }}>
+			{game.name}
+		</p>
+	</div>
 {/each}
 
-
-<style>
+<style lang="scss">
 	.gamelist__content {
 		height: 375px;
 		width: 275px;
@@ -73,6 +75,32 @@
 		background-repeat: round;
 		margin-top: 30px;
 		border-radius: 8px;
+		transition: all 0.2s;
+
+		&:hover {
+			scale: 1.05;
+			transition: all 0.15s;
+		}
+		&:hover &_title {
+			opacity: 95%;
+			transition-duration: 0.5s;
+			transition-delay: 0.1s;
+		}
+
+		&_title {
+			background-color: var(--topbar-background-color);
+			padding: 6% 10%;
+			width: 50%;
+			color: var(--selected-text-color);
+			position: absolute;
+			text-align: center;
+			opacity: 0;
+			transition: all 0.5s;
+			font-weight: 900;
+			border-radius: 0px 16px 16px 0px;
+			font-size: 1.2rem;
+			top: 70%; //Not perfect, long names stay too close to the bottom border
+		}
 	}
 
 	.library--urgames__title {

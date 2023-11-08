@@ -58,7 +58,7 @@
 		animate:flip={{ duration: 400, delay: 20 * game.id, easing: expoInOut }}
 	>
 		&nbsp;
-		<div class="gamelist__content_shine">&nbsp;</div>
+
 		<span class="gamelist__content_title" in:fade={{ duration: 800 }}>
 			{game.name}
 		</span>
@@ -67,10 +67,10 @@
 
 <style lang="scss">
 	.gamelist__content {
-		height: 375px;
-		width: 275px;
+		height: 20vw;
+		width: 18%;
 		display: inline-block;
-		margin-right: 30px;
+		margin-right: 2%;
 		margin-bottom: 10px;
 		background-size: contain;
 		background-repeat: round;
@@ -91,15 +91,30 @@
 			background-color: var(--topbar-background-color);
 			padding: 6% 10%;
 			color: var(--selected-text-color);
-			position: relative;
+			position: absolute;
 			text-align: center;
 			opacity: 0;
 			transition: all 0.25s;
+			transition-duration: 0.25s;
 			font-weight: 900;
 			border-radius: 0px 16px 16px 0px;
 			font-size: 1.2rem;
-			top: 65%;
-			display: inline-table;
+			top: 90%;
+			display: inline-block;
+			transform: translate(-5px, -75%);
+		}
+		/////////////////
+		//////MEDIAS/////
+		/////////////////
+		@media (max-width: 1750px) and (orientation: landscape) {
+			//usual desktop width (1080p)
+			height: 25vw;
+			width: 23%;
+		}
+		@media (max-width: 1366px) and (orientation: landscape) {
+			//old desktop width
+			width: 31%;
+			height: 33vw;
 		}
 	}
 

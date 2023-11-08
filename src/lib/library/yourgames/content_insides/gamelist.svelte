@@ -65,7 +65,7 @@
 
 <style lang="scss">
 	.gamelist__content {
-		height: 20vw;
+		height: 21vw;
 		width: 18%;
 		display: inline-block;
 		margin-right: 2%;
@@ -76,7 +76,8 @@
 		border-radius: 8px;
 		transition: all 0.2s;
 
-		&:hover, &:active {
+		&:hover,
+		&:active {
 			scale: 1.05;
 			transition: all 0.4s;
 		}
@@ -106,23 +107,24 @@
 		/////////////////
 		@media (max-width: 1750px) and (orientation: landscape) {
 			//usual desktop width (1080p)
-			height: 25vw;
+			height: 28vw;
 			width: 23%;
 		}
 		@media (max-width: 1366px) and (orientation: landscape) {
 			//old desktop width
 			width: 31%;
-			height: 33vw;
+			height: 36vw;
 		}
-		@media (max-width: 1080px) and (orientation: portrait){
+		@media (max-width: 1080px) and (orientation: portrait) {
 			//mobile
-			width: 48%;
-			height: 50vw;
-			&:not(:first-of-type){ //all divs except the first one, applies to the whole row
-				margin-top: 5px;
+			width: 46%;
+			margin-right: 4%;
+			height: 54vw;
+			&:not(:first-of-type) {
+				//all divs except the first one, applies to the whole row
+				margin-top: 2%;
 			}
 		}
-			
 	}
 
 	.library--urgames__title {
@@ -133,6 +135,5 @@
 		color: var(--text-color);
 		font-size: 3rem;
 		letter-spacing: 1px;
-		
 	}
 </style>

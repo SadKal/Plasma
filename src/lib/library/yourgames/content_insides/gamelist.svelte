@@ -57,9 +57,7 @@
 		style="background-image: url('{game.cover}');"
 		animate:flip={{ duration: 400, delay: 20 * game.id, easing: expoInOut }}
 	>
-		&nbsp;
-
-		<span class="gamelist__content_title" in:fade={{ duration: 800 }}>
+		<span class="gamelist__content_title">
 			{game.name}
 		</span>
 	</div>
@@ -78,7 +76,7 @@
 		border-radius: 8px;
 		transition: all 0.2s;
 
-		&:hover {
+		&:hover, &:active {
 			scale: 1.05;
 			transition: all 0.4s;
 		}
@@ -91,7 +89,7 @@
 			background-color: var(--topbar-background-color);
 			padding: 6% 10%;
 			color: var(--selected-text-color);
-			position: absolute;
+			position: relative;
 			text-align: center;
 			opacity: 0;
 			transition: all 0.25s;
@@ -100,8 +98,8 @@
 			border-radius: 0px 16px 16px 0px;
 			font-size: 1.2rem;
 			top: 90%;
-			display: inline-block;
-			transform: translate(-5px, -75%);
+			display: inline-table;
+			transform: translate(-1px, -75%);
 		}
 		/////////////////
 		//////MEDIAS/////
@@ -116,6 +114,15 @@
 			width: 31%;
 			height: 33vw;
 		}
+		@media (max-width: 1080px) and (orientation: portrait){
+			//mobile
+			width: 48%;
+			height: 50vw;
+			&:not(:first-of-type){ //all divs except the first one, applies to the whole row
+				margin-top: 5px;
+			}
+		}
+			
 	}
 
 	.library--urgames__title {
@@ -126,5 +133,6 @@
 		color: var(--text-color);
 		font-size: 3rem;
 		letter-spacing: 1px;
+		
 	}
 </style>

@@ -9,6 +9,7 @@
 
     let secondClass = 'slideshow__img' + position; 
     let nameClass = 'slideshow__title' + position;
+    let animationClass = secondClass + '--animation';
 
     let placeholderImage= "src/assets/loading.gif";
     let img;
@@ -37,10 +38,12 @@
         //Compruebo si la imagen ya esta cargada
         if($cacheStore.cache.includes(src)){
             img.src=src;
+            img.classList.remove(animationClass);
         }
         else{
             loadImg(src);
         } 
+        
     }); 
     onDestroy(() => {
         tempImg.removeEventListener('load', onImgLoaded);  
@@ -49,7 +52,7 @@
 </script>
 
 <a class="slideshow__link" href="/" on:click|preventDefault={() => $cacheStore.showSlides(index-1)}>
-    <img bind:this={img} src={placeholderImage} alt={alt} class="slideshow__img {secondClass}"/>
+    <img bind:this={img} src={placeholderImage} alt={alt} class="slideshow__img {secondClass} {animationClass}"/>
     <div class="slideshow__title--container {nameClass}">
         <div class="slideshow__title {nameClass}">{alt}</div>
     </div>
@@ -74,11 +77,18 @@
                 @media (max-width: 420px){
                     opacity: 40%;
                 }
+                &--animation{
+                    animation: side_images var(--seconds-fadein) ease-in;  
+                }
+               
             }
             &--center{           
                 clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
                 z-index: 2; 
                 scale: 140%;
+                &--animation{
+                    animation: fadein var(--seconds-fadein) ease-in;
+                }
                 @media (max-width: 420px){
                     scale: 230%;
                 }

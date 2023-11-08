@@ -13,10 +13,10 @@
     function scrollOnLoad(){
         requestAnimationFrame(() => {
             if(window.matchMedia("(max-width: 420px)").matches){
-                window.scrollTo(0,350);
+                window.scrollTo(0,400);
             }   
             else{
-                window.scrollTo(0, 70);
+                window.scrollTo(0, 90);
             };
         });
     }

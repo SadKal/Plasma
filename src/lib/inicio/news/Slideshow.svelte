@@ -5,6 +5,10 @@
     import SlideshowImage from "$news/SlideshowImage.svelte";
     import cacheStore from '$stores/cache';
 
+    let isSwiping=false;
+    let startSwipe; 
+    let endSwipe;
+
     //Registra el inicio del deslizamiento
     function swipeStart(event){
         startSwipe=event.touches[0].clientX;
@@ -28,27 +32,24 @@
             if (Math.abs(pxMoved) > minDistance) {
                 if (pxMoved < 0) {
                     //Deslizar IZDA
-                    showSlides(1);
+                    $cacheStore.showSlides(1);
                 } else {
                     //Deslizar DCHA
-                    showSlides(-1);
+                    $cacheStore.showSlides(-1);
                 };
             };
         };
     };
 
-    console.log($cacheStore.slides)
 </script>
 
-<div class="slideshow clearfix"  on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
+<div class="slideshow clearfix" on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
 
-    {#each Object.values($cacheStore.slides) as slide, i (slide.source)}
+    {#each Object.values($cacheStore.slides) as slide, index (slide.source)}
         <div class="slideshow__slide">
-            <a on:click={() => $cacheStore.showSlides(i-1)}>
-                {#key slide.position}
-                    <SlideshowImage src={slide.source} position={slide.position} alt={$cacheStore.gamesData[slide.index].name}/>
-                {/key}
-            </a> 
+            {#key slide.position}
+                <SlideshowImage src={slide.source} position={slide.position} {index} alt={$cacheStore.gamesData[slide.index].name}/>
+            {/key}
         </div>
     {/each}
     
@@ -65,27 +66,23 @@
     .slideshow{
         margin-top: 5rem; 
         transition: all .2s;
-        @media (min-width: 780px){
+        @media (min-width: 800px){
             margin-top: 10rem; 
             height: 220px;
         }
-        @media (min-width: 1185px){ 
-            margin-top: 10rem; 
-            height: 250px;
-        }
-        @media (min-width: 1330px){
+        @media (min-width: 1300px){
             width: 100%;
-            height: 400px;
-            
+            height: 350px;
         }
-
         &__slide{
             height: 100%;
             display: inline;
             max-width: calc(100%/3);
             float: left; 
-            position: relative;   
-            
+            position: relative;  
+        }
+        &__link{
+            text-decoration: none;
         }
     }
 </style>

@@ -2,7 +2,7 @@ import { writable } from 'svelte/store';
 import games from '$data/games.json';
 import pagesStore from './pages';
 import shopGameStore from './shopGame';
-import { slide } from 'svelte/transition';
+
 
 let gamesData = [];
 
@@ -11,8 +11,10 @@ let randomObject;
 let i=0;
 
 while(i<10){
+    //Saco un indice aleatorio y un objeto aleatorio del json
     randomIndex = Math.floor(Math.random() * games.data.length);
     randomObject = games.data[randomIndex];
+    //Sigo sacando hasta que encuentro uno que no esté en el array
     if(!gamesData.includes(randomObject)){
         gamesData.push(randomObject);
         i++;
@@ -25,14 +27,13 @@ function showSlides(n) {
         if (n==0){
             pagesStore.update((page) => {
                 shopGameStore.update((shop) => {
-                    console.log(gamesData);
                     let shopGame = gamesData.find((game) => game.image==slides.center.source);
                     shop.currentShopGame=shopGame;
-                    console.log(shopGame)
+                    
                     return shop;
                 })
                 page.active='Shop';
-                console.log(slides)
+              
                 return page;
             });
         };

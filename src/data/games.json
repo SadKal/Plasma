@@ -43,7 +43,7 @@
             "price":"59.99€"
         },
         {
-            "name":"Phoenix Wright: Ace Attorney trilogy",
+            "name":"Phoenix Wright: Ace Attorney",
             "image":"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_PhoenixWrightAceAttorneyTrilogy.jpg",
             "cover":"https://store-images.s-microsoft.com/image/apps.615.67362291782661543.eb0267ee-9235-487a-b697-5cc49c0703c1.327dcfde-8472-4f0e-b91e-9b4856238352",
             "genres": ["Novela Visual", "Policíaco"],
@@ -148,7 +148,7 @@
             "price":"59.99€"            
         },
         {
-            "name":"Enter the gungeon",
+            "name":"Enter the Gungeon",
             "image":"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/H2x1_NSwitchDS_EnterTheGungeon_image1600w.jpg",
             "cover":"https://cdn1.epicgames.com/offer/be13f6c4fb11427fbf3313ce93b97cc0/EnterTheGungeon_S2_1200x1600_1200x1600-4d79aae1e860c191c706e4e8bfdef244",
             "genres": ["Acción Aventura", "Rogue-Like"],

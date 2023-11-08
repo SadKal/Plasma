@@ -13,13 +13,16 @@
     --search-result-hover-color: rgb(0, 61, 53);
     --search-mobile-color: var(--search-result-hover-color);
     --search-mobile-focus-color: rgb(0, 43, 37);
+    --game-title-background-color: rgb(0,74,64);
+    --game-title-color-center: rgb(0, 41, 35);
+    --game-title-background-color-center: rgba(187, 46, 91, 0.7);
     
     //Texts
     --title-font: 60px;
 
     //Animations
     --seconds-fadein: 1s;
-
+ 
     //Measures
     --gutter-horizontal: 10%;
 }

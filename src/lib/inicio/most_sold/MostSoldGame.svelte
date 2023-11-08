@@ -62,7 +62,8 @@
         &__data{
             box-sizing: border-box;
             background-color: var(--game-data-bg-color);
-            font-size: 18px;
+            color: var(--game-title-color-center);
+            font-size: 18x;
             font-family: 'Montserrat';
             font-weight: bold;
             width: 100%;
@@ -84,7 +85,7 @@
             }
         }
         &__name{
-            font-size: 25px;
+            font-size: 20px;
             font-weight: bolder;
             margin: .5rem 0;
             @media (max-width: 420px) {

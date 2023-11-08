@@ -41,8 +41,8 @@
             letter-spacing: .4rem;
             font-weight: bolder;
             transition: all .5s;
-            @media (min-width: 420px){
-                font-size: 70px;
+            @media (max-width: 420px){
+                font-size: 30px;
                 letter-spacing: .6rem;
             }
             @media (min-width: 720px){
@@ -58,11 +58,11 @@
             margin-top: .3rem;
             letter-spacing: .1rem;
             color: var(--subtitle-text-color);
-            font-size: 10px;
-            @media (min-width: 420px){
+            font-size: 20px;
+            @media (max-width: 420px){
                 margin-top: .7rem;
                 letter-spacing: .1rem;
-                font-size: 20px;   
+                font-size: 10px;   
             }
             
         }

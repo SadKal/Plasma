@@ -58,8 +58,8 @@
         letter-spacing: .4rem;
 
         @media (max-width: 420px) {
-            font-size: 30px;
-            margin-top: 8rem;
+            font-size: 20px;
+            margin-top: 6rem;
         }
     } 
 

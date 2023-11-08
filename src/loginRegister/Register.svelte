@@ -2,7 +2,13 @@
 <div class="container">
     <div class="wrapper">
         <form action="">
-            <h1>Login</h1>
+            <h1>Register</h1>
+
+            <div class="input-box">
+                <input type="email" placeholder="Email" required>
+                <i class="bx bxs-lock-alt"></i>
+            </div>
+
             <div class="input-box">
                 <input type="text" placeholder="Username" required>
                 <i class="bx bxs-lock-alt"></i>
@@ -13,16 +19,16 @@
                 <i class="bx bxs-lock-alt"></i>
             </div>
 
-            <div class="remember-forgot">
-                <label>
-                    <input type="checkbox">Remember me?
-                </label>
-                <a href="#">Forgot password?</a>
+            <div class="boton">
+                <button type="submit" class="btn">Register</button>
             </div>
 
-            <div class="boton">
-                <button type="submit" class="btn">Login</button>
+            <div class="links">
+                <div class="gmail">
+                    <i class=""></i>
+                </div>
             </div>
+
 
             <div class="register-link">
                 <p>Don't have an account?</p>
@@ -55,6 +61,7 @@
 
 .wrapper{
     width: 40%;
+  
     background: transparent;
     border: 2px solid rgb(209, 51, 100);
     backdrop-filter: blur(20px);
@@ -94,13 +101,17 @@
     border: 2px solid rgb(209, 51, 100);
     border-radius: 40px;
     font-size: 16px;
-    transition: all 0.5s ease;
     padding: 20px 45px 20px 20px;
+    transition: all 0.5s ease;
 }
-
 .input-box input:hover{
     border-color: beige;
 }
+
+.input-box input::placeholder{
+    
+}
+
 
 .boton button:hover{
     color: #d13364; /* El color de el icono cuando pases por encima y cmabie a este */
@@ -169,7 +180,6 @@
 .register-link a:hover{
     color: beige;
 }
-
 .remember-forgot label{
     margin-right: 300px;
 }

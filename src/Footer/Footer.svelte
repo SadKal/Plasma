@@ -1,14 +1,5 @@
 
 <main>
-    <!-- <footer class="footer">
-        <div class="footer__content">
-            <img src="src/assets/plasma_icon_notext.png" alt="logo" class="footer__logo"/>
-                <span id="footerText">
-					© Plasma Corporation. All rights reserved. All trademarks are property of their respective owners in the SPAIN and other countries.
-                </span>
-        </div>
-          
-    </footer> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"> <!-- Es una biblioteca de iconos, los cuale uso para mostrar los iconos de las redes sociales -->
 
 

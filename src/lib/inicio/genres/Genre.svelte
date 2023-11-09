@@ -1,17 +1,23 @@
 <script>
     import { onMount } from "svelte";
+    import genresStore from "$stores/genres";
+    import pagesStore from "$stores/pages";
 
     export let name;
     export let bg_color;
     export let svg_src;
-    export let text_color;
+    export let text_color; 
     
 </script>
 
 <div class="col_1_of_4" 
     style=
     "background-color: {bg_color};
-    color: {text_color}">
+    color: {text_color}"
+    on:click={() => {
+        $pagesStore.active='Genres';
+        $genresStore.activeGenre={name};
+    }}>
     <object class="genre__svg" data={svg_src} type="image/svg+xml" width="70%" height="auto"/>
     <div class="genre__name">
         {name}

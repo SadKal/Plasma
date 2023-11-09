@@ -29,11 +29,9 @@ function showSlides(n) {
                 shopGameStore.update((shop) => {
                     let shopGame = gamesData.find((game) => game.image==slides.center.source);
                     shop.currentShopGame=shopGame;
-                    
                     return shop;
                 })
                 page.active='Shop';
-              
                 return page;
             });
         };

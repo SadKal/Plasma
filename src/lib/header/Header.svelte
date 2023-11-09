@@ -8,10 +8,8 @@
         <li>  
             <img src="src/assets/plasma_icon_notext.png" alt="logo" class="topbar__logo"/>
         </li>
-        {#each Object.keys($pagesStore.pages) as name, i}
-            {#if i<3}
-                <HeaderElement {name}/>
-            {/if}
+        {#each Object.keys($pagesStore.pages).slice(0,3) as name, i}
+            <HeaderElement {name}/>
         {/each}  
     </ul> 
 </div>

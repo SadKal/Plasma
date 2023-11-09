@@ -228,14 +228,14 @@
             "name":"Persona 4 Golden",
             "image":"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_Persona4Golden_image1600w.jpg",
             "cover":"https://image.api.playstation.com/vulcan/ap/rnd/202211/1812/UMxh8ivoTvoWEjXH0WSFsr70.jpg",
-            "genres": ["JRPG", "Por turnos", "Novela Visuals"],
+            "genres": ["JRPG", "Por turnos", "Novela Visual"],
             "price":"59.99€"
         },
         {
             "name":"Persona 3 Portable",
             "image":"https://fs-prod-cdn.nintendo-europe.com/media/images/10_share_images/games_15/nintendo_switch_download_software_1/2x1_NSwitchDS_Persona3Portable_image1600w.jpg",
             "cover":"https://store-images.s-microsoft.com/image/apps.33834.13672969377617960.8b9caabb-4abd-4de7-8a2e-96f8a9f13b21.022ba128-e3f7-4cc1-82ff-bffd12f4bacd",
-            "genres": ["JRPG", "Por turnos", "Novela Visuals"],
+            "genres": ["JRPG", "Por turnos", "Novela Visual"],
             "price":"59.99€"
         },
         {

@@ -4,6 +4,7 @@ import Header from "./lib/header/Header.svelte";
   import Perfil from "./Perfil/Perfil.svelte";
  import Login from "./loginRegister/Login.svelte";
  import Register from "./loginRegister/Register.svelte";
+ import LoginRegister from "./LoginRegister2/LoginRegister.svelte";
 
 </script>
 
@@ -14,7 +15,8 @@ import Header from "./lib/header/Header.svelte";
   <!--  <Perfil/>  -->
 
  <!--  <Login/> -->
-<Register/>
+<!-- <Register/> -->
+<LoginRegister/>
   <Footer/>   
 
 

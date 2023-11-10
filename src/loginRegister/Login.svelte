@@ -16,7 +16,7 @@
             <div class="remember-forgot">
                 <label>
                     <input type="checkbox">Remember me?
-                </label>
+                </label>    
                 <a href="#">Forgot password?</a>
             </div>
 

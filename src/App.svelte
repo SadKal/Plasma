@@ -31,10 +31,10 @@
 </script>
 
 <div class="main">
-    <!-- <Header/>
-    <Page/>
-    <Footer/> -->
-
+    <!-- <Header/> 
+    <Page/>  -->
+        <Login/>
+    <!-- <Footer/>  -->
 </div>
     
     

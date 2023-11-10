@@ -1,9 +1,8 @@
 <script>
-	import { fade } from "svelte/transition";
 	import user from "../../../../data/testuser.json";
 	import Select from "./select.svelte";
 	import { flip } from "svelte/animate";
-	import { cubicOut, elasticInOut, expoInOut } from "svelte/easing";
+	import { expoInOut } from "svelte/easing";
 
 	let games = user.gamesOwned;
 	sortBy("Nombre");
@@ -33,7 +32,6 @@
 				prototype.toLocaleString();
 
 			*/
-
 			games.sort((a, b) => {
 				return -(a.adqDate - b.adqDate);
 			});
@@ -75,7 +73,6 @@
 		margin-top: 30px;
 		border-radius: 8px;
 		transition: all 0.2s;
-
 		&:hover,
 		&:active {
 			scale: 1.05;
@@ -102,9 +99,6 @@
 			display: inline-table;
 			transform: translate(-1px, -75%);
 		}
-		/////////////////
-		//////MEDIAS/////
-		/////////////////
 		@media (max-width: 1750px) and (orientation: landscape) {
 			//usual desktop width (1080p)
 			height: 28vw;
@@ -126,7 +120,6 @@
 			}
 		}
 	}
-
 	.library--urgames__title {
 		position: absolute;
 		margin-top: -50px;

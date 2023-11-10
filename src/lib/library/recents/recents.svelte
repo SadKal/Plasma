@@ -16,17 +16,22 @@
         animation-timing-function: ease-in;
     }
 	.library--recents {
-		background-color: unset;
 		border-bottom: 7px solid var(--text-color);
 		padding-bottom: 100px;
 		&__title {
-			padding: 10rem;
+			margin: 75px 0px;
 			text-align: center;
-			font-size: 80px;
+			font-size: 6rem;
 			font-family: "Montserrat";
 			font-weight: 600;
 			color: var(--text-color);
 			letter-spacing: -1px;
+
+			@media (max-width: 1080px) and (orientation: portrait){
+			//mobile
+			font-size: 4rem;
 		}
+		}
+		
 	}
 </style>

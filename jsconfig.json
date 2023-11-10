@@ -33,7 +33,8 @@
       "$search/*": ["src/lib/inicio/search/*"],
       "$data/*": ["src/data/*"],
       "$stores/*": ["src/stores/*"],
-      "$utils/*": ["src/lib/utils/*"]
+      "$utils/*": ["src/lib/utils/*"],
+      "$library/*": ["src/lib/library/*"]
     }
   },
   /**

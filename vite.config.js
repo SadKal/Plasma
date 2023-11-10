@@ -18,7 +18,8 @@ export default defineConfig({
       $search: path.resolve(__dirname, './src/lib/inicio/search'),
       $data: path.resolve(__dirname, './src/data'),
       $stores: path.resolve(__dirname, './src/stores'),
-      $utils: path.resolve(__dirname, './src/lib/utils')
+      $utils: path.resolve(__dirname, './src/lib/utils'),
+      $library: path.resolve(__dirname, './src/lib/library')
     }
   }
 })

@@ -4,7 +4,6 @@
 	import Library from "./yourgames/yourgames.svelte"
 </script>
 
-<Header />
 <Recents />
 <Library />
 <style lang="scss">

@@ -69,6 +69,7 @@
             object-fit: cover;
             position: relative;
             z-index: 0;
+            
 
             transition: all .3s;
             &:hover{

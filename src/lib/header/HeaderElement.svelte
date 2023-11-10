@@ -1,7 +1,6 @@
 <script>
     export let name;
     import pagesStore from "$stores/pages";
-    import cacheStore from "$stores/cache";
 </script>
 
 <li>

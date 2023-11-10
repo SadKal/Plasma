@@ -49,9 +49,10 @@
         font-weight: bolder;
         font-size: 1rem;
         font-style: italic;
-        background-color: var(--game-data-bg-color);
+        background-color: rgba(243, 61, 119, .95);
         color: var(--game-title-color-center);
         clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
+        z-index: 10;
         
         animation: fadein var(--seconds-fadein) ease-in;
 

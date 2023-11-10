@@ -14,7 +14,8 @@
 
     onMount(() => {
         window.scrollTo(0, 0);
-    })
+    });
+
 </script>
 
 <div class="genres">
@@ -49,7 +50,7 @@
         font-weight: bolder;
         font-size: 1rem;
         font-style: italic;
-        background-color: rgba(243, 61, 119, .95);
+        background-color: var(--text-color);;
         color: var(--game-title-color-center);
         clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
         z-index: 10;

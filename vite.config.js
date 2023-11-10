@@ -20,7 +20,7 @@ export default defineConfig({
       $stores: path.resolve(__dirname, './src/stores'),
       $utils: path.resolve(__dirname, './src/lib/utils'),
       $library: path.resolve(__dirname, './src/lib/library'),
-      $perfil: path.resolve(__dirname, './src/lib/perfil')
+      $profile: path.resolve(__dirname, './src/lib/profile')
     }
   }
 })

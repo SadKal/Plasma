@@ -4,7 +4,7 @@
     import Page from "$utils/Page.svelte";
     import pagesStore from "$stores/pages";
     import Footer from "./Footer/Footer.svelte";
-
+    import Login from "./lib/login/Login.svelte";
     $:{
         if($pagesStore.active=='Inicio'){
             scrollOnLoad();
@@ -31,9 +31,10 @@
 </script>
 
 <div class="main">
-    <Header/>
+    <!-- <Header/>
     <Page/>
-    <Footer/>
+    <Footer/> -->
+
 </div>
     
     

@@ -3,6 +3,7 @@
     import Header from "$header/Header.svelte";
     import Page from "$utils/Page.svelte";
     import pagesStore from "$stores/pages";
+    import Footer from "./Footer/Footer.svelte";
 
     $:{
         if($pagesStore.active=='Inicio'){
@@ -32,6 +33,7 @@
 <div class="main">
     <Header/>
     <Page/>
+    <Footer/>
 </div>
     
     

@@ -34,7 +34,8 @@
       "$data/*": ["src/data/*"],
       "$stores/*": ["src/stores/*"],
       "$utils/*": ["src/lib/utils/*"],
-      "$library/*": ["src/lib/library/*"]
+      "$library/*": ["src/lib/library/*"],
+      "$perfil/*": ["src/lib/perfil/*"]
     }
   },
   /**

@@ -36,18 +36,60 @@
 
             <div class="login__options">
                 <div class="login__google">
-                <a href="#" class="login__google">
-                    <i class="fab fa-facebook-f"></i>                    <span>Login with google</span>
-                </a>
-            </div>
+                    <button>
+                        <i class="fa-brands fa-google-plus-g"></i>                        
+                        <span>Login with google</span>
+                    </button>
+                </div>
+
+                <div class="login__facebook">
+                    <button>
+                        <i class="fab fa-facebook-f"></i>                      
+                        <span>Login with facebook</span>
+                    </button>
+                </div>
+
+                <div class="login__microsoft">
+                    <button>
+                        <i class="fa-brands fa-microsoft"></i>
+                        <span>Login with microsoft</span>
+                    </button>
+                </div>
             </div>
         </form>
     </div>
 </div>
-    
+ 
+<footer>
+    <a href="#">Terms of use</a>
+    |
+    <a href="">Privacy policy</a>
+    </footer>
+
 </main>
 
+
+   
+
+
 <style lang="scss">
+
+    footer{
+        text-align: center;
+        color: beige;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 40px;
+        font-family: Montserrat;
+        font-weight: 600;
+        font-size: 16px;
+        a{
+            text-decoration: none;
+            color:var(--text-color);
+        }
+    }
+
     .login{
         width: 100%;
         height: 100%;
@@ -55,7 +97,6 @@
         color: var(--text-color);
         text-align: center;
         position: absolute;
-
         a{
             text-decoration: none;
             
@@ -70,7 +111,7 @@
                 position: relative;
                 h1{
                     font-size:var(--title-font);
-                    padding: 40px 40px 24px 40px;
+                    padding: 0px 40px 24px 40px;
                     margin: 0;
                 }
             }
@@ -116,6 +157,7 @@
             font-size: 16px;
             font-weight: 600;
             transition: all 0.5s ease;
+            font-family: Montserrat;
         }
     }
          
@@ -147,19 +189,47 @@
 
         }
 
-        &__google{
+        &__google,&__facebook,&__microsoft{
+            button{
+                height: 45px;
+                width: 100%;
+                border-radius: 5px;
+                background-color:var(--text-color);
+                font-family: Montserrat;
+                font-size: 15px;
+                font-size: 16px;
+                font-weight: 600;
+                color: beige;
+                margin-bottom: 10px;
+            }
+        }
+
+
+
+
+       /*  &__google,&__facebook,&__microsoft{
             background-color: var(--text-color);
             height: 45px;
             border-radius: 5px;
-
+            text-align: center;
+            line-height: 45px;
+            margin-bottom: 10px;
             a{
                 color: beige;
+                text-decoration: none;
+                outline: none;
             }
             
             span{
                 text-align: center;
+                
             }
-        }
+
+            &:hover{
+                background-color: var(--game-title-background-color-center);
+            }
+        } */
+
 
     }
 

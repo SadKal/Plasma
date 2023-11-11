@@ -5,6 +5,9 @@
 <main>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
+    <header>
+        <img src="src/assets/plasma_icon_notext.png" alt="logo" class="topbar__logo"/>
+    </header>
 <div class="login">
     <div class="login__content">
         <form>
@@ -74,6 +77,18 @@
 
 <style lang="scss">
 
+    header{
+        img{
+            width: 50px;
+            height: 50px;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%,0);
+            position: absolute;
+            padding: 20px;
+
+        }
+    }
     footer{
         text-align: center;
         color: beige;

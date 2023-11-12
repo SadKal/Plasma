@@ -5,6 +5,8 @@
     import pagesStore from "$stores/pages";
     import Footer from "./Footer/Footer.svelte";
     import Login from "./lib/login/Login.svelte";
+    import Register from "./lib/login/Register.svelte";
+
     $:{
         if($pagesStore.active=='Inicio'){
             scrollOnLoad();
@@ -33,7 +35,8 @@
 <div class="main">
     <!-- <Header/> 
     <Page/>  -->
-        <Login/>
+        <!-- <Login/> -->
+        <Register/>
     <!-- <Footer/>  -->
 </div>
     

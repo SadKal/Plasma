@@ -11,11 +11,11 @@ export default defineConfig({
   resolve: {
     alias: {
       $header: path.resolve(__dirname, './src/lib/header'),
-      $inicio: path.resolve(__dirname, './src/lib/inicio'),
-      $genres: path.resolve(__dirname, './src/lib/inicio/genres'),
-      $most_sold: path.resolve(__dirname, './src/lib/inicio/most_sold'),
-      $news: path.resolve(__dirname, './src/lib/inicio/news'),
-      $search: path.resolve(__dirname, './src/lib/inicio/search'),
+      $homepage: path.resolve(__dirname, './src/lib/homepage'),
+      $genres: path.resolve(__dirname, './src/lib/homepage/genres'),
+      $most_sold: path.resolve(__dirname, './src/lib/homepage/most_sold'),
+      $news: path.resolve(__dirname, './src/lib/homepage/news'),
+      $search: path.resolve(__dirname, './src/lib/homepage/search'),
       $data: path.resolve(__dirname, './src/data'),
       $stores: path.resolve(__dirname, './src/stores'),
       $utils: path.resolve(__dirname, './src/lib/utils'),

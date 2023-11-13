@@ -4,19 +4,19 @@
 
     let genres_arr=genres.data;
 </script>
-
+ 
 
 <div class="genres">
     <div class="genres__exhibitor">
         <div class="genres__title">
             Géneros Populares
         </div>
-        <div class="row clearfix">
+        <div class="genres__row clearfix">
             {#each genres_arr.slice(0,4) as {name, bg_color, svg_src, text_color}}
                 <Genre {name} {bg_color} {svg_src} {text_color}/>
             {/each}
         </div>
-        <div class="row clearfix">
+        <div class="genres__row clearfix">
             {#each genres_arr.slice(4,8) as {name, bg_color, svg_src, text_color}}
                 <Genre {name} {bg_color} {svg_src} {text_color}/>
             {/each}
@@ -31,13 +31,9 @@
         display: block;
 
     } 
-    *{
-        animation-name: fadein;
-        animation-duration: var(--seconds-fadein);
-        animation-timing-function: ease-in;
-    }
-
     .genres{ 
+        animation: fadein var(--seconds-fadein) ease-in;
+
         &__exhibitor{
             width: 80%;
             position: relative;
@@ -52,23 +48,23 @@
             color: var(--text-color);
             font-size: 60px;
             font-weight: bolder;
-            letter-spacing: .4rem;
+            letter-spacing: .4rem; /*suggesting .2rem*/
 
             @media (max-width: 420px) {
                 font-size: 30px;
                 margin-top: 8rem;
             }
         }
-    }
-    .row{
-        margin-top: 5rem;
-        margin-bottom: 5rem;
         
-        @media (max-width: 420px) {
-            &:not(:last-child){
-                margin-bottom: 2rem;
+        &__row{
+            margin-top: 5rem;
+            margin-bottom: 5rem;
+            
+            @media (max-width: 420px) {
+                &:not(:last-child){
+                    margin-bottom: 2rem;
+                }
             }
         }
     }
-
 </style>

@@ -1,6 +1,6 @@
 <script>
-	import user from "../../../../data/testuser.json";
-	import Select from "./select.svelte";
+	import user from "$data/testuser.json";
+	import Select from "./GameListSelect.svelte";
 	import { flip } from "svelte/animate";
 	import { expoInOut } from "svelte/easing";
 
@@ -71,7 +71,7 @@
 		background-size: contain;
 		background-repeat: round;
 		margin-top: 30px;
-		border-radius: 8px;
+		border-radius: 4px;
 		transition: all 0.2s;
 		&:hover,
 		&:active {
@@ -85,7 +85,7 @@
 
 		&_title {
 			background-color: var(--topbar-background-color);
-			padding: 6% 10%;
+			padding: 5% 10%;
 			color: var(--selected-text-color);
 			position: relative;
 			text-align: center;
@@ -93,7 +93,7 @@
 			transition: all 0.25s;
 			transition-duration: 0.25s;
 			font-weight: 900;
-			border-radius: 0px 16px 16px 0px;
+			clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
 			font-size: 1.2rem;
 			top: 90%;
 			display: inline-table;

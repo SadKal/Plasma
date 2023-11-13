@@ -42,13 +42,14 @@
         </div>
 </div>
 
+
 <style lang="scss">
     
     .most_sold{
         &__image{
             width: 100%;
             height: 80%;
-            border-radius: 5%;
+            border-radius: 1%; /*was 5%, moving to sharper shapes*/ 
             transition: all .4s;
             object-fit: cover;
 
@@ -63,14 +64,14 @@
             box-sizing: border-box;
             background-color: var(--game-data-bg-color);
             color: var(--game-title-color-center);
-            font-size: 18x;
+            font-size: 18x; /*?? fixing it doesnt seem to do anything, should delete*/
             font-family: 'Montserrat';
             font-weight: bold;
             width: 100%;
             height: 20%;
             margin-top: .2rem;
             padding: .5rem;
-            border-radius: .5rem;
+            border-radius: 1%; /* was .5rem, moving to sharper shapes*/
             text-align: center;
             
             @media (max-width: 420px) {
@@ -137,7 +138,7 @@
         }
         @media (min-width: 420px) {
             &:hover{
-                scale: 120%;
+                scale: 120%; /*110% might work better imo, 120% is too big*/
             }
         }
     }

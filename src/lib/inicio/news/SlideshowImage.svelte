@@ -54,7 +54,7 @@
 
 </script>
 
-<a class="slideshow__link" href="/" on:click|preventDefault={() => $cacheStore.showSlides(index-1)}>
+<a class="slideshow__link" href="/" on:click|preventDefault={() => $cacheStore.showSlides(index-1)}> <!-- returns page-->
     <img bind:this={img} src={placeholderImage} alt={alt} class="slideshow__img {secondClass} {animationClass}"/>
     <div bind:this={title} class="slideshow__title--container {nameClass} {nameAnimationClass}">
         <div class="slideshow__title {nameClass}">{alt}</div>

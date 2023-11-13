@@ -47,7 +47,7 @@
             }
             @media (min-width: 720px){
                 font-size: 100px;
-                letter-spacing: .8rem;
+                letter-spacing: .8rem; /*suggesting .4rem*/
             }
         }
         &__subtitle{
@@ -61,7 +61,7 @@
             font-size: 20px;
             @media (max-width: 420px){
                 margin-top: .7rem;
-                letter-spacing: .1rem;
+                letter-spacing: .1rem; /*suggesting removal*/
                 font-size: 10px;   
             }
             

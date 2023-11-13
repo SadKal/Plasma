@@ -1,5 +1,5 @@
 <script>
-	import Thumbnails from "./thumbnails.svelte";
+	import Thumbnails from "./Thumbnails.svelte";
 </script>
 
 <div class="library--recents">
@@ -25,7 +25,7 @@
 			font-family: "Montserrat";
 			font-weight: 600;
 			color: var(--text-color);
-			letter-spacing: -1px;
+			letter-spacing: 1px;
 
 			@media (max-width: 1080px) and (orientation: portrait){
 			//mobile

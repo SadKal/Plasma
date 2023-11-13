@@ -1,5 +1,5 @@
 <script>
-	import Gamelist from "./content_insides/gamelist.svelte";
+	import Gamelist from "./content_insides/GameList.svelte";
 </script>
 
 <div class="library--urgames__content">

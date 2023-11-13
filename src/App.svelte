@@ -31,9 +31,9 @@
 </script>
 
 <div class="main">
-    <!-- <Header/>
+    <Header/>
     <Page/>
-    <Footer/> -->
+    <Footer/>
 
 </div>
     

@@ -81,9 +81,9 @@
             float: left; 
             position: relative;  
         }
-        &__link{
+        /* &__link{
             text-decoration: none;
-        }
+        } */ //is this needed?? i tried getting rid of it and i saw no difference, just checking
     }
 </style>
 

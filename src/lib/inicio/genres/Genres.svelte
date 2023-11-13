@@ -52,7 +52,7 @@
             color: var(--text-color);
             font-size: 60px;
             font-weight: bolder;
-            letter-spacing: .4rem;
+            letter-spacing: .4rem; /*suggesting .2rem*/
 
             @media (max-width: 420px) {
                 font-size: 30px;

@@ -35,7 +35,7 @@
 			color: var(--text-color);
 			font-size: 3rem;
 			margin-bottom: 20px;
-			letter-spacing: -1px;
+			letter-spacing: 1px;
 			@media (max-width: 1080px) and (orientation: portrait) {
 				// "jugado recientemente"
 				//mobile
@@ -48,7 +48,7 @@
 	}
 	.thumbnail {
 		&--small {
-			border-radius: 3%;
+			border-radius: 1%;
 			height: 22vw;
 			width: 18%;
 			background-size: contain;

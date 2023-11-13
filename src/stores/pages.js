@@ -2,7 +2,7 @@ import Homepage from '$homepage/Homepage.svelte';
 import GamePage from '$homepage/game_page/GamePage.svelte';
 import GenrePage from '$homepage/genres/genre_page/GenrePage.svelte';
 import Library from '$library/Library.svelte';
-import Perfil from '$perfil/Perfil.svelte';
+import Perfil from '$profile/Profile.svelte';
 import { writable } from 'svelte/store';
 
 

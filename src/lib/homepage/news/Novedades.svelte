@@ -23,48 +23,34 @@
 </div>
 
 <style lang="scss">
-    *{
-        animation-name: fadein;
-        animation-duration: var(--seconds-fadein);
-        animation-timing-function: ease-in;
-    }
-    .novedades{
-        
+    .novedades{  
         width: 100%;
         text-align: center;
         font-family: 'Montserrat';
-    
+        margin-top: 10rem;
+        animation: fadein var(--seconds-fadein) ease-in;
+
         &__title{
-            margin-top: 10rem;
             color: var(--text-color);
-            font-size: 50px;
+            font-size: 120px;
             letter-spacing: .4rem;
             font-weight: bolder;
-            transition: all .5s;
+            @media (max-width: 720px){
+                font-size: 50px;
+                letter-spacing: .8rem;
+            }
             @media (max-width: 420px){
                 font-size: 30px;
                 letter-spacing: .6rem;
             }
-            @media (min-width: 720px){
-                font-size: 100px;
-                letter-spacing: .8rem; /*suggesting .4rem*/
-            }
         }
         &__subtitle{
-            width: 100%;
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            margin-top: .3rem;
-            letter-spacing: .1rem;
             color: var(--subtitle-text-color);
             font-size: 20px;
             @media (max-width: 420px){
                 margin-top: .7rem;
-                letter-spacing: .1rem; /*suggesting removal*/
                 font-size: 10px;   
             }
-            
         }
     }
 </style>

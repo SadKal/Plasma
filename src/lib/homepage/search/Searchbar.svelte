@@ -149,7 +149,7 @@
   
         }
         &__results{
-            max-height: 400px;
+            max-height: 20rem;
             overflow-y: auto;
         }
     }

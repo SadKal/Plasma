@@ -2,7 +2,7 @@
     //Debo añadir ts-nocheck porque si no vscode da error
     //@ts-nocheck
     //import games from '$data/games.json';
-    import SlideshowImage from "$news/SlideshowImage.svelte";
+    import Slide from "$homepage/news/Slide.svelte";
     import cacheStore from '$stores/cache';
 
     let isSwiping=false;
@@ -44,28 +44,26 @@
 </script>
 
 <div class="slideshow clearfix" on:touchstart={swipeStart} on:touchmove={swipeEnd} on:touchend={swipeAction}>
-
     {#each Object.values($cacheStore.slides) as slide, index (slide.source)}
         <div class="slideshow__slide">
             {#key slide.position}
-                <SlideshowImage src={slide.source} position={slide.position} {index} alt={$cacheStore.gamesData[slide.index].name}/>
+                <Slide src={slide.source} position={slide.position} {index} alt={$cacheStore.gamesData[slide.index].name}/>
             {/key}
         </div>
-    {/each}
-    
+    {/each}   
 </div>
-<style lang="scss">
 
+<style lang="scss">
     .clearfix::after {
         content: ""; 
         clear: both;
         display: block;
-
     } 
 
     .slideshow{
         margin-top: 5rem; 
-        transition: all .2s;
+        animation: fadein var(--seconds-fadein) ease-in;  
+
         @media (min-width: 800px){
             margin-top: 10rem; 
             height: 220px;
@@ -74,16 +72,14 @@
             width: 100%;
             height: 350px;
         }
+
         &__slide{
             height: 100%;
+            width: calc(100%/3);
             display: inline;
-            max-width: calc(100%/3);
             float: left; 
             position: relative;  
-        }
-        /* &__link{
-            text-decoration: none;
-        } */ //is this needed?? i tried getting rid of it and i saw no difference, just checking
+        }  
     }
 </style>
 

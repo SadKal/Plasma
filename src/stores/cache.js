@@ -64,7 +64,7 @@ const slides={
         source: gamesData[2].image,
         index: 2,
         position:'--side',
-    },
+    }
 };
 const cacheStore = writable({slides, cache, gamesData, showSlides});
 

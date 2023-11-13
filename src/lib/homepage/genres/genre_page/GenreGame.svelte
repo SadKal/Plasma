@@ -31,9 +31,7 @@
         display: block;
     } 
     .genre-game{
-        position: relative;
-        left: 50%;
-        transform: translateX(-50%);
+        margin: .3rem auto;
         width: 80%;
         height: 15rem;
         box-sizing: border-box;
@@ -49,7 +47,7 @@
         transition: all .3s ease-in-out;
         &:hover{
             background-color: rgb(0,74,64);
-            transform: translateX(-60%);
+            transform: translateX(-10%);
             z-index: 5;
             cursor: pointer;
         }
@@ -58,16 +56,13 @@
             height: 100%;
             width: 100%;
             object-fit: cover;
-            position: relative;
-            top: 50%;
-            transform: translateY(-50%);
+            clip-path: polygon(7% 0, 100% 0%, 93% 100%, 0% 100%);
 
             &--container{
                 height: 100%;
                 width: 30%;
                 margin-right: 1.5rem;
-                float: left;   
-                clip-path: polygon(7% 0, 100% 0%, 93% 100%, 0% 100%);
+                float: left;     
             }
         }
 

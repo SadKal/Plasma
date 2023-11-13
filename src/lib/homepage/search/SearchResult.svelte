@@ -24,7 +24,7 @@
     .search-result{
         box-sizing: border-box;
         width: 100%;
-        height: 6rem;
+        height: 8rem;
         background-color: var(--search-result-color);
         position: relative;
         padding: .3rem;
@@ -54,17 +54,16 @@
             }
         }
         &__image{
-            height: 80%;
+            height: 100%;
             width: 100%;
             object-fit: cover;
-            border-radius: .3rem;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
 
             &-container{
                 height: 100%;
-                width: 8%;
+                width: 20%;
                 margin-right: 1.5rem;
                 @media (max-width: 420px) {
                     width: 40%;

@@ -1,18 +1,18 @@
-import Inicio from '$inicio/Inicio.svelte';
-import GamePage from '$inicio/game_page/GamePage.svelte';
-import GenrePage from '$inicio/genres/GenrePage.svelte';
+import Homepage from '$homepage/Homepage.svelte';
+import GamePage from '$homepage/game_page/GamePage.svelte';
+import GenrePage from '$homepage/genres/genre_page/GenrePage.svelte';
 import Library from '$library/Library.svelte';
 import Perfil from '$perfil/Perfil.svelte';
 import { writable } from 'svelte/store';
 
 
 const pages = {
-    'Inicio': Inicio,
+    'Inicio': Homepage,
     'Biblioteca': Library,
     'Perfil': Perfil,
     'Shop': GamePage,
-    'Genres': GenrePage,
-}
+    'Genres': GenrePage
+};
 
 const active = 'Inicio';
 

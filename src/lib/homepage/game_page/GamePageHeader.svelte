@@ -1,4 +1,5 @@
 <script>
+    import cartStore from "$stores/cart";
 	import shopGameStore from "$stores/shopGame";
 	import GamePageContent from "./GamePageContent.svelte";
 	let game = $shopGameStore.currentShopGame;
@@ -17,10 +18,10 @@
 	/>
 	<div class="shopGame__title">
 		<span>{game.name}</span>
-	</div>
+	</div> 
 </div>
 
-<div class="shopGame__toCart"> <!-- once linked to library, check if already there and change accordingly-->
+<div class="shopGame__toCart" on:click={() => $cartStore.addGameToCart(game)}> <!-- once linked to library, check if already there and change accordingly-->
 	Añadir al carrito: {game.price}
 </div>
 
@@ -80,9 +81,11 @@
 		padding: 1% 4%;
 		clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 		cursor: pointer;
+		user-select: none;
+		
 		&:hover {
 			scale: 1.1;
 		}
-		transition: all 0.5s;
+		transition: all .2s;
 	}
 </style>

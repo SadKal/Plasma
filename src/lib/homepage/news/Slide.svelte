@@ -40,7 +40,6 @@
         else{
             loadImg(src);
         }
-        console.log($cacheStore.slides)
     }); 
     onDestroy(() => {
         tempImg.removeEventListener('load', onImgLoaded);  

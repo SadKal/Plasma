@@ -7,7 +7,7 @@
 <div class="shopGame__content_container">
 	<div class="shopGame__gameInfo">
 		<div class="shopGame__nonTechInfo">
-			<h1>Descripción:</h1>
+			<h1>Descripción:</h1> 
 			<p>
 				<!-- will be changed once we get API access and can bring from there-->
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab consectetur

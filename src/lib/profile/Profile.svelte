@@ -29,17 +29,7 @@
 <main>
     <div class="container">
         <div class="content">
-            <div class="edit">
-                <div class="title">
-                    <h1>Editar perfil</h1>
-                </div>
-                <div class="text">
-                    <p>Mantén la privacidad de tus datos personales. Cualquier usuario que pueda ver tu perfil puede ver la información que añades aquí.</p>
-                </div>
-            </div>
-    
             <div class="photo">
-                <div class="ph">Foto</div>
                 <div class="image">
                         <img src="{imgDefault}" alt="" class="image-rounded">
                 </div>

@@ -6,6 +6,9 @@
     import Footer from "./Footer/Footer.svelte";
     import Login from "./lib/login/Login.svelte";
     import Register from "./lib/login/Register.svelte";
+  import Profile from "$profile/Profile.svelte";
+  import Profile2 from "$profile/Profile2.svelte";
+  import Custom from "$profile/Custom.svelte";
 
     $:{
         if($pagesStore.active=='Inicio'){
@@ -33,11 +36,14 @@
 </script>
 
 <div class="main">
-    <!-- <Header/> 
-    <Page/>  -->
+   <!--  <Header/>  -->
+    <!-- <Profile2/> -->
+    <!-- <Page/> -->  
         <!-- <Login/> -->
-        <Register/>
-    <!-- <Footer/>  -->
+        <!-- <Register/> -->
+        <Custom/>
+        
+    <!-- <Footer/>   -->
 </div>
     
     

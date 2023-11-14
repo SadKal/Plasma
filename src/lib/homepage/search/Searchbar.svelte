@@ -130,7 +130,8 @@
             outline: none;
             font-size: 20px;
             font-style: italic;
-            font-weight: bold;
+            font-weight: 400;
+            font-family: 'Chakra Petch';
             color: var(--text-color);
             transition: all .3s;
             &:focus, &:hover{

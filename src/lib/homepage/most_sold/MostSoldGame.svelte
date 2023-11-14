@@ -75,7 +75,7 @@
                 
                 &:not(:last-child){
                     margin-bottom: 2rem;
-                }
+                } 
             }
             @media (min-width: 420px) {
                 &:hover{
@@ -107,7 +107,7 @@
             height: 20%;
             padding: .5rem;
             text-align: center;
-            box-shadow: 2px 2px 5px 2px black;
+            box-shadow: 5px 5px 5px .5px black;
             
             @media (max-width: 1500px) {
                 font-size: 12px;

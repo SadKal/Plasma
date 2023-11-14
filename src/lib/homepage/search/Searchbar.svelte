@@ -128,7 +128,6 @@
             border-radius: .3rem .3rem 0 0;
             border: none;
             outline: none;
-            font-family: 'Montserrat';
             font-size: 20px;
             font-style: italic;
             font-weight: bold;

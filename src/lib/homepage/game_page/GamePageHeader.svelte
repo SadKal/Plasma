@@ -56,7 +56,7 @@
 	}
 	.shopGame__title {
 		background-color: var(--game-title-background-color);
-		font-family: "Montserrat";
+
 		color: var(--selected-text-color);
 		padding: 1% 4%;
 		top: 50%;
@@ -67,7 +67,7 @@
 	}
 	.shopGame__toCart {
 		background-color: var(--add-to-cart-button-background);
-		font-family: "Montserrat";
+
 		color: var(--search-result-hover-color);
 		font-size: 1.35rem;
 		text-align: center;

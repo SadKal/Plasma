@@ -26,7 +26,6 @@
     .novedades{  
         width: 100%;
         text-align: center;
-        font-family: 'Montserrat';
         margin-top: 10rem;
         animation: fadein var(--seconds-fadein) ease-in;
 
@@ -34,7 +33,7 @@
             color: var(--text-color);
             font-size: 120px;
             letter-spacing: .4rem;
-            font-weight: bolder;
+            font-weight: 400;
             @media (max-width: 720px){
                 font-size: 50px;
                 letter-spacing: .8rem;

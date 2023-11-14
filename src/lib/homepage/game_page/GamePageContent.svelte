@@ -41,7 +41,6 @@
 		animation-name: fadein;
 		animation-duration: var(--seconds-fadein);
 		animation-timing-function: ease-in;
-		font-family: "Montserrat";
 	}
 	h1,
 	h2 {

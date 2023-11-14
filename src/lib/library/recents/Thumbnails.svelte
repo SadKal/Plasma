@@ -30,7 +30,6 @@
 		margin: 0 auto;
 
 		&__title {
-			font-family: "Montserrat";
 			font-weight: 600;
 			color: var(--text-color);
 			font-size: 3rem;

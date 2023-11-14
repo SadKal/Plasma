@@ -123,7 +123,6 @@
 	.library--urgames__title {
 		position: absolute;
 		margin-top: -50px;
-		font-family: "Montserrat";
 		font-weight: 600;
 		color: var(--text-color);
 		font-size: 3rem;

@@ -43,7 +43,7 @@
         &__title{
             width: 100%;
             text-align: center;
-            font-family: 'Montserrat';
+
             margin-top: 6rem;
             color: var(--text-color);
             font-size: 60px;

@@ -96,7 +96,6 @@
 
         &__title{
             color: var(--text-color);
-            font-family: 'Montserrat';
             font-size: 2rem;
             font-weight: bolder;
             padding: 1rem;

@@ -96,7 +96,6 @@
             width: 20%;
             
             padding: 1rem 2rem;
-            font-family: 'Montserrat';
             font-weight: bolder;
             background-color: var(--text-color);
             color: var(--game-title-color-center);

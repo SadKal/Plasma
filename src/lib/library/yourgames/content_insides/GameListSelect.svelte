@@ -55,6 +55,5 @@
 		overflow: hidden;
 		cursor: pointer;
 		background-color: transparent;
-		font-family: "Montserrat";
 	}
 </style>

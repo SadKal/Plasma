@@ -36,7 +36,7 @@
         height: 15rem;
         box-sizing: border-box;
         padding: 0rem;
-        font-family: 'Montserrat';
+
         font-weight: bolder;
         font-size: 1.2rem;
         background-color: rgba(0,74,64,.5);

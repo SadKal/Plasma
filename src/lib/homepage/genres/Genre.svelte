@@ -34,7 +34,7 @@
         text-align: center;
         padding: 3rem 0 1.5rem;
         font-weight: bolder;
-        font-family: 'Montserrat';
+
 
         background-image: url('https://cdn.mos.cms.futurecdn.net/HsDtpFEHbDpae6wBuW5wQo.jpg');
         background-blend-mode: soft-light;

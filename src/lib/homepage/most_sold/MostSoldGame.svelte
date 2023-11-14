@@ -101,7 +101,6 @@
             background-color: var(--game-data-bg-color);
             color: lightgray;
             font-size: 18x;
-            font-family: 'Montserrat';
             font-weight: bold;
             width: 100%;
             height: 20%;

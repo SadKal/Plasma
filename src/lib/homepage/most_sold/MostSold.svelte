@@ -54,7 +54,6 @@
         }
         
         &__title{
-            font-family: 'Montserrat';
             color: var(--text-color); 
             font-size: 60px;
             font-weight: bolder;

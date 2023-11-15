@@ -1,7 +1,8 @@
 <script>
+    import Custom from "./Custom.svelte";
     import Profile from "./Profile.svelte";
   
-      let imgDefault = './default.jpg';
+      let imgDefault = 'src/lib/profile/default.jpg';
   
       function ChangeImage(newImg){
           imgDefault = newImg;
@@ -26,7 +27,7 @@
   
       function handleClickOnImage() {
           // Simular clic en el input de tipo "file"
-          document.getElementById('img-uploader').click();
+          document.getElementById('img-uploader2').click();
       }
   </script>
 
@@ -38,8 +39,15 @@
             </div>
             <div class="custom__imgUser">
                 <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
-                <input type="file" id="img-uploader" on:change={HandleImg}>
+                <input type="file" id="img-uploader2" on:change={HandleImg}>
+                <div class="custom__camera">
+                    <img src="src/lib/profile/photo.png" alt="">
+                    <div class="custom__cameraText">.jpg/png</div>
+                </div>
+
+                
             </div>
+            
         </div>
 
         <div class="custom__nameUser">
@@ -49,36 +57,41 @@
             
             <div class="custom__nameInput">
                 <input type="text" name="" id="">
-                <input type="submit" value="Sbumit">
+                <input type="submit" value="Submit">
             </div>
         </div>
 </div> 
 <div class="cus">
-    <div class="cus__network1">
-        <label for="">Twitch</label><br>
-        <input type="text" name="" id="">
+ <p>Links de redes</p>   
+    <div class="cus__uno">
+        <div class="cus__network1">
+            <label for="">Twitch</label><br>
+            <input type="text" name="" id="">
+        </div>
+        <div class="cus__network2">
+            <label for="">Steam</label><br>
+            <input type="text" name="" id="">
+        </div>
+        <div class="cus__network3">
+            <label for="">Ubisoft Connect</label><br>
+            <input type="text" name="" id="">
+        </div>
     </div>
-    <div class="cus__network2">
-        <label for="">Steam</label><br>
-        <input type="text" name="" id="">
+    <div class="cus__dos">
+        <div class="cus__network4">
+            <label for="">Youtube</label><br>
+            <input type="text" name="" id="">
+        </div>
+    
+        <div class="cus__network5">
+            <label for="">Discord</label><br>
+            <input type="text" name="" id="">
+        </div>
+        <div class="cus__network6">
+            <label for="">EA</label><br>
+            <input type="text" name="" id="">
+        </div>
     </div>
-    <div class="cus__network3">
-        <label for="">Ubisoft Connect</label><br>
-        <input type="text" name="" id="">
-    </div>
-    <div class="cus__network4">
-        <label for="">Youtube</label><br>
-        <input type="text" name="" id="">
-    </div>
-    <div class="cus__network5">
-        <label for="">Discord</label><br>
-        <input type="text" name="" id="">
-    </div>
-    <div class="cus__network6">
-        <label for="">EA</label><br>
-        <input type="text" name="" id="">
-    </div>
-
     <div class="cus__submit">
         <input type="submit" value="Submit">
     </div>
@@ -87,31 +100,81 @@
 </main>
 
 <style lang="scss">
+    
     .custom{
         width: 100%;
         height: 100%;
         font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
-        margin-left: 40px;            
+        margin-left: 40px;
+        
+        
+            input[type="text"]{
+                        width: 70%;
+                        padding: 15px;
+                        background: transparent;
+                        border: 2px solid var(--text-color);
+                        border-radius: 5px;
+                        font-size: 16px;
+                        box-sizing: border-box;
+        }
+
+        input[type="submit"]{
+            margin-left: 10px;
+            height: 6vh;
+            width: 20%;
+            background:var(--text-color);
+            color: beige;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.5s ease;
+            font-family: Montserrat;         
+            }
 
         &__image{
             float: left;
+            width: 30%;
         }
 
-        &__imgUser{
+        &__camera{
+            display: inline-block;
+            font-size: 15px;
+            margin-left: 20px;
+                img{
+                    width: 30px;
+                    height: 30px;
+                    filter: invert(100%);//La pongo en blanco
+                }
 
+        }
+
+        &__cameraText{
+            display: inline-block;
+            margin-left:5px ;
+            
+        }
+
+       
+
+        &__imgUser{
+ 
         .image-rounded{
             border-radius: 50%;
-            width: 100px; 
-            height: 100px;
+            width: 80px; 
+            height: 80px;
             transition: all 0.5s;/* Le doy una transicion para la imagen */
             }
         }
 
         &__nameUser{
-            width: 30%;
+            width: 40%;
             float: left;
+            margin-left: 10vw;
         }
         
     }
@@ -123,36 +186,53 @@
         color: var(--text-color);
         display: inline-block;
         margin-left: 40px; 
-        margin-top: 40px;
+        margin-top: 30px;
 
-        &__network1,&__network2{
-        margin-bottom: 10px;
-        width: 48%;
-        float: left;
-        margin-right: 2%;
-        box-sizing: border-box;
+        input[type="text"]{
+                        width: 60%;
+                        padding: 15px;
+                        background: transparent;
+                        border: 2px solid var(--text-color);
+                        border-radius: 5px;
+                        font-size: 16px;
+                        box-sizing: border-box;
+                        margin-bottom: 20px;
         }
 
-        &__network3,&__network4{
-        margin-bottom: 10px;
-        width: 50%;
-        float: left;
-        box-sizing: border-box;
+        &__uno,&__dos{
+            width: 50%;
+            float: left;
         }
-
-        &__network5,&__network6{
-        margin-bottom: 10px;
-        width: 48%;
-        float: left;
-        margin-right: 2%;
-        box-sizing: border-box;
-        }
-
         &__submit{
-            position: relative;
-            height: auto;
-            width: 10%;
-            margin: 0 auto;
-        }
+            clear: both;
+            height: 20px;
+            width: 100%;
+            input[type="submit"]{
+              margin-left: 36%;
+              margin-right: 60%;
+              margin-top: 40px;
+            height: 8vh;
+            width: 8vw;
+            background:var(--text-color);
+            color: beige;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,.1);
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.5s ease;
+            font-family: Montserrat;         
+            }
+        } 
+    }
+    #img-uploader2{//Le quito el input para que no se vea 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%; 
+        height: 0%; 
+        opacity: 0; 
+        cursor: pointer;
     }
 </style>

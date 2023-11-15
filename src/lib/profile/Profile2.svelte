@@ -2,7 +2,7 @@
   import Custom from "./Custom.svelte";
   import Profile from "./Profile.svelte";
 
-    let imgDefault = './default.jpg';
+    let imgDefault = 'src/lib/profile/default.jpg';
 
     function ChangeImage(newImg){
         imgDefault = newImg;
@@ -19,7 +19,7 @@
             }
             reader.readAsDataURL(file);/* Que me lea la imagen como una URL */
         }else{
-            ChangeImage('src/Perfil/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
+            ChangeImage('src/lib/profile/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
         }
 
 
@@ -56,55 +56,42 @@
                             <div class="profile__lines">
                                 <span>Avatar, gamertag y links de redes sociales</span>
                             </div>
+                            <div class="profile__arrow">></div>
+
                     </li>
                     <li><a href="">Comunicaciones</a>
                         <div class="profile__lines">
                             <span>Gestiona los emails o notificaciones que quieres recibir</span>
                         </div>
+                        <div class="profile__arrow">></div>
                     </li>
                     <li><a href="">Privacidad</a>
                         <div class="profile__lines">
                             <span>Gestiona tu información pública o privada</span>
                         </div>
+                        <div class="profile__arrow">></div>
+
                     </li>
                     <li><a href="">Idioma y moneda</a>
                         <div class="profile__lines">
                             <span>Cambia el idioma o la moneda que quieres utilizar</span>
                         </div>
+                        <div class="profile__arrow">></div>
+
                     </li>
                     <li><a href="">Email y contraaseña</a>
                         <div class="profile__lines">
                             <span>Gestiona tu email y tu contraseña</span>
                         </div>
+                        <div class="profile__arrow">></div>
+
                     </li>
                 </ul>
                 </div>
 
         <div class="profile__content">
             <Custom/>
-            <!-- <div class="profile__nickavatar">
-                <div class="profile__image">
-                    <div class="profile__title">
-                        <p>Foto de perfil</p>
-                    </div>
-                    <div class="profile__imgUser">
-                        <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
-                        <input type="file" id="img-uploader" on:change={HandleImg}>
-                    </div>
-                </div>
-
-                <div class="profile__nameUser">
-                    <div class="profile__title">
-                        <p>Nombre de usuario</p>
-                    </div>
-                    
-                    <div class="profile__nameInput">
-                        <input type="text" name="" id="">
-                        <input type="submit" value="Sbumit">
-                    </div>
-                </div>
             
-            </div> -->
         </div>
     </div>
 
@@ -117,8 +104,17 @@
         font-family: Montserrat;
         color: var(--text-color);
 
+        &__arrow{
+            position: absolute;
+            top: 40%;
+            left: 95%;
+            transform: translate(-50%,-50%);
+        }
         &__photo{
             border-bottom: 2px solid var(--text-color);
+            margin-bottom:5vh;
+            margin-right: 5vh;
+            margin-left: 5vh;
         }
 
         &__img{
@@ -143,6 +139,14 @@
                 margin-bottom: 15px;
             span{
                 display: block;
+                
+                }
+            }
+
+            &__lines{
+                span{
+                    display: inline-block;
+                    width: 90%;
                 }
             }
 
@@ -164,7 +168,8 @@
                 li{
                     display: block;
                     margin: 15px;
-
+                    height: 10vh;
+                    position: relative;
                     a{
                         text-decoration: none;
                         color: aliceblue;
@@ -173,59 +178,14 @@
             }
 
             &__content{
-                width: 70%;
-            }
-
-            &__settings,&__content{
-                display: table-cell;
-            }
-/* ------------------------------------------------------------------------- */
-
-            &__nickavatar{
-                width: 100%;
-            }
-
-            &__image{
-                margin: 40px;
-                width: 30%;
+                width: 60%;
                 float: left;
             }
 
-            &__imgUser{
-            line-height: 150px;
-            
-           
-        .image-rounded{
-            border-radius: 50%;
-            width: 100px; 
-            height: 100px;
-            transition: all 0.5s;/* Le doy una transicion para la imagen */
+            &__settings{
+                width: 30%;
+                float: left;
             }
-        }
-
-        &__nameUser{
-            float: left;
-            width: 30vw;
-            margin: 40px;
-        }
-
-        &__nameInput{
-
-            input{
-                display: inline-block;
-            }
-
-            input[type="text"]{
-                width: 60%;
-            }
-
-            input[type="submit"]{
-                width: 20%;
-            }
-        }
-       
-           
-            
     }
 
     #img-uploader{//Le quito el input para que no se vea 

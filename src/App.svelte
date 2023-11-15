@@ -37,11 +37,11 @@
 
 <div class="main">
    <!--  <Header/>  -->
-    <!-- <Profile2/> -->
+    <Profile2/>
     <!-- <Page/> -->  
         <!-- <Login/> -->
         <!-- <Register/> -->
-        <Custom/>
+        <!-- <Custom/> -->
         
     <!-- <Footer/>   -->
 </div>

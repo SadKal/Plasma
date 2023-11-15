@@ -1,16 +1,12 @@
 <script>
     import cartStore from "$stores/cart";
     import CartInfo from "./CartInfo.svelte";
-
-    let elementCount=0;
-
-    $: elementCount
 </script>
 
 <li class="cart--container">
     <div class="cart__count--container">
         <div class="cart__count">
-            {elementCount}
+            {$cartStore.gamesInCart.length}
         </div> 
     </div>  
     <div on:click={() => $cartStore.cartActive = !$cartStore.cartActive}>

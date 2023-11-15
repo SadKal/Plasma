@@ -1,22 +1,29 @@
 <script>
     import cartStore from "$stores/cart";
 	import shopGameStore from "$stores/shopGame";
+	import libraryStore from "$stores/library";
 	import GamePageContent from "./GamePageContent.svelte";
 	import { onMount } from "svelte";
 
 	let game = $shopGameStore.currentShopGame;
 	let gameInCart = false;
+	let gameOwned = false;
+
+	$: if ($libraryStore.gamesInLibrary.includes(game)){
+			gameOwned=true;
+		}
 
 	function setGameInCart(){
-		cartStore.addGameToCart(game);
-		gameInCart = true;
-		setTimeout(() => {
-			$cartStore.cartActive=true;
-		}, 350);
-		setTimeout(() => {
-			$cartStore.cartActive=false;
-		}, 2000);
-		
+		if(!gameOwned){
+			cartStore.addGameToCart(game);
+			gameInCart = true;
+			setTimeout(() => {
+				$cartStore.cartActive=true;
+			}, 350);
+			setTimeout(() => {
+				$cartStore.cartActive=false;
+			}, 2000);
+		}
 	};
 
 	onMount(() => {
@@ -40,8 +47,13 @@
 </div>
 
 <div class="shopGame__toCart" on:click={setGameInCart}> <!-- once linked to library, check if already there and change accordingly-->
-	Añadir al carrito: {game.price/100}€
+	{#if gameOwned}
+		Ya tienes este juego
+	{:else}
+		Añadir al carrito: {game.price/100}€
+	{/if}
 </div>
+
 
 <GamePageContent />
 

@@ -1,5 +1,6 @@
 <script>
     import cartStore from "$stores/cart";
+    import libraryStore from "$stores/library";
     import { clickOutside } from "$utils/outsideCart";
     import CartGame from './CartGame.svelte';
 </script>
@@ -16,7 +17,7 @@
             </div>
         {:else}
             <div class="cart-info__total clearfix">
-                <div class="cart-info__buy">
+                <div class="cart-info__buy" on:click={cartStore.buyGames}>
                     Comprar
                 </div>
                 <div class="cart-info__text">
@@ -94,6 +95,7 @@
             clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
             cursor: pointer;
             transition: all .3s;
+            user-select: none;
 
             &:hover{
                 scale: 1.1;

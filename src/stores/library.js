@@ -20,7 +20,7 @@ function fetchRecents(min, max) {
 function fetchOwned(min, max) {
  	let aux;
 	aux = gamesInLibrary.concat(recentlyPlayed);
-    gamesInLibrary = aux;
+    gamesInLibrary = aux; 
     let limit = Math.min(gamesInLibrary.length, gamesData.data.length) 
 	let i = 0;
     let randGame;

@@ -1,4 +1,5 @@
 import { writable } from "svelte/store";
+import libraryStore from "./library";
 
 const gamesInCart = [];
 
@@ -17,7 +18,7 @@ function addGameToCart(game){
         }
         return {...cart, cartTotal: cartTotalCalc};
     });
-}
+};
 
 function removeGameFromCart(game){
     cartStore.update( (cart) => {
@@ -27,7 +28,20 @@ function removeGameFromCart(game){
         }
         return {...cart, cartTotal: cartTotalCalc};
     });
+};
+
+function buyGames(){
+    libraryStore.update( (library) => {
+        gamesInCart.forEach(game => {
+            if(!library.gamesInLibrary.includes(game)){
+                library.gamesInLibrary.push(game);
+            }
+            removeGameFromCart(game);
+        });
+        
+        return library;
+    })
 }
 
 
-export default {...cartStore, addGameToCart, removeGameFromCart};
+export default {...cartStore, addGameToCart, removeGameFromCart, buyGames};

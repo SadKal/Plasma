@@ -33,20 +33,15 @@ function removeGameFromCart(game){
 function buyGames(){
     cartStore.update( (cart) => {
         libraryStore.update( (library) => {
-            console.log("1",cart.gamesInCart)
             cart.gamesInCart.forEach(game => {
                 if(!library.gamesInLibrary.includes(game)){
                     library.gamesInLibrary.push(game); 
                 }
             });
-            while(cart.gamesInCart.length>0){
-                cart.gamesInCart.pop()
-            }
-            console.log(cart.gamesInCart)
             return library; 
-            });
-            console.log("2",cart.gamesInCart)
-        return {...cart, cartTotal: 0};
+        });
+        cartTotalCalc=0;
+        return {...cart, gamesInCart: [], cartTotal: 0};
     })
 }
 

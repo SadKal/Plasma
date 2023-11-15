@@ -9,8 +9,7 @@
             {$cartStore.gamesInCart.length}
         </div> 
     </div>  
-    <div on:click={() => {$cartStore.cartActive = !$cartStore.cartActive
-                        console.log("out",$cartStore.gamesInCart)}}>
+    <div on:click={() => $cartStore.cartActive = !$cartStore.cartActive}>
         <object  class="cart" data="src/assets/svgs/cart.svg" type="image/svg+xml" width="70%" height="auto"/>
     </div>
     <CartInfo/>

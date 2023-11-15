@@ -11,7 +11,7 @@
         {game.name}
     </div>
     <div class="search-result__price">
-        {game.price}
+        {game.price/100}€
     </div>
 </div>
 

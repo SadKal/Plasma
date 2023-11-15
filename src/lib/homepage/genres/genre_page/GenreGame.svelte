@@ -1,11 +1,14 @@
 <script>
-    import genresStore from "$stores/genres";
+    import shopGameStore from "$stores/shopGame";
     export let game;
 
     let genreGame;
 </script>
 
-<div bind:this={genreGame} class="genre-game clearfix">
+<div 
+bind:this={genreGame} 
+class="genre-game clearfix"
+on:click={ () => shopGameStore.openShop(game)}>
     <div class="genre-game__img--container">
         <img class="genre-game__img" src={game.image}/>
     </div>
@@ -19,7 +22,7 @@
         </div>
     </div>
     <div class="genre-game__price">
-        {game.price}
+        {game.price/100}€
     </div>
     
 </div>

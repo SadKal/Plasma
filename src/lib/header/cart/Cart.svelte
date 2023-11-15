@@ -7,13 +7,15 @@
     $: elementCount
 </script>
 
-<li on:click={() => $cartStore.cartActive = !$cartStore.cartActive} class="cart--container">
+<li class="cart--container">
     <div class="cart__count--container">
         <div class="cart__count">
             {elementCount}
         </div> 
     </div>  
-    <object class="cart" data="src/assets/svgs/cart.svg" type="image/svg+xml" width="70%" height="auto"/>
+    <div on:click={() => $cartStore.cartActive = !$cartStore.cartActive}>
+        <object  class="cart" data="src/assets/svgs/cart.svg" type="image/svg+xml" width="70%" height="auto"/>
+    </div>
     <CartInfo/>
 </li>
 

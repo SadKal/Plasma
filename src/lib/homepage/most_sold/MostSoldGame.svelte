@@ -103,13 +103,13 @@
             box-sizing: border-box;
             background-color: var(--game-data-bg-color);
             color: lightgray;
-            font-size: 18x;
-            font-weight: bold;
+            font-weight: 400;
             width: 100%;
             height: 20%;
             padding: .5rem;
+            border-radius: 2%;
             text-align: center;
-            box-shadow: 5px 5px 5px .5px black;
+            box-shadow: 3px 4px 15px 0.5px black;
             
             @media (max-width: 1500px) {
                 font-size: 12px;

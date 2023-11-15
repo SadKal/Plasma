@@ -36,6 +36,7 @@
 			});
 		}
 		$libraryStore.gamesInLibrary = $libraryStore.gamesInLibrary;
+		console.log(">>>", $libraryStore.gamesInLibrary)
 	}
 </script>
 

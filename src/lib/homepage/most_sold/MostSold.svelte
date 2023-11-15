@@ -45,22 +45,24 @@
     .most-sold{
         width: 100%;
         text-align: center;
-        margin-top: 15rem;
-
+        margin-top: 15vw;
         animation: fadein var(--seconds-fadein) ease-in;
 
         @media (max-width: 420px) {
-            margin-top: 6rem;
+            margin-top: 4rem;
         }
         
         &__title{
             color: var(--text-color); 
-            font-size: 70px;
+            font-size: 6rem;
             font-weight: 400;
             letter-spacing: .2rem;
 
-            @media (max-width: 420px) {
-                font-size: 20px;
+            @media (max-width: 1024px) {
+                font-size: 4rem;
+            }
+            @media (max-width: 720px) {
+                font-size: 3rem;
             }
         } 
 

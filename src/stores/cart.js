@@ -35,7 +35,10 @@ function buyGames(){
         libraryStore.update( (library) => {
             cart.gamesInCart.forEach(game => {
                 if(!library.gamesInLibrary.includes(game)){
-                    library.gamesInLibrary.push(game); 
+                    game.adqDate = Date.now();
+                    game.hrsPlayed = 0
+                    library.gamesInLibrary.push(game);
+
                 }
             });
             return library; 

@@ -34,8 +34,12 @@
             font-size: 120px;
             letter-spacing: .4rem;
             font-weight: 400;
+            @media (max-width: 1024px){
+                font-size: 5rem;
+                letter-spacing: .8rem;
+            }
             @media (max-width: 720px){
-                font-size: 50px;
+                font-size: 4.5rem;
                 letter-spacing: .8rem;
             }
             @media (max-width: 420px){
@@ -45,7 +49,11 @@
         }
         &__subtitle{
             color: var(--subtitle-text-color);
-            font-size: 20px;
+            font-size: 1.25rem;
+            @media (max-width: 720px){
+                margin-top: .7rem;
+                font-size: 1rem;   
+            }
             @media (max-width: 420px){
                 margin-top: .7rem;
                 font-size: 10px;   

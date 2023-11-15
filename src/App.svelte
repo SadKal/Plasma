@@ -2,7 +2,9 @@
 	import { onMount } from "svelte";
 	import Header from "$header/Header.svelte";
 	import Page from "$utils/Page.svelte";
+	import games from "$data/games.json"
 	import pagesStore from "$stores/pages";
+	import libraryStore from "$stores/library";
 	import Footer from "./Footer/Footer.svelte";
 	import Login from "./lib/login/Login.svelte";
 	import Register from "./lib/login/Register.svelte";
@@ -28,6 +30,8 @@
 		if ("scrollRestoration" in history) {
 			history.scrollRestoration = "manual";
 		}
+		$libraryStore.recentlyPlayed = $libraryStore.fetchRecents(0, (games.data.length - 1))
+		$libraryStore.gamesInLibrary = $libraryStore.fetchOwned(0, (games.data.length - 1))
 	});
 </script>
 

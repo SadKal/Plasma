@@ -34,11 +34,13 @@ function buyGames(){
     libraryStore.update( (library) => {
         gamesInCart.forEach(game => {
             if(!library.gamesInLibrary.includes(game)){
-                library.gamesInLibrary.push(game);
+                library.gamesInLibrary.push(game); 
             }
-            removeGameFromCart(game);
         });
-        
+        cartStore.update( (cart) => {
+            cart.gamesInCart.length=0;
+            return cart;
+        } )
         return library;
     })
 }

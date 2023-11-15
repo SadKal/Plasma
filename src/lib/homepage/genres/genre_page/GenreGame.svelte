@@ -1,8 +1,14 @@
 <script>
+    import libraryStore from "$stores/library";
     import shopGameStore from "$stores/shopGame";
     export let game;
 
     let genreGame;
+    let gameOwned;
+    
+    $: if($libraryStore.gamesInLibrary.includes(game)){
+        gameOwned=true;
+    }
 </script>
 
 <div 
@@ -22,7 +28,11 @@ on:click={ () => shopGameStore.openShop(game)}>
         </div>
     </div>
     <div class="genre-game__price">
-        {game.price/100}€
+        {#if gameOwned}
+            Ya tienes este juego.
+        {:else}
+            {game.price/100}€
+        {/if}
     </div>
     
 </div>

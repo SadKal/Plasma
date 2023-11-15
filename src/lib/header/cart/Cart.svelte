@@ -14,7 +14,7 @@
     </div>
     <CartInfo/>
 </li>
-
+ 
  
 <style lang="scss">
     .cart{

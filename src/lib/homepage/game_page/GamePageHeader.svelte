@@ -2,11 +2,28 @@
     import cartStore from "$stores/cart";
 	import shopGameStore from "$stores/shopGame";
 	import GamePageContent from "./GamePageContent.svelte";
+	import { onMount } from "svelte";
+
 	let game = $shopGameStore.currentShopGame;
-	import {onMount} from "svelte";
+	let gameInCart = false;
+
+	function setGameInCart(){
+		cartStore.addGameToCart(game);
+		gameInCart = true;
+		setTimeout(() => {
+			$cartStore.cartActive=true;
+		}, 350);
+		setTimeout(() => {
+			$cartStore.cartActive=false;
+		}, 2000);
+		
+	};
 
 	onMount(() => {
         window.scrollTo(0, 0);
+		if ($cartStore.gamesInCart.includes(game)){
+			gameInCart=true;
+		}
     });
 </script>
 
@@ -14,6 +31,7 @@
 	<div class="shopGame__gameBG" style="background-image: url({game.image});" />
 	<div
 		class="shopGame__coverArt"
+		class:active={gameInCart}
 		style="background-image: url({game.cover});"
 	/>
 	<div class="shopGame__title">
@@ -21,8 +39,8 @@
 	</div> 
 </div>
 
-<div class="shopGame__toCart" on:click={() => $cartStore.addGameToCart(game)}> <!-- once linked to library, check if already there and change accordingly-->
-	Añadir al carrito: {game.price}
+<div class="shopGame__toCart" on:click={setGameInCart}> <!-- once linked to library, check if already there and change accordingly-->
+	Añadir al carrito: {game.price/100}€
 </div>
 
 <GamePageContent />
@@ -48,12 +66,23 @@
 	.shopGame__coverArt {
 		height: 21vw;
 		width: 16%;
-		transform: translate(-100%, -130%);
-		position: relative;
+		position: absolute;
+		top: 15%;
+		left: 70%;
 		float: right;
 		background-size: cover;
 		background-repeat: round;
 		border-radius: 1%;
+		transition: all .4s ease-in-out;
+		opacity: 100%;
+
+		&.active{
+			opacity: 0;
+			top: -10%;
+			width: 0;
+			height: 0;
+			left: 100%;
+		}
 	}
 	.shopGame__title {
 		background-color: var(--game-title-background-color);

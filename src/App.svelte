@@ -1,11 +1,12 @@
 <script>
-	import { onMount } from "svelte";
+	import { onMount, onDestroy } from "svelte";
 	import Header from "$header/Header.svelte";
 	import Page from "$utils/Page.svelte";
 	import games from "$data/games.json"
 	import pagesStore from "$stores/pages";
 	import libraryStore from "$stores/library";
 	import Footer from "./Footer/Footer.svelte";
+	import cartStore from "$stores/cart";
 	import Login from "./lib/login/Login.svelte";
 	import Register from "./lib/login/Register.svelte";
 
@@ -24,6 +25,7 @@
 			}
 		});
 	}
+
 	onMount(() => {
 		//Odio los navegadores modernos
 		//El navegador tiene en el historial una variable que hace que vuelva al inicio de la pagina al cargar

@@ -108,8 +108,7 @@
             width: 100%;
             height: 20%;
             padding: .5rem;
-            text-align: center;
-            box-shadow: 5px 5px 5px .5px black;
+            text-align: center; 
             
             @media (max-width: 1500px) {
                 font-size: 12px;

@@ -10,7 +10,7 @@ function openShop(shopGame){
         page.active='Shop';
         return page;
     });
-}
+} 
 
 const currentShopGame = undefined;
 

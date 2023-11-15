@@ -13,6 +13,11 @@
 			gameOwned=true;
 		}
 
+	$: 	if ($cartStore.gamesInCart.includes(game)){
+			gameInCart=true;
+		}else{
+			gameInCart=false;
+		}
 	function setGameInCart(){
 		if(!gameOwned){
 			cartStore.addGameToCart(game);
@@ -28,9 +33,6 @@
 
 	onMount(() => {
         window.scrollTo(0, 0);
-		if ($cartStore.gamesInCart.includes(game)){
-			gameInCart=true;
-		}
     });
 </script>
 
@@ -46,9 +48,11 @@
 	</div> 
 </div>
 
-<div class="shopGame__toCart" on:click={setGameInCart}> <!-- once linked to library, check if already there and change accordingly-->
+<div class="shopGame__toCart" on:click={setGameInCart}> 
 	{#if gameOwned}
-		Ya tienes este juego
+		Ya tienes este juego.
+	{:else if gameInCart}
+		Juego ya en el carrito.
 	{:else}
 		Añadir al carrito: {game.price/100}€
 	{/if}

@@ -26,7 +26,7 @@ function showSlides(n) {
 
         if (n==0){
             let shopGame = gamesData.find((game) => game.image==slides.center.source);
-            shopGameStore.openShop(shopGame)
+            shopGameStore.openShop(shopGame);
         };
 
         const border = n === +1 ? 0 : gamesData.length-1

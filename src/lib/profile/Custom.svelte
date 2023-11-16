@@ -156,7 +156,7 @@
         &__cameraText{
             display: inline-block;
             margin-left:5px ;
-            
+            text-align: center;
         }
 
        

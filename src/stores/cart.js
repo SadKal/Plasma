@@ -41,7 +41,7 @@ function buyGames(){
             return library; 
         });
         cartTotalCalc=0;
-        return {...cart, gamesInCart: [], cartTotal: 0};
+        return {...cart, gamesInCart: [], cartTotal: cartTotalCalc};
     })
 }
 

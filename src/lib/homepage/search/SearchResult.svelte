@@ -1,9 +1,11 @@
 <script>
+    import shopGameStore from "$stores/shopGame";
+
     export let game;
 
 </script>
 
-<div class="search-result clearfix"> 
+<div class="search-result clearfix" on:click={() => shopGameStore.openShop(game)}> 
     <div class="search-result__image-container search-result__float">
         <img class="search-result__image" src={game.image}>
     </div>

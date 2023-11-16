@@ -2,6 +2,7 @@
     import { onDestroy, onMount } from "svelte";
     import games from '$data/games.json';
     import SearchResult from "$search/SearchResult.svelte";
+    import { clickOutside } from "$utils/outsideCart";
 
     let searchValue = '';
     let searchbar;
@@ -68,15 +69,25 @@
 <div class="search__link" on:click={scrollToSearch} on:click={focusSearch}>
     <object data="src/assets/svgs/magnifier.svg" type="image/svg+xml" width="70%" height="auto"/>
 </div>
-
-<div class="search">
-    <input bind:this={searchbar} class="search__bar" name="search" type="search" placeholder="Escribe para buscar..." on:change={clearFocus} bind:value={searchValue}/>
-    <div class="search__results">
-        {#each searchResult as game (game.name)}
-            <SearchResult {game}/>
-        {/each}
+<div 
+    class="search__container"
+    use:clickOutside 
+    on:click_outside={clearFocus}>
+    <div class="search">
+        <input 
+            bind:this={searchbar} 
+            class="search__bar" 
+            name="search" 
+            type="search" 
+            placeholder="Escribe para buscar..." 
+            bind:value={searchValue}/>
+        <div class="search__results"
+            >
+            {#each searchResult as game (game.name)}
+                <SearchResult {game}/>
+            {/each}
+        </div>
     </div>
-    
 </div>
 
 <style lang="scss">

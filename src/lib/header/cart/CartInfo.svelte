@@ -2,11 +2,12 @@
     import cartStore from "$stores/cart";
     import { clickOutside } from "$utils/outsideCart";
     import CartGame from './CartGame.svelte';
-
-    
 </script>
 
-<div class="cart-info" class:active={$cartStore.cartActive} use:clickOutside on:click_outside={ () => $cartStore.cartActive=false }>
+<div class="cart-info" class:active={$cartStore.cartActive} 
+    use:clickOutside 
+    on:click_outside={ () => $cartStore.cartActive=false }
+    >
     <div class="cart-info__games">
         {#each $cartStore.gamesInCart as game}
             <CartGame {game}/>

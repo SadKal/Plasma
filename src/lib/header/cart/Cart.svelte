@@ -14,8 +14,8 @@
     </div>
     <CartInfo/>
 </li>
-
-
+ 
+ 
 <style lang="scss">
     .cart{
         box-sizing: border-box;

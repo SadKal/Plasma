@@ -1,8 +1,21 @@
 <script>
+    import libraryStore from "$stores/library";
+    import cartStore from "$stores/cart"
     import shopGameStore from "$stores/shopGame";
     export let game;
 
     let genreGame;
+    let gameOwned;
+    let gameInCart;
+    
+    $: if($libraryStore.gamesInLibrary.includes(game)){
+        gameOwned=true;
+    }
+    $: 	if ($cartStore.gamesInCart.includes(game)){
+			gameInCart=true;
+		}else{
+			gameInCart=false;
+		}
 </script>
 
 <div 
@@ -22,7 +35,13 @@ on:click={ () => shopGameStore.openShop(game)}>
         </div>
     </div>
     <div class="genre-game__price">
-        {game.price/100}€
+        {#if gameOwned}
+            Ya tienes este juego.
+        {:else if gameInCart}
+            El juego ya esta en el carrito.
+        {:else}
+            {game.price/100}€
+        {/if}
     </div>
     
 </div>
@@ -95,6 +114,8 @@ on:click={ () => shopGameStore.openShop(game)}>
             transform: translateY(-50%);
             float: right;
             margin-right: 5rem;
+            max-width: 15%;
+            text-align: center;
         }
     }
 </style>

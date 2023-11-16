@@ -31,6 +31,11 @@
         position: relative;
         padding: .3rem;
         transition: all .3s;
+        @media (max-width: 650px) {
+            height: 5rem;
+            font-size: .75rem;
+            z-index: 60;
+        }
 
         @media (max-width: 420px) {
             height: 5rem;
@@ -44,11 +49,16 @@
         }
         &__name{
             color: var(--text-color);
-            font-weight: bolder;
+            font-weight: 700;
             font-size: 25px;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
+            @media (max-width: 650px) {
+            height: 5rem;
+            font-size: 1.25rem;
+            z-index: 60;
+        }
             @media (max-width: 420px) {
                 font-size: 12px;
                 top: 20%;
@@ -74,13 +84,18 @@
         }
         &__price{
             color: var(--text-color);
-            font-weight: bolder;
+            font-weight: 700;
             font-size: 25px;
             position: relative;
             top: 50%;
             transform: translateY(-50%);
             float: right;
             margin-right: .5rem;
+            @media (max-width: 650px) {
+            height: 5rem;
+            font-size: 1rem;
+            z-index: 60;
+        }
             @media (max-width: 420px) {
                 top: 40%;
                 font-size: 12px;

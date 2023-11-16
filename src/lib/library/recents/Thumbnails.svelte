@@ -28,9 +28,10 @@
 				// "jugado recientemente"
 				//mobile
 				font-size: 2rem;
-				&:hover {
-					scale: 1.05;
-				}
+			}
+			@media (max-width: 500px) and (orientation: portrait) {
+				// "jugado recientemente"
+				font-size: 1.5rem;
 			}
 		}
 	}

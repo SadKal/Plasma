@@ -16,20 +16,20 @@
 
 <style lang="scss">
     li{
-        margin-bottom: 1rem;
-        @media (min-width: 420px) {
-            margin-bottom: 0;
-        } 
 
         & a{
             padding: 1rem 2rem .5rem;
-            font-size: 42px;
+            font-size: 2.5rem;
             color: var(--text-color);
             text-decoration: none;
             transition: all .3s;
+            float: left;
 
-            @media (min-width: 700px) {
-                float: left;
+            @media (max-width: 750px) {
+                font-size: 2rem;
+            } 
+            @media (max-width: 650px) {
+                float: none;
             } 
 
             &:hover{
@@ -42,10 +42,6 @@
                         0 0 1rem var(--selected-text-color)
                     ,
                         0 0 .5rem black;
-
-                @media (min-width: 700px) {
-                    //transform: scale(1.3, 1.3);
-                } 
             }
         }
     }

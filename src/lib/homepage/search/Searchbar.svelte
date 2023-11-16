@@ -105,9 +105,9 @@
         max-height: 10vw;
 
         @media (max-width: 420px) {
-            top: 0;
             width: 60%; 
             left: 53%;
+            top: 15%
         }
 
         &__link{
@@ -127,7 +127,6 @@
             }
 
             @media (max-width: 420px) {
-                top: 0;
                 left: 85%;
             }
         }

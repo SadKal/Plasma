@@ -90,20 +90,24 @@
         &__title{
             box-sizing: border-box; 
             position: fixed;
-            top: 9%;
+            margin-top: -6rem;
             left: 50%;
             transform: translateX(-50%);
-            width: 20%;
+            width: 25rem;
+            outline: none;
             
             padding: 1rem 2rem;
-            font-weight: bolder;
+            font-weight: 700;
             background-color: var(--text-color);
             color: var(--game-title-color-center);
 
             clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
-            z-index: 10;
-
+            z-index: 20;
             font-size: 2rem;
+            @media (max-width: 650px) {
+                width: 65vw;
+                font-size: 1.25rem;
+            }
         }
 
         &__game-list{

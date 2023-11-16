@@ -55,18 +55,17 @@ on:click={ () => shopGameStore.openShop(game)}>
     .genre-game{
         margin: .3rem auto;
         width: 80%;
-        height: 15rem;
+        height: 20vw;
         box-sizing: border-box;
-        padding: 0rem;
 
-        font-weight: bolder;
-        font-size: 1.2rem;
+        font-weight: 700;
         background-color: rgba(0,74,64,.5);
         color: var(--text-color);
-        clip-path: polygon(2% 0, 100% 0%, 98% 100%, 0% 100%);
-        margin-top: 0rem;
-        
+        clip-path: polygon(2% 0, 100% 0%, 98% 100%, 0% 100%);        
         transition: all .3s ease-in-out;
+        @media (max-width: 750px) {
+                height: 30vw;
+            }
         &:hover{
             background-color: rgb(0,74,64);
             transform: translateX(-10%);
@@ -98,6 +97,16 @@ on:click={ () => shopGameStore.openShop(game)}>
             float: left;
             font-style: italic;
             color: var(--selected-text-color);
+            @media (max-width: 1200px) {
+                width: 30%;
+            }
+            @media (max-width: 850px) {
+                font-size: 1.75rem;
+            }
+            @media (max-width: 550px) {
+                font-size: 1rem;
+                margin-left: 1rem;
+            }
         }
         &__genres{
             position: relative;
@@ -105,6 +114,10 @@ on:click={ () => shopGameStore.openShop(game)}>
             font-size: 1.5rem;
             left: -10%;
             color: var(--text-color);
+            @media (max-width: 1200px) {
+                margin-top: 1.5rem;
+                font-size: .8rem;
+            }
         }
 
         &__price{
@@ -116,6 +129,10 @@ on:click={ () => shopGameStore.openShop(game)}>
             margin-right: 5rem;
             max-width: 15%;
             text-align: center;
+            @media (max-width: 850px) {
+                font-size: 1rem;
+                margin-right: 2.5rem;
+            }
         }
     }
 </style>

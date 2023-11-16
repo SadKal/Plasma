@@ -28,6 +28,12 @@
             right: 0;
             width: 5rem;
             cursor: pointer;
+            @media (max-width: 750px){
+                top: 1%
+            }
+            @media (max-width: 420px){
+                top: 1%
+            }
         }
 
         &__count{

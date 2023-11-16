@@ -64,15 +64,17 @@
             @media (max-width: 720px) {
                 font-size: 3rem;
             }
+            @media (max-width: 420px) {
+                font-size: 2rem;
+            }
         } 
 
         &__exhibitor{
-            width: 60%;
+            width: 70%;
             margin-top: 4rem;
             position: relative; 
             left: 50%;
             transform: translateX(-50%);
-
             @media (max-width: 420px) {
                 width: 100%;
             }

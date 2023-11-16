@@ -8,13 +8,11 @@
 </div>
 
 <style lang="scss">
-
-
-	*{
-        animation-name: fadein;
-        animation-duration: var(--seconds-fadein);
-        animation-timing-function: ease-in;
-    }
+	* {
+		animation-name: fadein;
+		animation-duration: var(--seconds-fadein);
+		animation-timing-function: ease-in;
+	}
 	.library--recents {
 		border-bottom: 7px solid var(--text-color);
 		padding-bottom: 100px;
@@ -26,11 +24,13 @@
 			color: var(--text-color);
 			letter-spacing: 1px;
 
-			@media (max-width: 1080px) and (orientation: portrait){
-			//mobile
-			font-size: 4rem;
+			@media (max-width: 1080px) and (orientation: portrait) {
+				//mobile
+				font-size: 4rem;
+			}
+			@media (max-width: 500px) and (orientation: portrait) {
+				font-size: 3rem;
+			}
 		}
-		}
-		
 	}
 </style>

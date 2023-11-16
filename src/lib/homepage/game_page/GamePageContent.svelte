@@ -77,9 +77,21 @@
 		border-right: 3px solid var(--game-data-bg-color);
 		padding-right: 7.5%;
 		display: inline-block;
+		@media (max-width: 650px) {
+			padding-right: 3%;
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+			border-right: none;
+		}
 	}
 	.shopGame__techInfo {
-		text-align: end;
-		float:right
+		text-align: start;
+		float:right;
+		@media (max-width: 500px) {
+			width: 100%;
+			border-right: none;
+			float:left;
+		}
 	}
 </style>

@@ -51,7 +51,7 @@
         top: 0;
         width: 0;
         height: 0;
-        z-index: 1;
+        z-index: 200;
 
         transition: all .3s ease-in-out;
         overflow: hidden;
@@ -67,6 +67,16 @@
             padding: 1rem 1rem 0 1rem;
             box-shadow: 5px 5px 5px .5px black;
             overflow: auto;
+            @media (max-width: 650px) {
+                top: 200%;
+                width: 30rem;
+            }
+            @media (max-width: 550px) {
+                width: 25rem;
+            }
+            @media (max-width: 420px) {
+                width: 20rem;
+            }
         }
         &__games{
             max-height: 90%;
@@ -87,6 +97,9 @@
             background-color: var(--cart-total-bg-color);
             font-weight: 600;
             letter-spacing: .1rem;
+            @media (max-width: 720px) {
+            font-size: 1.5rem;
+        }
         }
         &__buy{
             float: left;
@@ -98,6 +111,9 @@
             cursor: pointer;
             transition: all .3s;
             user-select: none;
+            @media (max-width: 720px) {
+            font-size: 1.75rem;
+        }
 
             &:hover{
                 scale: 1.1;
@@ -107,11 +123,17 @@
             padding: 1rem;
             font-size: 2rem;
             float: left;
+            @media (max-width: 720px) {
+            font-size: 1.5rem;
+        }
         }
         &__price{
             float: right;
             padding: 1rem;
             font-size: 2rem;
+            @media (max-width: 720px) {
+            font-size: 1.5rem;
+        }
         }
     }
 </style>

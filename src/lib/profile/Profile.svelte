@@ -153,7 +153,7 @@
 
     .nombre,.apellidos,.info,.pronoun,.username,.ph{
         margin-bottom: 10px;
-        font-weight: bold;
+        font-weight: 600;
     }
 
     h1{

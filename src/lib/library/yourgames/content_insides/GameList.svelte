@@ -70,7 +70,7 @@
 		margin-bottom: 10px;
 		background-size: contain;
 		background-repeat: round;
-		margin-top: 30px;
+		margin-top: 1.5rem;
 		border-radius: 4px;
 		transition: all 0.2s;
 		&:hover,
@@ -127,5 +127,9 @@
 		color: var(--text-color);
 		font-size: 3rem;
 		letter-spacing: 1px;
+		@media (max-width: 1080px) and (orientation: portrait) {
+			//mobile
+			font-size: 2rem;
+		}
 	}
 </style>

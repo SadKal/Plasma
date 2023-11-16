@@ -55,5 +55,13 @@
 		overflow: hidden;
 		cursor: pointer;
 		background-color: transparent;
+		@media (max-width: 1080px) and (orientation: portrait) {
+			//mobile
+			transform: translate(200px, -50px);
+		}
+		@media (max-width: 450px) and (orientation: portrait) {
+			//mobile
+			transform: translate(175px, -50px);
+		}
 	}
 </style>

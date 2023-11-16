@@ -96,7 +96,7 @@
         &__title{
             color: var(--text-color);
             font-size: 2rem;
-            font-weight: bolder;
+            font-weight: 700;
             padding: 1rem;
             text-align: center;
             user-select: none;

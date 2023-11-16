@@ -49,7 +49,7 @@
     .most-sold{
         &__game{
             width: calc((100% - (2 * var(--gutter-horizontal))) / 3);
-            height: 30vw;
+            height: 40vw;
             float: left;
             transition: all .4s;
             position: relative;
@@ -63,15 +63,8 @@
                 transition: all .1s;
                 z-index: 5;
             }
-
-            @media (max-width: 1500px) {
-                height: 400px;
-            }
-            @media (max-width: 1200px) {
-                height: 300px;
-            }
             @media (max-width: 420px) {
-                height: 100vw;
+                height: 120vw;
                 width:60%;
                 left: 50%;
                 transform: translateX(-50%);
@@ -107,34 +100,42 @@
             width: 100%;
             height: 20%;
             padding: .5rem;
-            border-radius: 2%;
             text-align: center;
             box-shadow: 3px 4px 15px 0.5px black;
             
             @media (max-width: 1500px) {
-                font-size: 12px;
+                font-size: 1rem;
             }
             @media (max-width: 1200px) {
-                font-size: 8px;
-                padding: .2rem;
+                height: 25%;
+            } 
+            @media (max-width: 900px) {
+                padding: .1rem;
+                height: 13.5vw;
+            } 
+            @media (max-width: 650px) {
+                font-size: .7rem;
             } 
             @media (max-width: 420px) {
-                font-size: 8px;
+                font-size: 1rem;
+                height: 25vw;
             }
         }
         &__name{
-            font-size: 20px;
-            font-weight: bolder;
-            margin: .5rem 0;
+            font-size: 1.5rem;
+            font-weight: 700;
+            line-height: 95%;
+            margin: .25rem 0;
             
             @media (max-width: 1500px) {
-                font-size: 15px;
+                font-size: 1.25rem;
             }
             @media (max-width: 1200px) {
-                font-size: 10px;
+                font-size: 1rem;
             }
             @media (max-width: 420px) {
-                font-size: 15px;
+                font-size: 1.5rem;
+                margin: .5rem 0;
             }          
         }
     }

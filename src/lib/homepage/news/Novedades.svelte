@@ -26,12 +26,12 @@
     .novedades{  
         width: 100%;
         text-align: center;
-        margin-top: 10rem;
+        margin-top: 15vw;
         animation: fadein var(--seconds-fadein) ease-in;
 
         &__title{
             color: var(--text-color);
-            font-size: 120px;
+            font-size: 7rem;
             letter-spacing: .4rem;
             font-weight: 400;
             @media (max-width: 1024px){
@@ -39,12 +39,18 @@
                 letter-spacing: .8rem;
             }
             @media (max-width: 720px){
+                margin-top: 25vw;
                 font-size: 4.5rem;
                 letter-spacing: .8rem;
             }
-            @media (max-width: 420px){
-                font-size: 30px;
+            @media (max-width: 600px){
+                font-size: 3.5rem;
                 letter-spacing: .6rem;
+            }
+            @media (max-width: 420px){
+                font-size: 3rem;
+                margin-top: 35vw;
+                letter-spacing: .4rem;
             }
         }
         &__subtitle{

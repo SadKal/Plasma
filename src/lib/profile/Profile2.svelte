@@ -1,5 +1,7 @@
 <script>
-  import Custom from "./Custom.svelte";
+  import Communications from "./Communications.svelte";
+import Custom from "./Custom.svelte";
+  import Privacy from "./Privacy.svelte";
   import Profile from "./Profile.svelte";
 
     let imgDefault = 'src/lib/profile/default.jpg';
@@ -29,6 +31,11 @@
         // Simular clic en el input de tipo "file"
         document.getElementById('img-uploader').click();
     }
+
+    let componenteMostrado = null;
+    function mostrarComponente(componente){
+        componenteMostrado=componente;
+    }
 </script>
 
 
@@ -52,46 +59,62 @@
                 <div class="profile__settings">
                 <ul>
                     <li>              
-                            <a href="">Personaliza tu perfil</a>
-                            <div class="profile__lines">
-                                <span>Avatar, gamertag y links de redes sociales</span>
-                            </div>
+                        <a on:click={()=> mostrarComponente('Perfil')}>Personaliza tu perfil</a>
+                        <div class="profile__lines">
+                            <span>Avatar, gamertag y links de redes sociales</span>
                             <div class="profile__arrow">></div>
+                        </div>
+                        
 
                     </li>
-                    <li><a href="">Comunicaciones</a>
+                    <li><a on:click={()=> mostrarComponente('Comunicaciones')} >Comunicaciones</a>
                         <div class="profile__lines">
                             <span>Gestiona los emails o notificaciones que quieres recibir</span>
+                            <div class="profile__arrow">></div>
                         </div>
-                        <div class="profile__arrow">></div>
+                        
                     </li>
-                    <li><a href="">Privacidad</a>
+                    <li><a on:click={()=> mostrarComponente('Privacidad')} >Privacidad</a>
                         <div class="profile__lines">
                             <span>Gestiona tu información pública o privada</span>
+                            <div class="profile__arrow">></div>
                         </div>
-                        <div class="profile__arrow">></div>
+                        
 
                     </li>
-                    <li><a href="">Idioma y moneda</a>
+                    <li><a on:click={()=> mostrarComponente('Idioma')} >Idioma y moneda</a>
                         <div class="profile__lines">
                             <span>Cambia el idioma o la moneda que quieres utilizar</span>
-                        </div>
-                        <div class="profile__arrow">></div>
+                            <div class="profile__arrow">></div>
 
+                        </div>
+                        
                     </li>
-                    <li><a href="">Email y contraaseña</a>
+                    <li><a on:click={()=> mostrarComponente('Email')}>Email y contraaseña</a>
                         <div class="profile__lines">
                             <span>Gestiona tu email y tu contraseña</span>
+                            <div class="profile__arrow">></div>
                         </div>
-                        <div class="profile__arrow">></div>
+                        
 
                     </li>
                 </ul>
                 </div>
 
         <div class="profile__content">
-            <Custom/>
-            
+            {#if componenteMostrado === 'Perfil'}
+                <Custom/>
+            {:else if componenteMostrado === 'Comunicaciones' }
+                <Communications/>
+            {:else if componenteMostrado === 'Privacidad'}
+                <Privacy/>
+            {:else if componenteMostrado === 'Idioma'}
+                <p>Idioma</p>
+            {:else if componenteMostrado === 'Email'}
+                <p>Email</p>
+            {:else}
+                <Custom/>
+            {/if}
         </div>
     </div>
 
@@ -104,12 +127,7 @@
         font-family: Montserrat;
         color: var(--text-color);
 
-        &__arrow{
-            position: absolute;
-            top: 40%;
-            left: 95%;
-            transform: translate(-50%,-50%);
-        }
+        
         &__photo{
             border-bottom: 2px solid var(--text-color);
             margin-bottom:5vh;
@@ -144,14 +162,29 @@
             }
 
             &__lines{
+                width: 100%;
                 span{
                     display: inline-block;
                     width: 90%;
+                    vertical-align: middle;
+                    line-height: 25px;
                 }
+
+                .profile__arrow{
+                display: inline-block;
+                width: 5%;
+                margin-left: 10px;
+                margin-bottom: 25px;
+                vertical-align: middle;
+                font-size: 30px;
+               
             }
 
+            }
+            
+
             &__user{
-                font-size: 20px;    
+                font-size: 19px;    
                 height: 100%;
                 display: table;
             }
@@ -160,6 +193,7 @@
                 width: 30%;
                 height: 100%;
                 border-right: 2px solid var(--text-color);
+                float: left;
 
                 ul{
                     list-style-type:none;
@@ -169,17 +203,18 @@
                     display: block;
                     margin: 15px;
                     height: 10vh;
-                    position: relative;
+                    float: left;
                     a{
                         text-decoration: none;
                         color: aliceblue;
+                        cursor: pointer;
                     }
                 }
             }
 
             &__content{
                 width: 60%;
-                float: left;
+                float: right;
             }
 
             &__settings{

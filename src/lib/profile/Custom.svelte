@@ -32,83 +32,83 @@
   </script>
 
 <main>
-<div class="custom">
-        <div class="custom__image">
-            <div class="custom__title">
-                <p>Foto de perfil</p>
+<div class="all">
+    <div class="custom">
+            <div class="custom__image">
+                <div class="custom__title">
+                    <p>Foto de perfil</p>
+                </div>
+                <div class="custom__imgUser">
+                    <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
+                    <input type="file" id="img-uploader2" on:change={HandleImg}>
+                    <div class="custom__camera">
+                        <img src="src/lib/profile/photo.png" alt="">
+                        <div class="custom__cameraText">.jpg/png</div>
+                    </div>
+                </div>
             </div>
-            <div class="custom__imgUser">
-                <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
-                <input type="file" id="img-uploader2" on:change={HandleImg}>
-                <div class="custom__camera">
-                    <img src="src/lib/profile/photo.png" alt="">
-                    <div class="custom__cameraText">.jpg/png</div>
+
+            <div class="custom__nameUser">
+                <div class="custom__title">
+                    <p>Nombre de usuario</p>
                 </div>
 
-                
+                <div class="custom__nameInput">
+                    <input type="text" name="" id="">
+                    <input type="submit" value="Submit">
+                </div>
             </div>
-            
-        </div>
-
-        <div class="custom__nameUser">
-            <div class="custom__title">
-                <p>Nombre de usuario</p>
-            </div>
-            
-            <div class="custom__nameInput">
+    </div> 
+    <div class="cus">
+     <p>Links de redes</p>   
+        <div class="cus__uno">
+            <div class="cus__network1">
+                <label for="">Twitch</label><br>
                 <input type="text" name="" id="">
-                <input type="submit" value="Submit">
+            </div>
+            <div class="cus__network2">
+                <label for="">Steam</label><br>
+                <input type="text" name="" id="">
+            </div>
+            <div class="cus__network3">
+                <label for="">Ubisoft Connect</label><br>
+                <input type="text" name="" id="">
             </div>
         </div>
-</div> 
-<div class="cus">
- <p>Links de redes</p>   
-    <div class="cus__uno">
-        <div class="cus__network1">
-            <label for="">Twitch</label><br>
-            <input type="text" name="" id="">
+        <div class="cus__dos">
+            <div class="cus__network4">
+                <label for="">Youtube</label><br>
+                <input type="text" name="" id="">
+            </div>
+        
+            <div class="cus__network5">
+                <label for="">Discord</label><br>
+                <input type="text" name="" id="">
+            </div>
+            <div class="cus__network6">
+                <label for="">EA</label><br>
+                <input type="text" name="" id="">
+            </div>
         </div>
-        <div class="cus__network2">
-            <label for="">Steam</label><br>
-            <input type="text" name="" id="">
+        <div class="cus__submit">
+            <input type="submit" value="Submit">
         </div>
-        <div class="cus__network3">
-            <label for="">Ubisoft Connect</label><br>
-            <input type="text" name="" id="">
-        </div>
-    </div>
-    <div class="cus__dos">
-        <div class="cus__network4">
-            <label for="">Youtube</label><br>
-            <input type="text" name="" id="">
-        </div>
-    
-        <div class="cus__network5">
-            <label for="">Discord</label><br>
-            <input type="text" name="" id="">
-        </div>
-        <div class="cus__network6">
-            <label for="">EA</label><br>
-            <input type="text" name="" id="">
-        </div>
-    </div>
-    <div class="cus__submit">
-        <input type="submit" value="Submit">
     </div>
 </div>
+    </main>
 
-</main>
-
-<style lang="scss">
+<style scoped lang="scss">
     
+    .all{
+        float: left;
+    }
     .custom{
         width: 100%;
         height: 100%;
         font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
-        margin-left: 40px;
-        
+      
         
             input[type="text"]{
                         width: 70%;
@@ -185,7 +185,6 @@
         font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
-        margin-left: 40px; 
         margin-top: 30px;
 
         input[type="text"]{
@@ -208,9 +207,10 @@
             height: 20px;
             width: 100%;
             input[type="submit"]{
-              margin-left: 36%;
+              margin-left: 33%;
               margin-right: 60%;
-              margin-top: 40px;
+              margin-top: 20px;
+              margin-bottom: 20px;
             height: 8vh;
             width: 8vw;
             background:var(--text-color);

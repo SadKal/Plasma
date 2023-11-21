@@ -1,20 +1,21 @@
 <script>
     import Custom from "./Custom.svelte";
     import Profile from "./Profile.svelte";
+    import { imageStore } from "$stores/images";
   
       let imgDefault = 'src/lib/profile/default.jpg';
   
       function ChangeImage(newImg){
           imgDefault = newImg;
+          imageStore.set(newImg);//Actualizo el valor del store.
       }
   
       function HandleImg(e){/* Creo una funcion para manejar el evento que causa que seleccione una imagen */
-          const file=e.target.files[0]; /* Meto lo que me pasen en una variable */
-  
+          const file=e.target.files[0]; /* Meto lo que me pasen en una variable */  
           if(file){/* Si esa variable tiene una foto nueva hace esto: */
               const reader = new FileReader();/* Un objeto el cual puede leer del lado del cliente */
-  
-              reader.onload = function (e){/* reader tiene un evento que lo manejo con una funcion, que se ejecute cuando finaliza la lectura */
+              reader.onload = function (e){     /* reader tiene un evento que lo manejo con una funcion, que se ejecute cuando finaliza la lectura */
+                console.log(e.target.result);
                   ChangeImage(e.target.result); /* Llamo a la otra funcion para que me cambie la imagen */
               }
               reader.readAsDataURL(file);/* Que me lea la imagen como una URL */
@@ -22,9 +23,9 @@
               ChangeImage('src/Perfil/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
           }
   
-  
       }
-  
+
+
       function handleClickOnImage() {
           // Simular clic en el input de tipo "file"
           document.getElementById('img-uploader2').click();

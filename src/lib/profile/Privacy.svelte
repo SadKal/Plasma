@@ -62,6 +62,7 @@
             width: 70%;
             border-radius: 20px;
             padding: 10px;
+            color: beige;
 
             .checkbox-slider{
                 margin-bottom: 20px;

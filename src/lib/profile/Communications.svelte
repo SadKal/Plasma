@@ -75,6 +75,13 @@
             display: inline-block;
             font-size: 18px;
 
+            &__email{
+                p{
+                    font-size: 18px;
+                    color: rgba(beige,0.8);
+                }
+            }
+
             &__adjustment, &__news{
                 margin-bottom: 5vh;
             }
@@ -89,6 +96,7 @@
                 width: 70%;
                 border-radius: 20px;
                 padding: 10px;
+                color: beige;
 
                 .checkbox-slider{
                     margin-bottom: 20px;

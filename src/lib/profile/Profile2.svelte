@@ -1,36 +1,13 @@
 <script>
+  import { imageStore } from "$stores/images";
   import Communications from "./Communications.svelte";
 import Custom from "./Custom.svelte";
+  import Email from "./Email.svelte";
   import Privacy from "./Privacy.svelte";
   import Profile from "./Profile.svelte";
 
-    let imgDefault = 'src/lib/profile/default.jpg';
-
-    function ChangeImage(newImg){
-        imgDefault = newImg;
-    }
-
-    function HandleImg(e){/* Creo una funcion para manejar el evento que causa que seleccione una imagen */
-        const file=e.target.files[0]; /* Meto lo que me pasen en una variable */
-
-        if(file){/* Si esa variable tiene una foto nueva hace esto: */
-            const reader = new FileReader();/* Un objeto el cual puede leer del lado del cliente */
-
-            reader.onload = function (e){/* reader tiene un evento que lo manejo con una funcion, que se ejecute cuando finaliza la lectura */
-                ChangeImage(e.target.result); /* Llamo a la otra funcion para que me cambie la imagen */
-            }
-            reader.readAsDataURL(file);/* Que me lea la imagen como una URL */
-        }else{
-            ChangeImage('src/lib/profile/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
-        }
-
-
-    }
-
-    function handleClickOnImage() {
-        // Simular clic en el input de tipo "file"
-        document.getElementById('img-uploader').click();
-    }
+    let valor = $imageStore;
+    console.log(valor);
 
     let componenteMostrado = null;
     function mostrarComponente(componente){
@@ -43,7 +20,7 @@ import Custom from "./Custom.svelte";
     <div class="profile">
             <div class="profile__photo">
                 <div class="profile__img">
-                    <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
+                    <img src="{valor}" alt="" class="image-rounded" on:click={handleClickOnImage}>
                     <input type="file" id="img-uploader" on:change={HandleImg}>
                 </div>
 
@@ -90,7 +67,7 @@ import Custom from "./Custom.svelte";
                         </div>
                         
                     </li>
-                    <li><a on:click={()=> mostrarComponente('Email')}>Email y contraaseña</a>
+                    <li><a on:click={()=> mostrarComponente('Email')}>Email y contraseña</a>
                         <div class="profile__lines">
                             <span>Gestiona tu email y tu contraseña</span>
                             <div class="profile__arrow">></div>
@@ -111,7 +88,7 @@ import Custom from "./Custom.svelte";
             {:else if componenteMostrado === 'Idioma'}
                 <p>Idioma</p>
             {:else if componenteMostrado === 'Email'}
-                <p>Email</p>
+                <Email/>
             {:else}
                 <Custom/>
             {/if}

@@ -36,14 +36,14 @@
 </script>
 
 <div class="main">
-   <!--  <Header/>  -->
+    <Header/> 
     <Profile2/>
     <!-- <Page/> -->  
         <!-- <Login/> -->
         <!-- <Register/> -->
         <!-- <Custom/> -->
         
-    <!-- <Footer/>   -->
+    <Footer/>  
 </div>
     
     

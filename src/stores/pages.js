@@ -2,14 +2,13 @@ import Homepage from '$homepage/Homepage.svelte';
 import GamePage from '$homepage/game_page/GamePageHeader.svelte';
 import GenrePage from '$homepage/genres/genre_page/GenrePage.svelte';
 import Library from '$library/Library.svelte';
-import Perfil from '$profile/Profile.svelte';
 import { writable } from 'svelte/store';
-
+import Profile from '$profile/Profile.svelte';
 
 const pages = {
     'Inicio': Homepage,
     'Biblioteca': Library,
-    'Perfil': Perfil,
+    'Perfil': Profile,
     'Shop': GamePage,
     'Genres': GenrePage
 };

@@ -40,7 +40,6 @@
         else{
             loadImg(src);
         }
-        console.log($cacheStore.slides)
     }); 
     onDestroy(() => {
         tempImg.removeEventListener('load', onImgLoaded);  
@@ -96,9 +95,8 @@
 
         &__title{
             color: var(--text-color);
-            font-family: 'Montserrat';
             font-size: 2rem;
-            font-weight: bolder;
+            font-weight: 700;
             padding: 1rem;
             text-align: center;
             user-select: none;

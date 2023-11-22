@@ -1,20 +1,21 @@
 <script>
-
-    let elementCount=0;
-
-    $: elementCount
+    import cartStore from "$stores/cart";
+    import CartInfo from "./CartInfo.svelte";
 </script>
 
-<li on:click={() => elementCount++} class="cart--container">
+<li class="cart--container">
     <div class="cart__count--container">
         <div class="cart__count">
-            {elementCount}
-        </div>
-    </div>  
-    <object class="cart" data="src/assets/svgs/cart.svg" type="image/svg+xml" width="70%" height="auto"/>
+            {$cartStore.gamesInCart.length}
+        </div> 
+    </div>
+    <div on:click={() => $cartStore.cartActive = !$cartStore.cartActive}>
+        <object class="cart" data="src/assets/svgs/cart.svg" type="image/svg+xml" width="70%" height="auto"/>
+    </div>
+    <CartInfo/>
 </li>
-
-
+ 
+ 
 <style lang="scss">
     .cart{
         box-sizing: border-box;
@@ -27,6 +28,12 @@
             right: 0;
             width: 5rem;
             cursor: pointer;
+            @media (max-width: 750px){
+                top: 1%
+            }
+            @media (max-width: 420px){
+                top: 1%
+            }
         }
 
         &__count{

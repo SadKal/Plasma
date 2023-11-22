@@ -27,14 +27,14 @@
     .genre{
         box-sizing: border-box;
         width: calc((100% - (3 * var(--gutter-horizontal))) / 4);
-        height: auto;
+        height: max-content;
         float: left;
         
         position: relative;
         text-align: center;
         padding: 3rem 0 1.5rem;
-        font-weight: bolder;
-        font-family: 'Montserrat';
+        font-weight: 700;
+
 
         background-image: url('https://cdn.mos.cms.futurecdn.net/HsDtpFEHbDpae6wBuW5wQo.jpg');
         background-blend-mode: soft-light;
@@ -53,6 +53,12 @@
 
         &__name{
             margin-top: 2rem;
+            @media (max-width: 750px) {
+            font-size: .8rem;
+            &:not(:last-child){
+                margin-bottom: 2rem;
+            }
+        }
         }
 
         &__svg{
@@ -63,7 +69,6 @@
             width:60%;
             left: 50%;
             transform: translateX(-50%);
-            
             &:not(:last-child){
                 margin-bottom: 2rem;
             }

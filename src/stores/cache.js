@@ -1,7 +1,7 @@
 import { writable } from 'svelte/store';
 import games from '$data/games.json';
-import pagesStore from './pages';
-import shopGameStore from './shopGame';
+import shopGameStore from '$stores/shopGame';
+
 
 
 let gamesData = [];
@@ -25,15 +25,8 @@ function showSlides(n) {
     cacheStore.update ((data => {
 
         if (n==0){
-            pagesStore.update((page) => {
-                shopGameStore.update((shop) => {
-                    let shopGame = gamesData.find((game) => game.image==slides.center.source);
-                    shop.currentShopGame=shopGame;
-                    return shop;
-                })
-                page.active='Shop';
-                return page;
-            });
+            let shopGame = gamesData.find((game) => game.image==slides.center.source);
+            shopGameStore.openShop(shopGame);
         };
 
         const border = n === +1 ? 0 : gamesData.length-1

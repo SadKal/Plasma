@@ -6,7 +6,7 @@
     import Searchbar from '$search/Searchbar.svelte';
    
 </script>
- 
+
 <Searchbar/>
 
 <Novedades/>

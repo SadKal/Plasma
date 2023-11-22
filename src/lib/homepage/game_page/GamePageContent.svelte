@@ -7,7 +7,7 @@
 <div class="shopGame__content_container">
 	<div class="shopGame__gameInfo">
 		<div class="shopGame__nonTechInfo">
-			<h1>Descripción:</h1>
+			<h1>Descripción:</h1> 
 			<p>
 				<!-- will be changed once we get API access and can bring from there-->
 				Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab consectetur
@@ -41,7 +41,6 @@
 		animation-name: fadein;
 		animation-duration: var(--seconds-fadein);
 		animation-timing-function: ease-in;
-		font-family: "Montserrat";
 	}
 	h1,
 	h2 {
@@ -78,9 +77,21 @@
 		border-right: 3px solid var(--game-data-bg-color);
 		padding-right: 7.5%;
 		display: inline-block;
+		@media (max-width: 650px) {
+			padding-right: 3%;
+		}
+		@media (max-width: 500px) {
+			width: 100%;
+			border-right: none;
+		}
 	}
 	.shopGame__techInfo {
-		text-align: end;
-		float:right
+		text-align: start;
+		float:right;
+		@media (max-width: 500px) {
+			width: 100%;
+			border-right: none;
+			float:left;
+		}
 	}
 </style>

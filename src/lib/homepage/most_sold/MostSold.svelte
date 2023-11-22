@@ -45,33 +45,36 @@
     .most-sold{
         width: 100%;
         text-align: center;
-        margin-top: 15rem;
-
+        margin-top: 15vw;
         animation: fadein var(--seconds-fadein) ease-in;
 
         @media (max-width: 420px) {
-            margin-top: 6rem;
+            margin-top: 4rem;
         }
         
         &__title{
-            font-family: 'Montserrat';
             color: var(--text-color); 
-            font-size: 60px;
-            font-weight: bolder;
-            letter-spacing: .4rem;
+            font-size: 6rem;
+            font-weight: 400;
+            letter-spacing: .2rem;
 
+            @media (max-width: 1024px) {
+                font-size: 4rem;
+            }
+            @media (max-width: 720px) {
+                font-size: 3rem;
+            }
             @media (max-width: 420px) {
-                font-size: 20px;
+                font-size: 2rem;
             }
         } 
 
         &__exhibitor{
-            width: 60%;
+            width: 70%;
             margin-top: 4rem;
             position: relative; 
             left: 50%;
             transform: translateX(-50%);
-
             @media (max-width: 420px) {
                 width: 100%;
             }

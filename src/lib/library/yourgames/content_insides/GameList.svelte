@@ -1,22 +1,21 @@
 <script>
-	import user from "$data/testuser.json";
+	import libraryStore from "$stores/library";
 	import Select from "./GameListSelect.svelte";
 	import { flip } from "svelte/animate";
 	import { expoInOut } from "svelte/easing";
 
-	let games = user.gamesOwned;
 	sortBy("Nombre");
 
 	function sortBy(selectedValue) {
 		if (selectedValue === "Nombre") {
-			games.sort((a, b) => {
+			$libraryStore.gamesInLibrary.sort((a, b) => {
 				if (a.name < b.name) return -1;
 				if (a.name > b.name) return 1;
 				if (a.name === b.name) return 0;
 			});
 		}
 		if (selectedValue === "Más jugados") {
-			games.sort((a, b) => {
+			$libraryStore.gamesInLibrary.sort((a, b) => {
 				return -(a.hrsPlayed - b.hrsPlayed);
 			});
 		}
@@ -32,11 +31,12 @@
 				prototype.toLocaleString();
 
 			*/
-			games.sort((a, b) => {
+			$libraryStore.gamesInLibrary.sort((a, b) => {
 				return -(a.adqDate - b.adqDate);
 			});
 		}
-		games = games;
+		$libraryStore.gamesInLibrary = $libraryStore.gamesInLibrary;
+		console.log(">>>", $libraryStore.gamesInLibrary)
 	}
 </script>
 
@@ -49,11 +49,11 @@
 	eventClick={sortBy}
 />
 
-{#each games as game (game.id)}
+{#each $libraryStore.gamesInLibrary as game (game.id)}
 	<div
 		class="gamelist__content"
 		style="background-image: url('{game.cover}');"
-		animate:flip={{ duration: 400, delay: 20 * game.id, easing: expoInOut }}
+		animate:flip={{ duration: 400, delay: 10 * game.id, easing: expoInOut }}
 	>
 		<span class="gamelist__content_title">
 			{game.name}
@@ -70,7 +70,7 @@
 		margin-bottom: 10px;
 		background-size: contain;
 		background-repeat: round;
-		margin-top: 30px;
+		margin-top: 1.5rem;
 		border-radius: 4px;
 		transition: all 0.2s;
 		&:hover,
@@ -123,10 +123,13 @@
 	.library--urgames__title {
 		position: absolute;
 		margin-top: -50px;
-		font-family: "Montserrat";
 		font-weight: 600;
 		color: var(--text-color);
 		font-size: 3rem;
 		letter-spacing: 1px;
+		@media (max-width: 1080px) and (orientation: portrait) {
+			//mobile
+			font-size: 2rem;
+		}
 	}
 </style>

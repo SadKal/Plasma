@@ -1,25 +1,14 @@
 <script>
-	import user from "../../../data/testuser.json";
-	let userLastPlayed = user.lastPlayed;
-	let games = user.gamesOwned;
+	import libraryStore from "$stores/library";
 
-	let images = [];
-	let i = 0;
-	while (i < 5) {
-		if (!images.includes(userLastPlayed[i])) {
-			images.push(games[Number(userLastPlayed[i]) - 1].cover); // horrid type conversion from string to number
-			i++;
-		}
-	}
-	
 </script>
 
 <div class="library--recents">
 	<div class="library--recents__title">Jugado recientemente</div>
-	{#each images as img}
+	{#each $libraryStore.recentlyPlayed as img}
 		<div
 			class="library--recents__thumbnails thumbnail--small"
-			style="background-image: url('{img}');"
+			style="background-image: url('{img.cover}');"
 		/>
 	{/each}
 </div>
@@ -30,7 +19,6 @@
 		margin: 0 auto;
 
 		&__title {
-			font-family: "Montserrat";
 			font-weight: 600;
 			color: var(--text-color);
 			font-size: 3rem;
@@ -40,9 +28,10 @@
 				// "jugado recientemente"
 				//mobile
 				font-size: 2rem;
-				&:hover {
-					scale: 1.05;
-				}
+			}
+			@media (max-width: 500px) and (orientation: portrait) {
+				// "jugado recientemente"
+				font-size: 1.5rem;
 			}
 		}
 	}

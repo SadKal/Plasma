@@ -1,11 +1,27 @@
 <script>
-    import genresStore from "$stores/genres";
+    import libraryStore from "$stores/library";
+    import cartStore from "$stores/cart"
+    import shopGameStore from "$stores/shopGame";
     export let game;
 
     let genreGame;
+    let gameOwned;
+    let gameInCart;
+    
+    $: if($libraryStore.gamesInLibrary.includes(game)){
+        gameOwned=true;
+    }
+    $: 	if ($cartStore.gamesInCart.includes(game)){
+			gameInCart=true;
+		}else{
+			gameInCart=false;
+		}
 </script>
 
-<div bind:this={genreGame} class="genre-game clearfix">
+<div 
+bind:this={genreGame} 
+class="genre-game clearfix"
+on:click={ () => shopGameStore.openShop(game)}>
     <div class="genre-game__img--container">
         <img class="genre-game__img" src={game.image}/>
     </div>
@@ -19,7 +35,13 @@
         </div>
     </div>
     <div class="genre-game__price">
-        {game.price}
+        {#if gameOwned}
+            Ya tienes este juego.
+        {:else if gameInCart}
+            El juego ya esta en el carrito.
+        {:else}
+            {game.price/100}€
+        {/if}
     </div>
     
 </div>
@@ -33,18 +55,17 @@
     .genre-game{
         margin: .3rem auto;
         width: 80%;
-        height: 15rem;
+        height: 15vw;
         box-sizing: border-box;
-        padding: 0rem;
-        font-family: 'Montserrat';
-        font-weight: bolder;
-        font-size: 1.2rem;
+
+        font-weight: 700;
         background-color: rgba(0,74,64,.5);
         color: var(--text-color);
-        clip-path: polygon(2% 0, 100% 0%, 98% 100%, 0% 100%);
-        margin-top: 0rem;
-        
+        clip-path: polygon(2% 0, 100% 0%, 98% 100%, 0% 100%);        
         transition: all .3s ease-in-out;
+        @media (max-width: 750px) {
+                height: 30vw;
+            }
         &:hover{
             background-color: rgb(0,74,64);
             transform: translateX(-10%);
@@ -76,6 +97,16 @@
             float: left;
             font-style: italic;
             color: var(--selected-text-color);
+            @media (max-width: 1200px) {
+                width: 30%;
+            }
+            @media (max-width: 850px) {
+                font-size: 1.75rem;
+            }
+            @media (max-width: 550px) {
+                font-size: 1rem;
+                margin-left: 1rem;
+            }
         }
         &__genres{
             position: relative;
@@ -83,6 +114,10 @@
             font-size: 1.5rem;
             left: -10%;
             color: var(--text-color);
+            @media (max-width: 1200px) {
+                margin-top: 1.5rem;
+                font-size: .8rem;
+            }
         }
 
         &__price{
@@ -92,6 +127,12 @@
             transform: translateY(-50%);
             float: right;
             margin-right: 5rem;
+            max-width: 15%;
+            text-align: center;
+            @media (max-width: 850px) {
+                font-size: 1rem;
+                margin-right: 2.5rem;
+            }
         }
     }
 </style>

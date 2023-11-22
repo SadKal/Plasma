@@ -26,27 +26,40 @@
     .novedades{  
         width: 100%;
         text-align: center;
-        font-family: 'Montserrat';
-        margin-top: 10rem;
+        margin-top: 8vw;
         animation: fadein var(--seconds-fadein) ease-in;
 
         &__title{
             color: var(--text-color);
-            font-size: 120px;
+            font-size: 7rem;
             letter-spacing: .4rem;
-            font-weight: bolder;
-            @media (max-width: 720px){
-                font-size: 50px;
+            font-weight: 400;
+            @media (max-width: 1024px){
+                font-size: 5rem;
                 letter-spacing: .8rem;
             }
-            @media (max-width: 420px){
-                font-size: 30px;
+            @media (max-width: 720px){
+                margin-top: 25vw;
+                font-size: 4.5rem;
+                letter-spacing: .8rem;
+            }
+            @media (max-width: 600px){
+                font-size: 3.5rem;
                 letter-spacing: .6rem;
+            }
+            @media (max-width: 420px){
+                font-size: 3rem;
+                margin-top: 35vw;
+                letter-spacing: .4rem;
             }
         }
         &__subtitle{
             color: var(--subtitle-text-color);
-            font-size: 20px;
+            font-size: 1.25rem;
+            @media (max-width: 720px){
+                margin-top: .7rem;
+                font-size: 1rem;   
+            }
             @media (max-width: 420px){
                 margin-top: .7rem;
                 font-size: 10px;   

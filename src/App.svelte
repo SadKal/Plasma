@@ -6,8 +6,6 @@
     import Footer from "./Footer/Footer.svelte";
     import Login from "./lib/login/Login.svelte";
     import Register from "./lib/login/Register.svelte";
-  import Profile from "$profile/Profile.svelte";
-  import Profile2 from "$profile/Profile2.svelte";
   import Custom from "$profile/Custom.svelte";
 
     $:{
@@ -37,13 +35,13 @@
 
 <div class="main">
     <Header/> 
-    <Profile2/>
-    <!-- <Page/> -->  
+    <!-- <Profile2/> -->
+    <Page/>  
         <!-- <Login/> -->
         <!-- <Register/> -->
         <!-- <Custom/> -->
         
-    <Footer/>  
+   <!--  <Footer/>  --> 
 </div>
     
     

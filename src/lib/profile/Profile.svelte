@@ -1,208 +1,213 @@
 <script>
-    let imgDefault = 'src/Perfil/default.jpg';
+  import { imageStore } from "$stores/images";
+  import Communications from "./Communications.svelte";
+import Custom from "./Custom.svelte";
+  import Email from "./Email.svelte";
+  import Privacy from "./Privacy.svelte";
 
-    function ChangeImage(newImg){
-        imgDefault = newImg;
+    let valor = $imageStore;
+    console.log(valor);
+
+    let componenteMostrado = null;
+    function mostrarComponente(componente){
+        componenteMostrado=componente;
     }
-
-    function HandleImg(e){/* Creo una funcion para manejar el evento que causa que seleccione una imagen */
-        const file=e.target.files[0]; /* Meto lo que me pasen en una variable */
-
-        if(file){/* Si esa variable tiene una foto nueva hace esto: */
-            const reader = new FileReader();/* Un objeto el cual puede leer del lado del cliente */
-
-            reader.onload = function (e){/* reader tiene un evento que lo manejo con una funcion, que se ejecute cuando finaliza la lectura */
-                ChangeImage(e.target.result); /* Llamo a la otra funcion para que me cambie la imagen */
-            }
-            reader.readAsDataURL(file);/* Que me lea la imagen como una URL */
-        }else{
-            ChangeImage('src/Perfil/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
-        }
-
-
-    }
-
-   
-
 </script>
 
+
 <main>
-    <div class="container">
-        <div class="content">
-            <div class="photo">
-                <div class="image">
-                        <img src="{imgDefault}" alt="" class="image-rounded">
-                </div>
-    
-                <div class="modify">
-                    <input type="file" id="img-uploader" on:change={HandleImg}>
-                    <label for="img-uploader">Cambiar foto</label>
-
-                </div>
-            </div>
-    
-            <div class="data">
-                <div class="names">
-                    <div class="name">
-                        <div class="nombre">Nombre</div>
-                        <div class="box">
-                            <input type="text" value="Maria">
-                        </div>
-                    </div>
-                    <div class="lastname">
-                        <div class="apellidos">Apellidos</div>
-                        <div class="box">
-                            <input type="text" value="Pinar">
-                        </div>
-                    </div>
+    <div class="profile">
+            <div class="profile__photo">
+                <div class="profile__img">
+                    <!-- <img src="{valor}" alt="" class="image-rounded" on:click={handleClickOnImage}>
+                    <input type="file" id="img-uploader" on:change={HandleImg}> -->
                 </div>
 
-                <div class="infos">
-                    <div class="info">Info</div>
-                    <div class="textarea">
-                        <textarea name="" id="" cols="30" rows="10" placeholder="Cuenta tu historia"></textarea>
-                    </div>
-                </div>
-
-                <div class="pronouns">
-                    <div class="pronoun">Pronombres</div>
-                    <div class="selects">
-                        <select name="" id="">
-                            <option value="">Él/He/Him </option>
-                            <option value="">Ella/She/Her </option>
-                            <option value="">Elle/They/Them </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="user">
-                    <div class="username">Nombre de usuario</div>
-                    <div class="usertext">
-                        <input type="text" value="mapins">
+                <div class="profile__data">
+                    <div class="profile__name">
+                        <span>Maripins</span>
+                        <span>Miembro desde: nov 30, 2023</span>
                     </div>
                 </div>
             </div>
+
+            <div class="profile__user">
+                <div class="profile__settings">
+                <ul>
+                    <li>              
+                        <a on:click={()=> mostrarComponente('Perfil')}>Personaliza tu perfil</a>
+                        <div class="profile__lines">
+                            <span>Avatar, gamertag y links de redes sociales</span>
+                            <div class="profile__arrow">></div>
+                        </div>
+                        
+
+                    </li>
+                    <li><a on:click={()=> mostrarComponente('Comunicaciones')} >Comunicaciones</a>
+                        <div class="profile__lines">
+                            <span>Gestiona los emails o notificaciones que quieres recibir</span>
+                            <div class="profile__arrow">></div>
+                        </div>
+                        
+                    </li>
+                    <li><a on:click={()=> mostrarComponente('Privacidad')} >Privacidad</a>
+                        <div class="profile__lines">
+                            <span>Gestiona tu información pública o privada</span>
+                            <div class="profile__arrow">></div>
+                        </div>
+                        
+
+                    </li>
+                    <li><a on:click={()=> mostrarComponente('Idioma')} >Idioma y moneda</a>
+                        <div class="profile__lines">
+                            <span>Cambia el idioma o la moneda que quieres utilizar</span>
+                            <div class="profile__arrow">></div>
+
+                        </div>
+                        
+                    </li>
+                    <li><a on:click={()=> mostrarComponente('Email')}>Email y contraseña</a>
+                        <div class="profile__lines">
+                            <span>Gestiona tu email y tu contraseña</span>
+                            <div class="profile__arrow">></div>
+                        </div>
+                        
+
+                    </li>
+                </ul>
+                </div>
+
+        <div class="profile__content">
+            {#if componenteMostrado === 'Perfil'}
+                <Custom/>
+            {:else if componenteMostrado === 'Comunicaciones' }
+                <Communications/>
+            {:else if componenteMostrado === 'Privacidad'}
+                <Privacy/>
+            {:else if componenteMostrado === 'Idioma'}
+                <p>Idioma</p>
+            {:else if componenteMostrado === 'Email'}
+                <Email/>
+            {:else}
+                <Custom/>
+            {/if}
         </div>
     </div>
 
-    
-
 </main>
 
-<style>
-
-    .container{
-        margin: 20px;
-        color: rgb(209, 51, 100);
-        font-size: 18px;
-        max-width: 70%;
-        height: 100%;
-        margin: 0 auto;
-        padding: 1px;
-        background-color: #002e28;
-        background-position: center;
-    }
-    .content{
-        margin: 20px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-    }
-    input,select,textarea,label{
-        border-radius: 15px;
-        padding: 10px;
-        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-size: 16px;
-    }
-    .image-rounded{
-        border-radius: 50%;
-            width: 150px; 
-            height: 150px;
-            margin-bottom: 15px;
-            filter: none;
-            transition: all 0.5s;/* Le doy una transicion para la imagen */
-
-    }
-
-    .image, .modify{
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    .modify{
-      margin-left: 10px;
-      margin-bottom: 20px;
-    }
-
-    .name, .lastname{
-        display: inline-block;
-    }
-
-    .names,.infos,.pronouns,.user{
-        margin-bottom: 15px;
-    }
-
-    .nombre,.apellidos,.info,.pronoun,.username,.ph{
-        margin-bottom: 10px;
-        font-weight: bold;
-    }
-
-    h1{
-        margin-bottom: 2px;
-    }
-
-    .usertext{
-        width: 50%;
-    }
-
-    .apellidos{
-        margin-top: 10px;
-    }
-
-    textarea{
-        width: 40%;
-        max-width: 40%;
-        height: auto;
-        box-sizing: border-box;
-    }
-
-    select{
+<style lang="scss">
+    .profile{
         width: 100%;
-        max-width: 100%;
-        height: auto;
-        box-sizing: border-box;
-    }
+        height: 100%;
+        font-family: Montserrat;
+        color: var(--text-color);
 
-    .selects{
-        width: 18%;
-    }
-
-    input{
-        width: 70%;
-        max-width: 70%;
-        box-sizing: border-box;
-    }
-
-    .usertext input{
-        width: 35%;
-        max-width: 35%;
-        box-sizing: border-box;
-    }
-
-    .image-rounded:hover {
-          filter: blur(2px) brightness(60%);/* Cuando pase por encima con el raton se pone borroso. */
-          
+        
+        &__photo{
+            border-bottom: 2px solid var(--text-color);
+            margin-bottom:5vh;
+            margin-right: 5vh;
+            margin-left: 5vh;
         }
 
-    #img-uploader{
-        display: none;
+        &__img{
+            text-align: center;
+            line-height: 150px;
+            height: 22vh;
+           
+        .image-rounded{
+            border-radius: 50%;
+            width: 150px; 
+            height: 150px;
+            transition: all 0.5s;/* Le doy una transicion para la imagen */
+            margin-top: 40px;
+            }
+        }
+
+
+        &__data{
+            text-align: center;
+        }
+            &__name{
+                margin-bottom: 15px;
+            span{
+                display: block;
+                
+                }
+            }
+
+            &__lines{
+                width: 100%;
+                span{
+                    display: inline-block;
+                    width: 90%;
+                    vertical-align: middle;
+                    line-height: 25px;
+                }
+
+                .profile__arrow{
+                display: inline-block;
+                width: 5%;
+                margin-left: 10px;
+                margin-bottom: 25px;
+                vertical-align: middle;
+                font-size: 30px;
+               
+            }
+
+            }
+            
+
+            &__user{
+                font-size: 19px;    
+                height: 100%;
+                display: table;
+            }
+
+            &__settings{
+                width: 30%;
+                height: 100%;
+                border-right: 2px solid var(--text-color);
+                float: left;
+
+                ul{
+                    list-style-type:none;
+                }
+
+                li{
+                    display: block;
+                    margin: 15px;
+                    height: 10vh;
+                    float: left;
+                    a{
+                        text-decoration: none;
+                        color: aliceblue;
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &__content{
+                width: 60%;
+                float: right;
+            }
+
+            &__settings{
+                width: 30%;
+                float: left;
+            }
     }
 
-    label{
-        background: rgb(209, 51, 100);
-        color: white;
-        padding: 6px 20px;
+    #img-uploader{//Le quito el input para que no se vea 
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%; 
+        height: 0%; 
+        opacity: 0; 
         cursor: pointer;
-        border-radius: 3px;
-}
+    }
 
+    
 </style>

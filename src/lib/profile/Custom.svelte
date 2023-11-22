@@ -1,6 +1,5 @@
 <script>
     import Custom from "./Custom.svelte";
-    import Profile from "./Profile.svelte";
     import { imageStore } from "$stores/images";
   
       let imgDefault = 'src/lib/profile/default.jpg';

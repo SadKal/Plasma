@@ -104,8 +104,8 @@
             clip-path: polygon(5% 0, 100% 0%, 95% 100%, 0% 100%);
             z-index: 20;
             font-size: 2rem;
-            @media (max-width: 650px) {
-                width: 65vw;
+            @media (max-width: 750px) {
+                width: 55vw;
                 font-size: 1.25rem;
             }
         }

@@ -55,7 +55,7 @@ on:click={ () => shopGameStore.openShop(game)}>
     .genre-game{
         margin: .3rem auto;
         width: 80%;
-        height: 20vw;
+        height: 15vw;
         box-sizing: border-box;
 
         font-weight: 700;

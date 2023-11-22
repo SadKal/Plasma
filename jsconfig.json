@@ -26,7 +26,8 @@
     "baseUrl": ".",
     "paths": {
       "$header/*": ["src/lib/header/*"],
-      "$homepage/*": ["src/lib/homepage/*"], 
+      "$homepage/*": ["src/lib/homepage/*"],
+      "$homepage": ["src/lib/homepage"], 
       "$genres/*": ["src/lib/homepage/genres/*"],
       "$most_sold/*": ["src/lib/homepage/most_sold/*"],
       "$news/*": ["src/lib/homepage/news/*"],

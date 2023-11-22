@@ -56,7 +56,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body {
     line-height: 1.5;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat';
+    position: relative;
 }
 
 * {
@@ -84,6 +85,8 @@ ul {
     background-color: #24262b;
     padding: 70px 0;
     margin-top: 20px;
+    position: relative;
+    width: 100%;
 }
 
 .footer-col {

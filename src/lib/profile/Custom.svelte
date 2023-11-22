@@ -97,7 +97,7 @@
 </div>
     </main>
 
-<style scoped lang="scss">
+<style lang="scss">
     
     .all{
         float: left;
@@ -105,13 +105,12 @@
     .custom{
         width: 100%;
         height: 100%;
-        font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
       
         
             input[type="text"]{
-                        width: 70%;
+                        width: 75%;
                         padding: 15px;
                         background: transparent;
                         border: 2px solid var(--text-color);
@@ -133,7 +132,6 @@
             font-size: 16px;
             font-weight: 600;
             transition: all 0.5s ease;
-            font-family: Montserrat;         
             }
 
         &__image{
@@ -173,8 +171,12 @@
 
         &__nameUser{
             width: 40%;
-            float: left;
-            margin-left: 10vw;
+            float: left;    
+            margin-left: 12vw;
+        }
+
+        &__nameInput{
+            margin-top: 4vh;
         }
         
     }
@@ -182,26 +184,30 @@
     .cus{
         width: 100%;
         height: 100%;
-        font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
         margin-top: 30px;
 
+        label{
+            margin-bottom: 15px;
+        }
+
         input[type="text"]{
-                        width: 60%;
-                        padding: 15px;
-                        background: transparent;
-                        border: 2px solid var(--text-color);
-                        border-radius: 5px;
-                        font-size: 16px;
-                        box-sizing: border-box;
-                        margin-bottom: 20px;
+            width: 60%;
+            padding: 15px;
+            background: transparent;
+            border: 2px solid var(--text-color);
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
         }
 
         &__uno,&__dos{
             width: 50%;
             float: left;
         }
+
         &__submit{
             clear: both;
             height: 20px;
@@ -222,10 +228,11 @@
             font-size: 16px;
             font-weight: 600;
             transition: all 0.5s ease;
-            font-family: Montserrat;         
             }
-        } 
+        }
+        
     }
+
     #img-uploader2{//Le quito el input para que no se vea 
         position: absolute;
         top: 0;

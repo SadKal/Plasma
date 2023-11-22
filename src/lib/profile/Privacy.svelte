@@ -38,12 +38,11 @@
         
 </main>
 
-<style scoped lang="scss">
+<style lang="scss">
 
     .privacy{
         width: 100%;
         height: 100%;
-        font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
         font-size: 18px;

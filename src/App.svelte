@@ -9,6 +9,7 @@
 	import cartStore from "$stores/cart";
 	import Login from "./lib/login/Login.svelte";
 	import Register from "./lib/login/Register.svelte";
+  import Profile from "$profile/Profile.svelte";
 
 	$: {
 		if ($pagesStore.active == "Inicio") {
@@ -40,6 +41,7 @@
 <div class="main">
 	<Header />
 	<Page />
+	<!-- <Profile/> -->
 	<Footer />
 </div>
 

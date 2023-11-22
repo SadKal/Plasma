@@ -42,7 +42,7 @@
 </div>
     </main>
 
-<style scoped lang="scss">
+<style lang="scss">
     
     .email{
         float: left;
@@ -50,7 +50,6 @@
     .email{
         width: 100%;
         height: 100%;
-        font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;        
     }
@@ -58,7 +57,6 @@
     .email_dos{
         width: 100%;
         height: 100%;
-        font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
         margin-top: 30px;
@@ -110,7 +108,6 @@
                 font-size: 16px;
                 font-weight: 600;
                 transition: all 0.5s ease;
-                font-family: Montserrat;         
             }
 
             button{

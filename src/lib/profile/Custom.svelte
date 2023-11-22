@@ -36,7 +36,7 @@
     <div class="custom">
             <div class="custom__image">
                 <div class="custom__title">
-                    <p>Foto de perfil</p>
+                    <h1>Imagen de perfil</h1>
                 </div>
                 <div class="custom__imgUser">
                     <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
@@ -50,17 +50,17 @@
 
             <div class="custom__nameUser">
                 <div class="custom__title">
-                    <p>Nombre de usuario</p>
+                    <h1>Nombre de usuario</h1>
                 </div>
 
                 <div class="custom__nameInput">
                     <input type="text" name="" id="">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Aceptar">
                 </div>
             </div>
     </div> 
     <div class="cus">
-     <p>Links de redes</p>   
+     <h1>Enlaces de redes</h1>   
         <div class="cus__uno">
             <div class="cus__network1">
                 <label for="">Twitch</label><br>
@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="cus__submit">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Aceptar">
         </div>
     </div>
 </div>
@@ -107,6 +107,10 @@
         height: 100%;
         color: var(--text-color);
         display: inline-block;
+
+        h1{
+            margin-bottom: 30px;
+        }
       
         
             input[type="text"]{
@@ -136,7 +140,7 @@
 
         &__image{
             float: left;
-            width: 30%;
+            width: 40%;
         }
 
         &__camera{
@@ -172,7 +176,7 @@
         &__nameUser{
             width: 40%;
             float: left;    
-            margin-left: 12vw;
+            margin-left: 6vw;
         }
 
         &__nameInput{
@@ -213,21 +217,21 @@
             height: 20px;
             width: 100%;
             input[type="submit"]{
-              margin-left: 33%;
-              margin-right: 60%;
-              margin-top: 20px;
-              margin-bottom: 20px;
-            height: 8vh;
-            width: 8vw;
-            background:var(--text-color);
-            color: beige;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,.1);
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.5s ease;
+                margin-left: 33%;
+                margin-right: 60%;
+                margin-top: 5px;
+                margin-bottom: 20px;
+                height: 6vh;
+                width: 8vw;
+                background:var(--text-color);
+                color: beige;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0,0,0,.1);
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 600;
+                transition: all 0.5s ease;
             }
         }
         

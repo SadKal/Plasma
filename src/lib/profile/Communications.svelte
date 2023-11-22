@@ -6,7 +6,7 @@
     <div class="communications">
             <div class="communications__adjustment">
                 <div class="communications__title">
-                    <h1>Communications adjustment</h1>
+                    <h1>Ajuste de comunicaciones</h1>
                 </div>
                 <div class="communications__email">
                     <p>marioaajsjaj@gmail.com</p>
@@ -15,7 +15,7 @@
     
             <div class="communications__news">
                 <div class="communications__title">
-                    <h1>Follow our news</h1>
+                    <h1>Sigue nuestras noticias</h1>
                 </div>
                 
                 <div class="communications__checkboxs">
@@ -23,17 +23,17 @@
                     <div class="checkboxs__container">
                         <div class="checkbox-slider">
                             <input type="checkbox" id="my-slider-1">
-                            <label for="my-slider-1">Receive news from IG</label>
+                            <label for="my-slider-1">Recibe noticias de IG</label>
                         </div>
 
                         <div class="checkbox-slider">
                             <input type="checkbox" id="my-slider-2">
-                            <label for="my-slider-2">Receive the offers of the week by email</label>
+                            <label for="my-slider-2">Recibe las ofertas de la semana por email</label>
                         </div>
 
                         <div class="checkbox-slider">
                             <input type="checkbox" id="my-slider-3">
-                            <label for="my-slider-3">Reminder of sloping basket</label>
+                            <label for="my-slider-3">Recordatorio de cesta pendiente</label>
                         </div>
                     </div>
 
@@ -50,12 +50,12 @@
                     <div class="checkboxs__container">
                         <div class="checkbox-slider">
                             <input type="checkbox" id="wishlist-slider-1">
-                            <label for="wishlist-slider-1">Opening of reservations</label>
+                            <label for="wishlist-slider-1">Apertura de reservas</label>
                         </div>
 
                         <div class="checkbox-slider">
                             <input type="checkbox" id="wishlist-slider-2">
-                            <label for="wishlist-slider-2">Delivery of the first keys</label>
+                            <label for="wishlist-slider-2">Entrega de las primeras llaves</label>
                         </div>
 
                         </div>
@@ -72,7 +72,6 @@
             height: 100%;
             color: var(--text-color);
             display: inline-block;
-            font-size: 18px;
 
             &__email{
                 p{
@@ -86,9 +85,7 @@
             }
 
 
-            h1{
-                font-size: 25px;
-            }
+           
             
             &__checkboxs{
                 background-color: rgba(0,0,0,0.2);

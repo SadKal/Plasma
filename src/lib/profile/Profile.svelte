@@ -4,6 +4,9 @@
 import Custom from "./Custom.svelte";
   import Email from "./Email.svelte";
   import Privacy from "./Privacy.svelte";
+  import Idiom from "./Idiom.svelte";
+
+
 
     /* let $valor = $: imageStore;
     console.log($valor); */
@@ -26,7 +29,7 @@ import Custom from "./Custom.svelte";
                 <div class="profile__data">
                     <div class="profile__name">
                         <span>Maripins</span>
-                        <span>Miembro desde: nov 30, 2023</span>
+                        <span>Miembr@ desde: Nov 30, 2023</span>
                     </div>
                 </div>
             </div>
@@ -35,40 +38,40 @@ import Custom from "./Custom.svelte";
                 <div class="profile__settings">
                 <ul>
                     <li>
-						<a on:click={()=> mostrarComponente('Perfil')}>Personaliza tu perfil
+						<a on:click={()=> mostrarComponente('Profile')}>Personaliza tu perfil
 							<div class="profile__link-content">  
                     		    <div class="profile__lines">
-                    		        <span>Avatar, gamertag y links de redes sociales</span>
+                    		        <span>Avatar, gamertag y enlaces a redes sociales</span>
                     		        <div class="profile__arrow"></div>
                     		    </div>
                     		</div> 
 						</a>
                     </li>
-                    <li><a on:click={()=> mostrarComponente('Comunicaciones')} >
+                    <li><a on:click={()=> mostrarComponente('Communications')} >
 							<div class="profile__link-content"> 
 								Comunicaciones
                         		<div class="profile__lines">
-                        		    <span>Gestiona los emails o notificaciones </span>
+                        		    <span>Administrar correos electrónicos o notificaciones</span>
                         		    <div class="profile__arrow"></div>
                         		</div>
 							</div>
                         </a>
                     </li>
 
-                    <li><a on:click={()=> mostrarComponente('Privacidad')} >
+                    <li><a on:click={()=> mostrarComponente('Privacity')} >
 							<div class="profile__link-content"> 
 								Privacidad
                         		<div class="profile__lines">
-                        		    <span>Gestiona tu información pública o privada</span>
+                        		    <span>Administra tu información pública o privada</span>
                         		    <div class="profile__arrow"></div>
                         		</div>
                         	</div>
 						</a>
                     </li>
-                    <li><a on:click={()=> mostrarComponente('Idioma')} >Idioma y moneda
+                    <li><a on:click={()=> mostrarComponente('Idiom')} >Idioma y moneda
 							<div class="profile__link-content"> 
                         		<div class="profile__lines">
-                        		    <span>Cambia el idioma o la moneda que quieres utilizar</span>
+                        		    <span>Cambia el idioma o moneda que deseas utilizar</span>
                         		    <div class="profile__arrow"></div>
                         		</div>
                         	</div>
@@ -77,7 +80,7 @@ import Custom from "./Custom.svelte";
                     <li><a on:click={()=> mostrarComponente('Email')}>Email y contraseña
 							<div class="profile__link-content"> 
                         		<div class="profile__lines">
-                        		    <span>Gestiona tu email y tu contraseña</span>
+                        		    <span>Gestiona tu correo electrónico y contraseña</span>
                         		    <div class="profile__arrow"></div>
                         		</div>
                         	</div>
@@ -87,14 +90,14 @@ import Custom from "./Custom.svelte";
                 </div>
 
         <div class="profile__content">
-            {#if componenteMostrado === 'Perfil'}
+            {#if componenteMostrado === 'Profile'}
                 <Custom/>
-            {:else if componenteMostrado === 'Comunicaciones' }
+            {:else if componenteMostrado === 'Communications' }
                 <Communications/>
-            {:else if componenteMostrado === 'Privacidad'}
+            {:else if componenteMostrado === 'Privacity'}
                 <Privacy/>
-            {:else if componenteMostrado === 'Idioma'}
-                <p>Idioma</p>
+            {:else if componenteMostrado === 'Idiom'}
+                <Idiom/>
             {:else if componenteMostrado === 'Email'}
                 <Email/>
             {:else}
@@ -107,12 +110,10 @@ import Custom from "./Custom.svelte";
 
 <style lang="scss">
 	
-	main{
-		padding-bottom: 100px;
-	}
+	
     .profile{
         width: 100%;
-        min-height: 100vh;
+        min-height: 115vh;
         font-family: 'Chakra Petch', sans-serif;
         color: var(--text-color);
 
@@ -170,9 +171,9 @@ import Custom from "./Custom.svelte";
         
 
             &__user{
-                font-size: 24px;    
                 height: 100%;
 				position: relative;
+				font-size: 20px;
             }
 
             &__settings{
@@ -180,6 +181,7 @@ import Custom from "./Custom.svelte";
                 height: 100%;
                 border-right: 2px solid var(--text-color);
                 float: left;
+				font-size: 25px;
 
 				ul li a {
 				    text-decoration: none;
@@ -197,8 +199,8 @@ import Custom from "./Custom.svelte";
 
                 li{
                     display: block;
-                    height: 10vh;
-					margin: 20px;	
+                    height: 11vh;
+					margin: 30px;	
 					
  					a{
                         text-decoration: none;
@@ -215,7 +217,8 @@ import Custom from "./Custom.svelte";
 
             &__content{
                 width: 60%;
-                float: right;
+                float: left;
+				margin-left: 100px;
             }
 
             &__settings{

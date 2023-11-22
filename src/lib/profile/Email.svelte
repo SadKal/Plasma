@@ -7,7 +7,7 @@
     <div class="email__uno">
             <div class="email__nameUser">
                 <div class="email__title">
-                    <h1>Account security</h1>
+                    <h1>Seguridad de la cuenta</h1>
                     <p>mariirocoa@gmail.com</p>
                 </div>
             </div>
@@ -15,7 +15,7 @@
     <div class="email_dos">
           
            <div class="email_dos__uno">
-            <h1>Change your email</h1> 
+            <h1>Cambia tu email</h1> 
                <div class="email_dos__network1">
                    <input type="email" name="" id="" placeholder="Tu nuevo e-mail">
                </div>
@@ -27,14 +27,14 @@
                </div>
                
                 <div class="email_dos__submit">
-                    <input type="submit" value="Accept">
+                    <input type="submit" value="Aceptar">
                 </div>
            </div>
            <div class="email_dos__dos">
-            <h1>Change your password</h1> 
+            <h1>Cambia tu contraseña</h1> 
 
                <div class="email_dos__network4">
-                   <button >Disviculating my Google account</button>
+                   <button >Desvincular mi cuenta de Google</button>
                </div>
            </div>
            

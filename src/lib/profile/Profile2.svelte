@@ -20,8 +20,8 @@ import Custom from "./Custom.svelte";
     <div class="profile">
             <div class="profile__photo">
                 <div class="profile__img">
-                    <img src="{valor}" alt="" class="image-rounded" on:click={handleClickOnImage}>
-                    <input type="file" id="img-uploader" on:change={HandleImg}>
+                    <!-- <img src="{valor}" alt="" class="image-rounded" on:click={handleClickOnImage}>
+                    <input type="file" id="img-uploader" on:change={HandleImg}> -->
                 </div>
 
                 <div class="profile__data">

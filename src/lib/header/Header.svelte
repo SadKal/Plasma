@@ -38,13 +38,9 @@
 			padding: 0;
 			width: 100%;
 		}
-
-		@media (min-width: 750px) {
-			/*Position sticky y top 0 hace que la barra se quede siempre arriba sin hacer overlap con el resto de contenido*/
-			position: sticky;
-			z-index: 100;
-
-		}
+		position: sticky;
+		top: 0;
+		z-index: 100;
 
 		&__logo {
 			width: 45px;

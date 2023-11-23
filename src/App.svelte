@@ -5,7 +5,11 @@
 	import games from "$data/games.json"
 	import pagesStore from "$stores/pages";
 	import libraryStore from "$stores/library";
-	import Footer from "./Footer/Footer.svelte";
+	import Footer from "./lib/footer/Footer.svelte";
+	import cartStore from "$stores/cart";
+	import Login from "./lib/login/Login.svelte";
+	import Register from "./lib/login/Register.svelte";
+  import Profile from "$profile/Profile.svelte";
 
 	$: {
 		if ($pagesStore.active == "Inicio") {

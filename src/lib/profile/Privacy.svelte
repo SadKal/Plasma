@@ -6,30 +6,30 @@
     <div class="privacy">
         <div class="privacy__news">
             <div class="privacy__title">
-                <h1>Privacy</h1>
+                <h1>Privacidad</h1>
             </div>
             
             <div class="privacy__checkboxs">
                 <div class="checkboxs__container">
                     <div class="checkbox-slider">
                         <input type="checkbox" id="my-slider-1">
-                        <label for="my-slider-1">Show my friends on my public profile</label>
+                        <label for="my-slider-1">Mostrar mis amigos en mi perfil público</label>
                     </div>
                     <div class="checkbox-slider">
                         <input type="checkbox" id="my-slider-2">
-                        <label for="my-slider-2">Show my games in my public profile</label>
+                        <label for="my-slider-2">Mostrar mis juegos en mi perfil público</label>
                     </div>
                     <div class="checkbox-slider">
                         <input type="checkbox" id="my-slider-3">
-                        <label for="my-slider-3">Allow other members to send me friend requests</label>
+                        <label for="my-slider-3">Permitir que otros miembros me envíen solicitudes de amistad</label>
                     </div>
                     <div class="checkbox-slider">
                         <input type="checkbox" id="my-slider-4">
-                        <label for="my-slider-4">Show my reviews in my public profile</label>
+                        <label for="my-slider-4">Mostrar mis reseñas en mi perfil público</label>
                     </div>
                     <div class="checkbox-slider">
                         <input type="checkbox" id="my-slider-5">
-                        <label for="my-slider-5">Show my wishlist on my public profile</label>
+                        <label for="my-slider-5">Mostrar mi wishlist en mi perfil público</label>
                     </div>
                 </div>
             </div>
@@ -38,23 +38,16 @@
         
 </main>
 
-<style scoped lang="scss">
+<style lang="scss">
 
     .privacy{
         width: 100%;
         height: 100%;
-        font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
-        font-size: 18px;
 
         &__adjustment, &__news{
             margin-bottom: 5vh;
-        }
-
-
-        h1{
-            font-size: 25px;
         }
         
         &__checkboxs{

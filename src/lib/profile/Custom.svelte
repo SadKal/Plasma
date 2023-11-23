@@ -1,7 +1,7 @@
 <script>
     import { imageStore } from "$stores/images";
   
-      let imgDefault = 'src/lib/profile/default.jpg';
+      let imgDefault = 'src/assets/prof/default.jpg';
   
       function ChangeImage(newImg){
           imgDefault = newImg;
@@ -18,7 +18,7 @@
               }
               reader.readAsDataURL(file);/* Que me lea la imagen como una URL */
           }else{
-              ChangeImage('src/Perfil/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
+              ChangeImage('src/assets/prof/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
           }
   
       }
@@ -35,13 +35,13 @@
     <div class="custom">
             <div class="custom__image">
                 <div class="custom__title">
-                    <p>Foto de perfil</p>
+                    <h1>Imagen de perfil</h1>
                 </div>
                 <div class="custom__imgUser">
                     <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
                     <input type="file" id="img-uploader2" on:change={HandleImg}>
                     <div class="custom__camera">
-                        <img src="src/lib/profile/photo.png" alt="">
+                        <img src="src/assets/prof/photo.png" alt="">
                         <div class="custom__cameraText">.jpg/png</div>
                     </div>
                 </div>
@@ -49,17 +49,17 @@
 
             <div class="custom__nameUser">
                 <div class="custom__title">
-                    <p>Nombre de usuario</p>
+                    <h1>Nombre de usuario</h1>
                 </div>
 
                 <div class="custom__nameInput">
                     <input type="text" name="" id="">
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Aceptar">
                 </div>
             </div>
     </div> 
     <div class="cus">
-     <p>Links de redes</p>   
+     <h1>Enlaces de redes</h1>   
         <div class="cus__uno">
             <div class="cus__network1">
                 <label for="">Twitch</label><br>
@@ -90,39 +90,47 @@
             </div>
         </div>
         <div class="cus__submit">
-            <input type="submit" value="Submit">
+            <input type="submit" value="Aceptar">
         </div>
     </div>
 </div>
     </main>
 
-<style scoped lang="scss">
+<style lang="scss">
     
     .all{
         float: left;
+
+        @media (max-width:768px) {
+                display: block;
+        }
     }
     .custom{
         width: 100%;
         height: 100%;
-        font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
+
+        h1{
+            margin-bottom: 30px;
+        }
       
         
             input[type="text"]{
-                        width: 70%;
+                        width: 75%;
                         padding: 15px;
                         background: transparent;
                         border: 2px solid var(--text-color);
                         border-radius: 5px;
                         font-size: 16px;
                         box-sizing: border-box;
+                        
         }
 
         input[type="submit"]{
             margin-left: 10px;
-            height: 6vh;
-            width: 20%;
+            height: 40px;
+            width: 70px;
             background:var(--text-color);
             color: beige;
             border: none;
@@ -132,12 +140,14 @@
             font-size: 16px;
             font-weight: 600;
             transition: all 0.5s ease;
-            font-family: Montserrat;         
             }
 
         &__image{
             float: left;
-            width: 30%;
+            width: 40%;
+            @media (max-width: 768px) {
+            width: 100%; 
+            }
         }
 
         &__camera{
@@ -172,8 +182,17 @@
 
         &__nameUser{
             width: 40%;
-            float: left;
-            margin-left: 10vw;
+            float: left;    
+            margin-left: 6vw;
+
+            @media (max-width: 768px) {
+            width: 100%; 
+            margin-left: 0;
+            }
+        }
+
+        &__nameInput{
+            margin-top: 4vh;
         }
         
     }
@@ -181,50 +200,57 @@
     .cus{
         width: 100%;
         height: 100%;
-        font-family: Montserrat;
         color: var(--text-color);
         display: inline-block;
         margin-top: 30px;
 
+        
+
+        label{
+            margin-bottom: 15px;
+        }
+
         input[type="text"]{
-                        width: 60%;
-                        padding: 15px;
-                        background: transparent;
-                        border: 2px solid var(--text-color);
-                        border-radius: 5px;
-                        font-size: 16px;
-                        box-sizing: border-box;
-                        margin-bottom: 20px;
+            width: 60%;
+            padding: 15px;
+            background: transparent;
+            border: 2px solid var(--text-color);
+            border-radius: 5px;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
         }
 
         &__uno,&__dos{
             width: 50%;
             float: left;
         }
+
         &__submit{
             clear: both;
             height: 20px;
             width: 100%;
             input[type="submit"]{
-              margin-left: 33%;
-              margin-right: 60%;
-              margin-top: 20px;
-              margin-bottom: 20px;
-            height: 8vh;
-            width: 8vw;
-            background:var(--text-color);
-            color: beige;
-            border: none;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,.1);
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            transition: all 0.5s ease;
-            font-family: Montserrat;         
+                margin-left: 33%;
+                margin-right: 60%;
+                margin-top: 5px;
+                margin-bottom: 20px;
+                height: 40px;
+                width: 80px;
+                background:var(--text-color);
+                color: beige;
+                border: none;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0,0,0,.1);
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: 600;
+                transition: all 0.5s ease;
             }
-        } 
+        }
+        
     }
+
     #img-uploader2{//Le quito el input para que no se vea 
         position: absolute;
         top: 0;

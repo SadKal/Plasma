@@ -2,8 +2,8 @@ import Homepage from '$homepage/Homepage.svelte';
 import ShopPage from '$homepage/shop_page/ShopPageHeader.svelte';
 import GenrePage from '$homepage/genres/genre_page/GenrePage.svelte';
 import Library from '$library/Library.svelte';
-import { writable } from 'svelte/store';
 import Profile from '$profile/Profile.svelte';
+import { writable } from 'svelte/store';
 
 const pages = {
     'Inicio': Homepage,

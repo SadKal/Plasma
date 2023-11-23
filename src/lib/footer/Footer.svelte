@@ -4,9 +4,9 @@
 
 
     <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__container--row">
-                <div class="footer__col">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
                     <h4>company</h4>
                     <ul>
                         <li><a href="#">about us</a></li>
@@ -16,7 +16,7 @@
                     </ul>
                 </div>
 
-                <div class="footer__col">
+                <div class="footer-col">
                     <h4>get help</h4>
                     <ul>
                         <li><a href="#">FAQ</a></li>
@@ -26,7 +26,7 @@
                     </ul>
                 </div>
 
-                    <div class="footer__col">
+                    <div class="footer-col">
                         <h4>online shop</h4>
                         <ul>
                             <li><a href="#">watch</a></li>
@@ -35,7 +35,7 @@
                         </ul>
                     </div>
 
-                        <div class="footer__col">
+                        <div class="footer-col">
                             <h4>follow us</h4>
                             <div class="social-links"><!-- Enlace para ver la biblioteca de iconos:https://fontawesome.com/icons-->
                                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -54,18 +54,24 @@
 <style lang="scss">
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+    line-height: 1.5;
+    font-family: 'Montserrat';
+    position: relative;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.footer__container {
+.container {
     max-width: 1170px;
     margin: auto;
 }
 
-.footer__container--row::after {/* Uso after para añadir contenido adicional (un elemento falso) */
+.row::after {/* Uso after para añadir contenido adicional (un elemento falso) */
     content: "";/* Le dejo sin contenido para que actue como un contenedor para ajustar la disposicion */
     display: table;/* Le digo que el elemento falso actue como una tabla, para que actue como un contenedor*/
     clear: both;/* Y le quito elementos flotantes */
@@ -79,22 +85,22 @@ ul {
     background-color: #24262b;
     padding: 70px 0;
     margin-top: 20px;
-    position:relative;
+    position: relative;
     width: 100%;
 
     @media(max-width:1600px){
-        clear:both;
-        
-    }
+    clear: both;
+    margin-top: 20px;
+ }
 }
 
-.footer__col {
+.footer-col {
     width: 25%;
     padding: 0 15px;
     float: left;
 }
 
-.footer__col h4 {
+.footer-col h4 {
     font-size: 18px;
     color: #ffffff;
     text-transform: capitalize;
@@ -103,7 +109,7 @@ ul {
     position: relative;
 }
 
-.footer__col h4::before {/* Lineas de abajo de los titulos */
+.footer-col h4::before {/* Lineas de abajo de los titulos */
     content: '';
     position: absolute;
     left: 0;
@@ -114,11 +120,11 @@ ul {
     width: 50px;
 }
 
-.footer__col ul li{
+.footer-col ul li{
     margin-bottom: 10px;
 }
 
-.footer__col ul li a{
+.footer-col ul li a{
     color: #d13364;
     font-size: 16px;
     text-decoration: none;
@@ -128,13 +134,13 @@ ul {
     transition: all 0.3s ease;/* Transicion suave cuando cambian , es decir para que cuando pase con el raton sea mas suave*/
 }
 
-.footer__col ul li a:hover{/* Cuando el puntero este encima */
+.footer-col ul li a:hover{/* Cuando el puntero este encima */
     padding-left:8px ;
 }
 
 
 
-.footer__col .social-links a{
+.footer-col .social-links a{
     display: inline-block;
     height: 40px;
     width: 40px;
@@ -155,14 +161,14 @@ ul {
 
 /* PARTE RESPONSIVA */
  @media(max-width:767px){
-    .footer__col{
+    .footer-col{
         width: 50%;
         margin-bottom: 30px;
     }
  }
 
  @media(max-width:574px){
-    .footer__col{
+    .footer-col{
         width: 100%;
        
     }

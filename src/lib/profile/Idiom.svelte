@@ -91,7 +91,7 @@
 
 
         <div class="idiom__coins">
-            <div class="idiom__title">
+            <div class="idiom__title2">
                 <h1>Monedas</h1>
             </div>
             <div class="idiom__coin1">
@@ -125,7 +125,7 @@
                 <div class="idiom__coins">
                     <a href="#">
                         <div class="idiom__coin-content">
-                            <span>DKK - DKK</span>
+                            <span>DKK-DK</span>
                         </div>
                     </a>
                 </div>
@@ -139,12 +139,19 @@
 
 <style lang="scss">
     .idiom{
+        width: 100%;
+
+        @media  (max-width: 1600px)  {
+			        width: 165%;
+                    display: block;
+			        border-right: none;
+		        }
 
         h1{
             margin-top: 0;
             
         }
-        
+
         &__languages{
             height: 50%;
         }
@@ -153,9 +160,10 @@
             text-decoration: none;
             vertical-align: middle;
             margin-bottom: 5px;
-            color: var(--text-color);
+            color: var(--text-color);  
         }
-
+        
+        
 
         img{
             width: 50px;
@@ -171,6 +179,11 @@
             margin-right: 20px;
             margin-bottom: 20px;
             line-height: 70px;
+            transition: all ease 0.4s;
+
+            &:hover{
+                border: 1px solid beige;
+            }
             
         }
 
@@ -195,11 +208,12 @@
             border-radius: 5px;
             margin-bottom: 20px;
             line-height: 70px;
-            width: 100%;
+            transition: all ease 0.4s;
 
-            a{
-                width: 100%;
+            &:hover{
+                border: 1px solid beige;
             }
+
             span{
                 margin-left: 20px;
             }
@@ -216,65 +230,11 @@
             width: 40%;
         }
 
+        &__coins{
+            width: 70%;
+        }
+
 
     }
 </style>
-
-<!-- <main>
-    <div class="idiom__user">
-        <div class="idiom__settings">
-        <ul>
-            <li>
-                <a >Customize your idiom
-                    <div class="idiom__link-content">  
-                        <div class="idiom__lines">
-                            <span>Avatar, gamertag and social network links</span>
-                            <div class="idiom__arrow"></div>
-                        </div>
-                    </div> 
-                </a>
-            </li>
-            <li><a >
-                    <div class="idiom__link-content"> 
-                        Communications
-                        <div class="idiom__lines">
-                            <span>Manage emails or notifications</span>
-                            <div class="idiom__arrow"></div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-
-            <li><a >
-                    <div class="idiom__link-content"> 
-                        Privacity
-                        <div class="idiom__lines">
-                            <span>Manage your public or private information</span>
-                            <div class="idiom__arrow"></div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li><a >Language and currency
-                    <div class="idiom__link-content"> 
-                        <div class="idiom__lines">
-                            <span>Change the language or currency you want to use</span>
-                            <div class="idiom__arrow"></div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-            <li><a>Email and password
-                    <div class="idiom__link-content"> 
-                        <div class="idiom__lines">
-                            <span>Manage your email and password</span>
-                            <div class="idiom__arrow"></div>
-                        </div>
-                    </div>
-                </a>
-            </li>
-        </ul>
-        </div>
-
-</main> -->
 

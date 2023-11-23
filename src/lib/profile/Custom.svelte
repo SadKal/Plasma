@@ -2,7 +2,7 @@
     import Custom from "./Custom.svelte";
     import { imageStore } from "$stores/images";
   
-      let imgDefault = 'src/lib/profile/default.jpg';
+      let imgDefault = 'src/assets/prof/default.jpg';
   
       function ChangeImage(newImg){
           imgDefault = newImg;
@@ -19,7 +19,7 @@
               }
               reader.readAsDataURL(file);/* Que me lea la imagen como una URL */
           }else{
-              ChangeImage('src/Perfil/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
+              ChangeImage('src/assets/prof/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
           }
   
       }
@@ -42,7 +42,7 @@
                     <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
                     <input type="file" id="img-uploader2" on:change={HandleImg}>
                     <div class="custom__camera">
-                        <img src="src/lib/profile/photo.png" alt="">
+                        <img src="src/assets/prof/photo.png" alt="">
                         <div class="custom__cameraText">.jpg/png</div>
                     </div>
                 </div>
@@ -101,6 +101,10 @@
     
     .all{
         float: left;
+
+        @media (max-width:768px) {
+                display: block;
+        }
     }
     .custom{
         width: 100%;
@@ -121,12 +125,13 @@
                         border-radius: 5px;
                         font-size: 16px;
                         box-sizing: border-box;
+                        
         }
 
         input[type="submit"]{
             margin-left: 10px;
-            height: 6vh;
-            width: 20%;
+            height: 40px;
+            width: 70px;
             background:var(--text-color);
             color: beige;
             border: none;
@@ -141,6 +146,9 @@
         &__image{
             float: left;
             width: 40%;
+            @media (max-width: 768px) {
+            width: 100%; 
+            }
         }
 
         &__camera{
@@ -177,6 +185,11 @@
             width: 40%;
             float: left;    
             margin-left: 6vw;
+
+            @media (max-width: 768px) {
+            width: 100%; 
+            margin-left: 0;
+            }
         }
 
         &__nameInput{
@@ -191,6 +204,8 @@
         color: var(--text-color);
         display: inline-block;
         margin-top: 30px;
+
+        
 
         label{
             margin-bottom: 15px;
@@ -221,8 +236,8 @@
                 margin-right: 60%;
                 margin-top: 5px;
                 margin-bottom: 20px;
-                height: 6vh;
-                width: 8vw;
+                height: 40px;
+                width: 80px;
                 background:var(--text-color);
                 color: beige;
                 border: none;

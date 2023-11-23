@@ -219,9 +219,6 @@
             }
         }
 
-
-
-
        /*  &__google,&__facebook,&__microsoft{
             background-color: var(--text-color);
             height: 45px;

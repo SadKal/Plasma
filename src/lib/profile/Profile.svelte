@@ -6,10 +6,33 @@ import Custom from "./Custom.svelte";
   import Privacy from "./Privacy.svelte";
   import Idiom from "./Idiom.svelte";
 
+  let imgDefault = 'src/assets/prof/default.jpg';
+  
+  function ChangeImage(newImg){
+      imgDefault = newImg;
+      imageStore.set(newImg);//Actualizo el valor del store.
+  }
+
+  function HandleImg(e){/* Creo una funcion para manejar el evento que causa que seleccione una imagen */
+      const file=e.target.files[0]; /* Meto lo que me pasen en una variable */  
+      if(file){/* Si esa variable tiene una foto nueva hace esto: */
+          const reader = new FileReader();/* Un objeto el cual puede leer del lado del cliente */
+          reader.onload = function (e){     /* reader tiene un evento que lo manejo con una funcion, que se ejecute cuando finaliza la lectura */
+            console.log(e.target.result);
+              ChangeImage(e.target.result); /* Llamo a la otra funcion para que me cambie la imagen */
+          }
+          reader.readAsDataURL(file);/* Que me lea la imagen como una URL */
+      }else{
+          ChangeImage('src/assets/prof/default.jpg');/* En el caso de que no se cambie la imagen me dejas la de por defecto */
+      }
+
+  }
 
 
-    /* let $valor = $: imageStore;
-    console.log($valor); */
+  function handleClickOnImage() {
+      // Simular clic en el input de tipo "file"
+      document.getElementById('img-uploader').click();
+  }
 
     let componenteMostrado = null;
     function mostrarComponente(componente){
@@ -22,8 +45,8 @@ import Custom from "./Custom.svelte";
     <div class="profile">
             <div class="profile__photo">
                 <div class="profile__img">
-                    <!-- <img src="{$valor}" alt="" class="image-rounded">
-        			<input type="file" id="img-uploader" on:change={HandleImg}> -->
+                    <img src="{imgDefault}" alt="" class="image-rounded" on:click={handleClickOnImage}>
+                    <input type="file" id="img-uploader" on:change={HandleImg}>
                 </div>
 
                 <div class="profile__data">
@@ -183,6 +206,14 @@ import Custom from "./Custom.svelte";
                 float: left;
 				font-size: 25px;
 
+                @media  (max-width: 1600px)  {
+			        width: 100%;
+                    display: block;
+			        border-right: none;
+		        }
+
+
+
 				ul li a {
 				    text-decoration: none;
 				    color: aliceblue;
@@ -213,18 +244,25 @@ import Custom from "./Custom.svelte";
 				a:hover{
 					border: 1.5px solid var(--text-color);
 				}
+
+                
             }
 
             &__content{
                 width: 60%;
                 float: left;
 				margin-left: 100px;
+                min-height: 100vh;
+
+                @media  (max-width: 1600px)  {
+			        width: 70%;
+                    display: block;
+			        border-right: none;
+		        }
+                
             }
 
-            &__settings{
-                width: 30%;
-                float: left;
-            }
+           
     }
 
     #img-uploader{//Le quito el input para que no se vea 

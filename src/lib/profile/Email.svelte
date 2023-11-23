@@ -84,21 +84,33 @@
             border-right: 1px solid var(--text-color);
             width: 40%;
             float: left;
+            @media  (max-width: 1600px)  {
+			        width: 100%;
+                    display: block;
+			        border-right: none;
+		        }
         }
 
         &__dos{
             width: 45%;
             float: left;
             margin-left: 6vw;
+
+            @media  (max-width: 1600px)  {
+                margin: 0;
+			        width: 100%;
+                    display: block;
+			        border-right: none;
+		        }
         }
 
         input[type="submit"]{
-                margin-left: 25%;
+                margin-left: 32%;
                 margin-right: 60%;
                 margin-top: 20px;
                 margin-bottom: 20px;
-                height: 6vh;
-                width: 8vw;
+                height: 40px;
+                width: 70px;
                 background:var(--text-color);
                 color: beige;
                 border: none;
@@ -106,18 +118,33 @@
                 box-shadow: 0 0 10px rgba(0,0,0,.1);
                 cursor: pointer;
                 font-size: 16px;
-                font-weight: 600;
-                transition: all 0.5s ease;
+                transition: all ease 0.5s;
+
+                &:hover{
+                    background-color: beige;
+                    color: var(--text-color);
+                }
             }
 
             button{
-                height: 6vh;
+                height: 65px;
                 width: 25vw;
                 font-size: 17px;
                 background: var(--text-color);
                 border: none;
                 border-radius: 5px;
                 color: beige;
+                transition: all ease 0.5s;
+
+                &:hover{
+                    background-color: beige;
+                    color: var(--text-color);
+                }
+
+                @media  (max-width: 1600px)  {
+			        width: 70%;
+
+		        }
             }
 
         

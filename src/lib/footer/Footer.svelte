@@ -87,6 +87,11 @@ ul {
     margin-top: 20px;
     position: relative;
     width: 100%;
+
+    @media(max-width:1600px){
+    clear: both;
+    margin-top: 20px;
+ }
 }
 
 .footer-col {

@@ -5,7 +5,7 @@
 	import games from "$data/games.json"
 	import pagesStore from "$stores/pages";
 	import libraryStore from "$stores/library";
-	import Footer from "./Footer/Footer.svelte";
+	import Footer from "./lib/footer/Footer.svelte";
 	import cartStore from "$stores/cart";
 	import Login from "./lib/login/Login.svelte";
 	import Register from "./lib/login/Register.svelte";
@@ -41,8 +41,6 @@
 <div class="main">
 	<Header />
 	<Page />
-	<!-- <Profile/> -->
-	
 	<Footer />
 </div>
 

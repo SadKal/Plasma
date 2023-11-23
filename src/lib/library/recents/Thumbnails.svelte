@@ -25,12 +25,9 @@
 			margin-bottom: 20px;
 			letter-spacing: 1px;
 			@media (max-width: 1080px) and (orientation: portrait) {
-				// "jugado recientemente"
-				//mobile
 				font-size: 2rem;
 			}
 			@media (max-width: 500px) and (orientation: portrait) {
-				// "jugado recientemente"
 				font-size: 1.5rem;
 			}
 		}
@@ -47,18 +44,14 @@
 			display: inline-block;
 			transition: all 0.4s;
 			@media (max-width: 1750px) and (orientation: landscape) {
-				//usual desktop width (1080p)
-				height: 25vw;
+				height: 27vw;
 				width: 23%;
 			}
 			@media (max-width: 1366px) and (orientation: landscape) {
-				//old desktop width
 				width: 31%;
-				height: 33vw;
+				height: 36vw;
 			}
 			@media (max-width: 1080px) and (orientation: portrait) {
-				//thumbnails
-				//mobile
 				width: 46%;
 				margin-right: 4%;
 				margin-top: 2%;

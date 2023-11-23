@@ -1,5 +1,5 @@
 import Homepage from '$homepage/Homepage.svelte';
-import GamePage from '$homepage/game_page/GamePageHeader.svelte';
+import ShopPage from '$homepage/shop_page/ShopPageHeader.svelte';
 import GenrePage from '$homepage/genres/genre_page/GenrePage.svelte';
 import Library from '$library/Library.svelte';
 import { writable } from 'svelte/store';
@@ -9,7 +9,7 @@ const pages = {
     'Inicio': Homepage,
     'Biblioteca': Library,
     'Perfil': Profile,
-    'Shop': GamePage,
+    'Shop': ShopPage,
     'Genres': GenrePage
 };
 

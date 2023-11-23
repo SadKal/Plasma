@@ -111,7 +111,7 @@
             cursor: pointer;
             transition: all .3s;
             user-select: none;
-            @media (max-width: 720px) {
+            @media (max-width: 700px) {
             font-size: 1.75rem;
         }
 
@@ -123,7 +123,7 @@
             padding: 1rem;
             font-size: 2rem;
             float: left;
-            @media (max-width: 720px) {
+            @media (max-width: 700px) {
             font-size: 1.5rem;
         }
         }
@@ -131,7 +131,7 @@
             float: right;
             padding: 1rem;
             font-size: 2rem;
-            @media (max-width: 720px) {
+            @media (max-width: 700px) {
             font-size: 1.5rem;
         }
         }

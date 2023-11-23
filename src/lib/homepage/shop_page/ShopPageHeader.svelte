@@ -2,7 +2,7 @@
 	import cartStore from "$stores/cart";
 	import shopGameStore from "$stores/shopGame";
 	import libraryStore from "$stores/library";
-	import GamePageContent from "./GamePageContent.svelte";
+	import GamePageContent from "./ShopPageContent.svelte";
 	import { onMount } from "svelte";
 
 	let game = $shopGameStore.currentShopGame;
@@ -80,15 +80,15 @@
 		z-index: 0;
 		
 		margin: 25px 0px 0px -25px;
-		@media (max-width: 650px) {
+		@media (max-width: 650px) and (orientation:portrait) {
 			height: 40vh;
 		}
 	}
 	.shopGame__coverArt {
-		height: 23vw;
-		width: 18%;
+		height: 400px;
+			width: 300px;
 		position: absolute;
-		top: 20%;
+		top: 15%;
 		left: 70%;
 
 		background-size: cover;
@@ -96,16 +96,34 @@
 		border-radius: 1%;
 		transition: all 0.4s ease-in-out;
 		opacity: 100%;
-		@media (max-width: 1050px) {
-			height: 50%;
-			width: 30%;
-			left: 62.5%;
+		@media (max-width: 1050px) and (orientation: portrait) {
+			height: 400px;
+			width: 300px;
+			left: 60%;
+
 		}
-		@media (max-width: 650px) {
-			height: 43vw;
-			width: 33%;
+		@media (max-width: 650px) and (orientation: portrait) {
+			height: 225px;
+			width: 175px;
 			left: 55%;
 			top: 10%;
+		}
+		@media (min-width: 1500px) and (orientation: landscape) {
+			height: 400px;
+			width: 300px;
+			left: 75%;
+		}
+		@media (max-height: 900px) and (orientation: landscape) {
+			height: 300px;
+			width: 225px;
+			left: 75%;
+			top: 10%;
+		}
+		@media (max-height: 600px) and (orientation: landscape) {
+			height: 225px;
+			width: 175px;
+			left: 75%;
+			top: 5%;
 		}
 
 		&.active {
@@ -120,17 +138,33 @@
 		background-color: var(--game-title-background-color);
 
 		color: var(--selected-text-color);
-		padding: .75rem 2rem;
+		padding: .75rem 2.5rem;
 		top: 40%;
 		left: 10%;
+		text-align: center;
 		clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 		font-size: 2rem;
 		position: absolute;
-		@media (max-width: 650px) {
-			font-size: 2rem;
-			margin: 0 auto;
-			top: 10%;
+		@media (max-width: 900px) and (orientation:portrait) {
+			max-width: 25%;
+			top: 15%;
+		}
+		@media (max-width: 650px) and (orientation:portrait) {
+			font-size: 1.25rem;	
+			max-width: 30%;
 			padding: 3% 7%;
+		}
+		@media (max-width: 450px) and (orientation:portrait) {
+			font-size: 1rem;	
+		}
+		@media (max-height: 900px) and (orientation: landscape) {
+			top: 20%;
+		}
+		@media (max-height: 600px) and (orientation:landscape) {
+			font-size: 1.5rem;		
+			max-width: 30%;
+			top: 10%;
+			padding: 1% 5%;
 		}
 	}
 	.shopGame__toCart {
@@ -141,17 +175,31 @@
 		text-align: center;
 		margin: 0 auto;
 		width: 15%;
-		margin-top: 14px;
 		position: absolute;
 		top: 45%;
 		left: 10%;
-		padding: .75rem 2rem;
+		padding: .5rem 1.5em;
 		clip-path: polygon(10% 0%, 100% 0%, 90% 100%, 0% 100%);
 		cursor: pointer;
 		user-select: none;
-		@media (max-width: 650px) {
-			top: 30%;
+		@media (max-width: 900px) and (orientation:portrait) {
+			top: 45%;
 			width: 25%;
+		}
+		@media (max-width: 650px) and (orientation:portrait) {
+			top: 35%;
+		}
+		@media (max-width: 450px) and (orientation:portrait) {
+			font-size: .75rem;	
+			max-width: 30%;
+			padding: 2% 4%;
+		}
+		@media (max-height: 900px) and (orientation: landscape) {
+			top:45%
+		}
+		@media (max-height: 600px) and (orientation:landscape) {
+			top: 50%;
+			width: 15%;
 			font-size: 1rem;
 		}
 

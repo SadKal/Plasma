@@ -38,7 +38,7 @@
             height: 100%;
             width: 18%;
             float: left;
-            @media (max-width: 720px) {
+            @media (max-width: 700px) {
             font-size: 1.5rem;
         }
         }
@@ -58,7 +58,7 @@
             letter-spacing: .1rem;
             color: var(--text-color);
             max-width: 45%;
-            @media (max-width: 720px) {
+            @media (max-width: 700px) {
             font-size: 1.25rem;
             max-width: 25%;
         }
@@ -73,7 +73,7 @@
             letter-spacing: .1rem;
             color: var(--text-color);
             padding: 1rem;
-            @media (max-width: 720px) {
+            @media (max-width: 700px) {
             font-size: 1rem;
             transform: translate(50%, -50%);
             top: 80%;

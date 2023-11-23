@@ -55,7 +55,7 @@ on:click={ () => shopGameStore.openShop(game)}>
     .genre-game{
         margin: .3rem auto;
         width: 80%;
-        height: 15vw;
+        height: 250px;
         box-sizing: border-box;
 
         font-weight: 700;
@@ -63,8 +63,8 @@ on:click={ () => shopGameStore.openShop(game)}>
         color: var(--text-color);
         clip-path: polygon(2% 0, 100% 0%, 98% 100%, 0% 100%);        
         transition: all .3s ease-in-out;
-        @media (max-width: 750px) {
-                height: 30vw;
+        @media (max-width: 1200px) {
+                height: 200px;
             }
         &:hover{
             background-color: rgb(0,74,64);
@@ -85,6 +85,10 @@ on:click={ () => shopGameStore.openShop(game)}>
                 margin-right: 1.5rem;
                 float: left;     
             }
+            @media (max-width: 1200px) {
+                height: 200px;
+                margin-right: 1rem;
+            }
         }
 
         &__name{
@@ -99,9 +103,13 @@ on:click={ () => shopGameStore.openShop(game)}>
             color: var(--selected-text-color);
             @media (max-width: 1200px) {
                 width: 30%;
+                font-size: 1.5rem;
+                margin-left: 1.5rem;
+                margin-top: 1rem;
             }
-            @media (max-width: 850px) {
-                font-size: 1.75rem;
+            @media (max-width: 750px) {
+                font-size: 1.25rem;
+                margin-left: 1rem;
             }
             @media (max-width: 550px) {
                 font-size: 1rem;
@@ -115,8 +123,8 @@ on:click={ () => shopGameStore.openShop(game)}>
             left: -10%;
             color: var(--text-color);
             @media (max-width: 1200px) {
-                margin-top: 1.5rem;
-                font-size: .8rem;
+                font-size: 1rem;
+                margin-top: 1rem;
             }
         }
 
@@ -129,8 +137,8 @@ on:click={ () => shopGameStore.openShop(game)}>
             margin-right: 5rem;
             max-width: 15%;
             text-align: center;
-            @media (max-width: 850px) {
-                font-size: 1rem;
+            @media (max-width: 1200px) {
+                font-size: 1.25rem;
                 margin-right: 2.5rem;
             }
         }

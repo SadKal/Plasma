@@ -84,7 +84,7 @@
                 scale: 140%;
 
                 transition: all .3s;
-                @media (max-width: 420px){
+                @media (max-width: 450px){
                     scale: 230%;
                 }
                 &:hover{
@@ -121,7 +121,7 @@
                 z-index: 10;
                 color: var(--game-title-color-center);
                 background-color: var(--game-title-background-color-center);
-                bottom: -20%;   
+                bottom: -18%;   
                 clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
 
                 @media (max-width: 800px) {

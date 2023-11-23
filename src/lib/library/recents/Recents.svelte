@@ -24,11 +24,10 @@
 			color: var(--text-color);
 			letter-spacing: 1px;
 
-			@media (max-width: 1080px) and (orientation: portrait) {
-				//mobile
+			@media (max-width: 650px) and (orientation: portrait) {
 				font-size: 4rem;
 			}
-			@media (max-width: 500px) and (orientation: portrait) {
+			@media (max-width: 450px) and (orientation: portrait) {
 				font-size: 3rem;
 			}
 		}

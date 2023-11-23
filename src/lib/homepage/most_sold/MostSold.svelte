@@ -48,7 +48,7 @@
         margin-top: 15vw;
         animation: fadein var(--seconds-fadein) ease-in;
 
-        @media (max-width: 420px) {
+        @media (max-width: 450px) {
             margin-top: 4rem;
         }
         
@@ -58,13 +58,13 @@
             font-weight: 400;
             letter-spacing: .2rem;
 
-            @media (max-width: 1024px) {
+            @media (max-width: 1050px) {
                 font-size: 4rem;
             }
-            @media (max-width: 720px) {
+            @media (max-width: 750px) {
                 font-size: 3rem;
             }
-            @media (max-width: 420px) {
+            @media (max-width: 450px) {
                 font-size: 2rem;
             }
         } 
@@ -75,7 +75,7 @@
             position: relative; 
             left: 50%;
             transform: translateX(-50%);
-            @media (max-width: 420px) {
+            @media (max-width: 450px) {
                 width: 100%;
             }
         }
@@ -84,7 +84,7 @@
             &:not(:last-child){
                 margin-bottom: 3rem;
             }
-            @media (max-width: 420px) {
+            @media (max-width: 450px) {
                 &:not(:last-child){
                     margin-bottom: 2rem;
                 }

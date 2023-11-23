@@ -61,16 +61,11 @@
     } 
 
     .slideshow{
-        margin-top: 5rem; 
+        margin-top: 6rem; 
         animation: fadein var(--seconds-fadein) ease-in;  
-
-        @media (min-width: 800px){
-            margin-top: 10rem; 
-            height: 220px;
-        }
-        @media (min-width: 1300px){
-            width: 100%;
-            height: 350px;
+        
+        @media (max-width: 800px){
+            margin-top: 7rem; 
         }
 
         &__slide{

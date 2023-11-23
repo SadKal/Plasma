@@ -63,7 +63,7 @@
                 transition: all .1s;
                 z-index: 5;
             }
-            @media (max-width: 420px) {
+            @media (max-width: 450px) {
                 height: 120vw;
                 width:60%;
                 left: 50%;
@@ -73,7 +73,7 @@
                     margin-bottom: 2rem;
                 } 
             }
-            @media (min-width: 420px) {
+            @media (min-width: 450px) {
                 &:hover{
                     scale: 110%;
                 }
@@ -114,13 +114,13 @@
             } 
             @media (max-width: 900px) {
                 padding: .1rem;
-                font-size: 1rem;
+                font-size: .9rem;
                 height: 13.5vw;
             } 
             @media (max-width: 650px) {
                 font-size: .6rem;
             } 
-            @media (max-width: 420px) {
+            @media (max-width: 450px) {
                 font-size: 1rem;
                 height: 25vw;
             }
@@ -137,7 +137,11 @@
             @media (max-width: 1200px) {
                 font-size: 1rem;
             }
-            @media (max-width: 420px) {
+            @media (max-width: 650px) {
+                font-size: .75rem;
+                margin: .25rem 0;
+            }          
+            @media (max-width: 450px) {
                 font-size: 1.5rem;
                 margin: .5rem 0;
             }          

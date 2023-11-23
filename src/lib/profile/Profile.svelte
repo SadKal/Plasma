@@ -132,7 +132,11 @@ import Custom from "./Custom.svelte";
 </main>
 
 <style lang="scss">
-	
+    * {
+        animation-name: fadein;
+		animation-duration: var(--seconds-fadein);
+		animation-timing-function: ease-in;
+    }
 	
     .profile{
         width: 100%;

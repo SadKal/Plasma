@@ -1,6 +1,6 @@
 <script>
 	import Recents from "./recents/Recents.svelte";
-	import Library from "./yourgames/YourGames.svelte";
+	import YourGames from "./yourgames/YourGames.svelte";
 	import { onMount } from "svelte";
 
 	onMount(() => {
@@ -9,7 +9,7 @@
 </script>
 
 <Recents />
-<Library />
+<YourGames />
 
 <style lang="scss">
 </style>

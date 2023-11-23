@@ -90,7 +90,7 @@
         &__title{
             box-sizing: border-box; 
             position: fixed;
-            margin-top: -6rem;
+            margin-top: -96px;
             left: 50%;
             transform: translateX(-50%);
             width: 25rem;

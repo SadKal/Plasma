@@ -6,10 +6,7 @@
 	import pagesStore from "$stores/pages";
 	import libraryStore from "$stores/library";
 	import Footer from "./lib/footer/Footer.svelte";
-	import cartStore from "$stores/cart";
-	import Login from "./lib/login/Login.svelte";
-	import Register from "./lib/login/Register.svelte";
-  import Profile from "$profile/Profile.svelte";
+
 
 	$: {
 		if ($pagesStore.active == "Inicio") {
@@ -20,7 +17,7 @@
 	function scrollOnLoad() {
 		requestAnimationFrame(() => {
 			if (window.matchMedia("(max-width: 420px)").matches) {
-				window.scrollTo(0, 400);
+				window.scrollTo(0, 60);
 			} else {
 				window.scrollTo(0, 90);
 			}

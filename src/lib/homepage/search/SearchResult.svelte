@@ -40,7 +40,6 @@
         @media (max-width: 420px) {
             height: 5rem;
             font-size: 12px;
-            z-index: 60;
         }
 
         &:hover{
@@ -60,9 +59,9 @@
             z-index: 60;
         }
             @media (max-width: 420px) {
+                height: 1rem;
                 font-size: 12px;
                 top: 20%;
-                transform: translateY(0);
             }
         }
         &__image{
@@ -76,9 +75,9 @@
             &-container{
                 height: 100%;
                 width: 20%;
-                margin-right: 1.5rem;
+                margin-right: 1rem;
                 @media (max-width: 420px) {
-                    width: 40%;
+                    width: 20%;
                 }
             }
         }
@@ -97,7 +96,7 @@
             z-index: 60;
         }
             @media (max-width: 420px) {
-                top: 40%;
+                height: 2rem;
                 font-size: 12px;
             }
         }

@@ -36,38 +36,53 @@
 			});
 		}
 		$libraryStore.gamesInLibrary = $libraryStore.gamesInLibrary;
-		console.log(">>>", $libraryStore.gamesInLibrary)
 	}
 </script>
 
-<span class="library--urgames__title">Tus juegos</span>
+<div class="gamelist__title">
+	<span class="library--urgames__title">Tus juegos</span>
 
-<Select
-	label="Ordenar por"
-	values={["Nombre", "Más jugados", "Fecha adq."]}
-	selectedValue="Nombre"
-	eventClick={sortBy}
-/>
+	<Select
+		label="Ordenar por"
+		values={["Nombre", "Más jugados", "Fecha adq."]}
+		selectedValue="Nombre"
+		eventClick={sortBy}
+	/>
+</div>
 
-{#each $libraryStore.gamesInLibrary as game (game.id)}
-	<div
-		class="gamelist__content"
-		style="background-image: url('{game.cover}');"
-		animate:flip={{ duration: 400, delay: 10 * game.id, easing: expoInOut }}
-	>
-		<span class="gamelist__content_title">
-			{game.name}
-		</span>
-	</div>
-{/each}
+<div class="gamelist__container">
+	{#each $libraryStore.gamesInLibrary as game (game.id)}
+		<div
+			class="gamelist__content"
+			style="background-image: url('{game.cover}');"
+			animate:flip={{ duration: 400, delay: 10 * game.id, easing: expoInOut }}
+		>
+			<span class="gamelist__content_title">
+				{game.name}
+			</span>
+		</div>
+	{/each}
+</div>
 
 <style lang="scss">
+	.gamelist__title {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		margin-right: 2%; //select aligned with thumbnails
+		}
+	.gamelist__container {
+		display: flex;
+		flex-wrap: wrap;
+		margin-top: 20px;
+		justify-content: start;
+	}
 	.gamelist__content {
 		height: 21vw;
 		width: 18%;
-		display: inline-block;
-		margin-right: 2%;
+		display: flex;
 		margin-bottom: 10px;
+		margin-right: 2%;
 		background-size: contain;
 		background-repeat: round;
 		margin-top: 1.5rem;
@@ -84,49 +99,42 @@
 		}
 
 		&_title {
-			background-color: var(--topbar-background-color);
+			display: flex;
+			height: fit-content;
+			align-self: center;
 			padding: 5% 10%;
-			color: var(--selected-text-color);
 			position: relative;
 			text-align: center;
+			font-size: 1.2rem;
 			opacity: 0;
+			clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
+			background-color: var(--topbar-background-color);
+			color: var(--selected-text-color);
+			font-weight: 900;
 			transition: all 0.25s;
 			transition-duration: 0.25s;
-			font-weight: 900;
-			clip-path: polygon(0 0, 100% 0%, 90% 100%, 0% 100%);
-			font-size: 1.2rem;
-			top: 90%;
-			display: inline-table;
-			transform: translate(-1px, -75%);
+			margin: 20% 0 0 -1px; //needed to make the title stay flush to the side, is there really no better way?
+
 		}
 		@media (max-width: 1750px) and (orientation: landscape) {
-			//usual desktop width (1080p)
 			height: 28vw;
 			width: 23%;
 		}
 		@media (max-width: 1366px) and (orientation: landscape) {
-			//old desktop width
 			width: 31%;
 			height: 36vw;
 		}
 		@media (max-width: 1080px) and (orientation: portrait) {
-			//mobile
 			width: 46%;
-			margin-right: 4%;
 			height: 54vw;
-			&:not(:first-of-type) {
-				//all divs except the first one, applies to the whole row
-				margin-top: 2%;
-			}
 		}
 	}
 	.library--urgames__title {
-		position: absolute;
-		margin-top: -50px;
 		font-weight: 600;
 		color: var(--text-color);
-		font-size: 3rem;
+		font-size: 4rem;
 		letter-spacing: 1px;
+		display: flex;
 		@media (max-width: 1080px) and (orientation: portrait) {
 			//mobile
 			font-size: 2rem;

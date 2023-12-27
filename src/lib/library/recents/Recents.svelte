@@ -2,8 +2,8 @@
 	import Thumbnails from "./Thumbnails.svelte";
 </script>
 
+<div class="library--recents__title">Tu biblioteca</div>
 <div class="library--recents">
-	<div class="library--recents__title">Tu biblioteca</div>
 	<Thumbnails />
 </div>
 
@@ -15,7 +15,8 @@
 	}
 	.library--recents {
 		border-bottom: 7px solid var(--text-color);
-		padding-bottom: 100px;
+		padding-bottom: 75px;
+		display: flex;
 		&__title {
 			margin: 75px 0px;
 			text-align: center;

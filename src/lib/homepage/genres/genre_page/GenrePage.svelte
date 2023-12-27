@@ -69,9 +69,7 @@
     }
 
     .genres{
-        
         animation: fadein var(--seconds-fadein) ease-in;
-
         &__select{
             text-align: center;
             background-color: transparent;

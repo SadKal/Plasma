@@ -73,6 +73,8 @@
             width: 70%;
             margin-top: 4rem;
             position: relative; 
+            display: flex;
+            flex-wrap: wrap;
             left: 50%;
             transform: translateX(-50%);
             @media (max-width: 450px) {
